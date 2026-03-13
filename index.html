@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNO Game Rules</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:    #E8272A;
+      --yellow: #F6C822;
+      --blue:   #005BAA;
+      --green:  #00A550;
+      --dark:   #111111;
+      --surface:#1A1A1A;
+      --muted:  #888;
+      --light:  #F5F2EC;
+      --radius: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--light);
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative; z-index: 2;
+      padding: 72px 48px 40px;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 0;
+    }
+
+    .header-eyebrow {
+      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted); font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .header-title-block {
+      display: flex; flex-direction: column; gap: 0;
+    }
+
+    .header-uno {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(80px, 12vw, 144px);
+      line-height: 0.88;
+      letter-spacing: 0.04em;
+      color: var(--light);
+    }
+
+    .header-rule-line {
+      display: flex; align-items: center;
+      margin-top: 4px;
+    }
+
+    .header-therules {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(28px, 4.2vw, 54px);
+      letter-spacing: 0.18em;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(245,242,236,0.35);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .header-sub {
+      margin-top: 20px;
+      font-size: 14px; color: var(--muted); font-weight: 400;
+      max-width: 360px; line-height: 1.6;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 0 48px 80px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      position: relative;
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex; flex-direction: column;
+      min-height: 300px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: transform 0.35s cubic-bezier(.22,1,.36,1),
+                  box-shadow 0.35s cubic-bezier(.22,1,.36,1),
+                  border-color 0.25s ease;
+      will-change: transform;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 28px 56px rgba(0,0,0,0.55);
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    /* accent bar on left */
+    .card::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--accent);
+      transition: width 0.3s cubic-bezier(.22,1,.36,1);
+    }
+    .card:hover::before { width: 6px; }
+
+    /* ── CARD COLORS ── */
+    .card--uno      { --accent: var(--red); }
+    .card--flip     { --accent: var(--yellow); }
+    .card--liars    { --accent: #9B5CF6; }
+    .card--mercy    { --accent: var(--blue); }
+    .card--dare     { --accent: #FF6B35; }
+
+    /* ── BIG NUMBER BG ── */
+    .card-number {
+      position: absolute;
+      right: -12px; bottom: -16px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 160px;
+      line-height: 1;
+      color: rgba(255,255,255,0.04);
+      user-select: none;
+      transition: color 0.3s ease, transform 0.35s cubic-bezier(.22,1,.36,1);
+      pointer-events: none;
+    }
+    .card:hover .card-number {
+      color: rgba(255,255,255,0.07);
+      transform: scale(1.06) translate(-4px, -4px);
+    }
+
+    /* ── CARD INNER ── */
+    .card-body {
+      padding: 32px 32px 32px 40px;
+      display: flex; flex-direction: column; flex: 1;
+      gap: 0;
+    }
+
+    .card-tag {
+      font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); font-weight: 600; margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 42px;
+      line-height: 1;
+      letter-spacing: 0.03em;
+      color: var(--light);
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
+      font-size: 11px; color: var(--muted); font-weight: 400;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .card-desc {
+      font-size: 13.5px; line-height: 1.65;
+      color: rgba(245,242,236,0.65);
+      flex: 1;
+    }
+
+    /* pill badges */
+    .card-badges {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-top: 24px;
+    }
+
+    .badge {
+      font-size: 11px; font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: rgba(245,242,236,0.55);
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    /* CTA arrow */
+    .card-cta {
+      margin-top: 28px;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
+      transition: gap 0.2s ease;
+    }
+    .card:hover .card-cta { gap: 12px; }
+
+    .card-cta svg {
+      width: 16px; height: 16px; stroke: var(--accent); fill: none;
+      stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
+      transition: transform 0.25s ease;
+    }
+    .card:hover .card-cta svg { transform: translateX(4px); }
+
+    /* ── ICON BLOCK ── */
+    .card-icon {
+      width: 48px; height: 48px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      font-size: 22px;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    /* ── ADULTS ONLY RIBBON ── */
+    .card--dare .card-ribbon {
+      position: absolute;
+      top: 18px; right: -28px;
+      background: #FF6B35;
+      color: #111;
+      font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 36px;
+      transform: rotate(45deg);
+      white-space: nowrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 2;
+      text-align: center;
+      padding: 24px 48px 40px;
+      font-size: 12px; color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* ── STAGGER ENTRANCE ── */
+    .card {
+      opacity: 0;
+      transform: translateY(28px);
+      animation: fadeUp 0.55s cubic-bezier(.22,1,.36,1) forwards;
+    }
+    .card:nth-child(1) { animation-delay: 0.08s; }
+    .card:nth-child(2) { animation-delay: 0.16s; }
+    .card:nth-child(3) { animation-delay: 0.24s; }
+    .card:nth-child(4) { animation-delay: 0.32s; }
+    .card:nth-child(5) { animation-delay: 0.40s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      opacity: 0;
+      animation: fadeUp 0.5s cubic-bezier(.22,1,.36,1) forwards;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      position: relative; z-index: 2;
+      width: 40px; height: 3px;
+      background: var(--red);
+      border-radius: 2px;
+      margin: 0 48px 40px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      header, .grid, .divider { padding-left: 24px; padding-right: 24px; }
+      header { padding-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-title-block">
+      <h1 class="header-uno">UNO</h1>
+      <div class="header-rule-line">
+        <span class="header-therules">The&nbsp;Rules</span>
+      </div>
+    </div>
+    <p class="header-sub">Select a game edition to view its complete rules, card types, and how to play.</p>
+  </header>
+
+  <div class="divider"></div>
+
+  <main class="grid">
+
+    <!-- 1. UNO Classic -->
+    <a href="uno.html" class="card card--uno">
+      <div class="card-body">
+        <div class="card-icon">🃏</div>
+        <p class="card-tag">Classic Edition</p>
+        <h2 class="card-title">UNO</h2>
+        <p class="card-subtitle">2–10 Players · Ages 7+</p>
+        <p class="card-desc">The original card game. Match colors and numbers, play action cards, and be the first to empty your hand. Don't forget to shout UNO!</p>
+
+        <div class="card-cta">
+          View Rules
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- 2. UNO Flip -->
+    <a href="uno-flip.html" class="card card--flip">
+      <div class="card-body">
+        <div class="card-icon">🔄</div>
+        <p class="card-tag">Double-Sided Edition</p>
+        <h2 class="card-title">UNO<br>Flip</h2>
+        <p class="card-subtitle">2–10 Players · Ages 7+</p>
+        <p class="card-desc">Two decks in one. The Light side plays like classic UNO — until a Flip card hits and the brutal Dark side takes over with punishing draw penalties.</p>
+
+        <div class="card-cta">
+          View Rules
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- 3. Liar's UNO -->
+    <a href="liars-uno.html" class="card card--liars">
+      <div class="card-body">
+        <div class="card-icon">🤥</div>
+        <p class="card-tag">Bluffing Edition</p>
+        <h2 class="card-title">Liar's<br>UNO</h2>
+        <p class="card-subtitle">2–10 Players · Ages 7+</p>
+        <p class="card-desc">Bluffing meets card matching. Play face-down and dare opponents to challenge you. Get caught lying and you draw — but catch a liar and they pay the price.</p>
+
+        <div class="card-cta">
+          View Rules
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- 4. UNO Show 'Em No Mercy -->
+    <a href="uno-show-em-no-mercy.html" class="card card--mercy">
+      <div class="card-body">
+        <div class="card-icon">💀</div>
+        <p class="card-tag">Brutal Edition</p>
+        <h2 class="card-title">Show 'Em<br>No Mercy</h2>
+        <p class="card-subtitle">2–10 Players · Ages 7+</p>
+        <p class="card-desc">The most ruthless UNO yet. Stack Draw cards with no limits, force your opponents into massive hands, and show absolutely no mercy on your way to victory.</p>
+
+        <div class="card-cta">
+          View Rules
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- 5. UNO Dare Adults Only -->
+    <a href="uno-dare-adults-only.html" class="card card--dare">
+      <div class="card-ribbon">18+</div>
+      <div class="card-body">
+        <div class="card-icon">🔞</div>
+        <p class="card-tag">Adults Only Edition</p>
+        <h2 class="card-title">UNO Dare<br>Adults</h2>
+        <p class="card-subtitle">2–10 Players · Ages 18+</p>
+        <p class="card-desc">UNO with a dare twist made for adults. Instead of drawing, accept a dare challenge. Wild cards come with social dares that raise the stakes every round.</p>
+
+        <div class="card-cta">
+          View Rules
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </a>
+
+  </main>
+
+  <footer>
+    UNO is a trademark of Mattel, Inc. · This is a fan-made rules reference site.
+  </footer>
+
+</body>
+</html>
