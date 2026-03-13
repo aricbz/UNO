@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>UNO Show 'Em No Mercy</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E8192C;
+    --yellow: #FFD700;
+    --blue: #0057B8;
+    --green: #00A651;
+    --dark: #0D0D0D;
+    --surface: #161616;
+    --card-bg: #1E1E1E;
+    --border: #2A2A2A;
+    --text: #F0F0F0;
+    --muted: #888;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--red);
+    padding: 20px 20px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: rgba(0,0,0,.15);
+    border-radius: 50%;
+  }
+  .header-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .logo-uno {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 0 rgba(0,0,0,.4);
+  }
+  .logo-sub {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: var(--yellow);
+    text-shadow: 2px 2px 0 rgba(0,0,0,.4);
+    margin-top: -4px;
+    margin-bottom: 4px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(0,0,0,.25);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: .5px;
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    background: var(--dark);
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .tab {
+    flex: 1;
+    padding: 13px 8px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all .2s;
+    user-select: none;
+  }
+  .tab.active {
+    color: var(--yellow);
+    border-bottom-color: var(--yellow);
+  }
+
+  /* ── PANELS ── */
+  .panel { display: none; padding: 16px 16px 40px; }
+  .panel.active { display: block; }
+
+  /* ── SECTION HEADERS ── */
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--muted);
+    margin: 24px 0 10px;
+    text-transform: uppercase;
+  }
+  .section-title:first-child { margin-top: 0; }
+
+  /* ── OBJECT BLOCK ── */
+  .object-block {
+    background: linear-gradient(135deg, var(--red) 0%, #c0141f 100%);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .object-block strong { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1px; margin-bottom: 4px; }
+
+  /* ── SETUP STEPS ── */
+  .setup-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .setup-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+  }
+  .step-num {
+    background: var(--red);
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .setup-step p { font-size: 13px; line-height: 1.5; padding-top: 4px; }
+
+  /* ── RULE CARDS ── */
+  .rule-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: border-color .2s;
+  }
+  .rule-card:active { opacity: .85; }
+  .rule-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .rule-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    font-weight: 900;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  .rule-card-title {
+    font-weight: 700;
+    font-size: 14px;
+    flex: 1;
+  }
+  .rule-card-subtitle {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .rule-card-chevron {
+    color: var(--muted);
+    font-size: 16px;
+    transition: transform .2s;
+  }
+  .rule-card.open .rule-card-chevron { transform: rotate(90deg); }
+  .rule-card-body {
+    display: none;
+    padding-top: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #ccc;
+    border-top: 1px solid var(--border);
+    margin-top: 12px;
+  }
+  .rule-card.open .rule-card-body { display: block; }
+  .rule-card.open { border-color: #444; }
+
+  /* ── ACTION CARDS GRID ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .action-card {
+    border-radius: var(--radius);
+    padding: 14px 12px;
+    position: relative;
+    overflow: hidden;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform .15s;
+    border: 1px solid transparent;
+  }
+  .action-card:active { transform: scale(.97); }
+  .action-card .card-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    line-height: 1;
+    color: rgba(255,255,255,.9);
+  }
+  .action-card .card-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    color: rgba(255,255,255,.95);
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+  .action-card .card-pip {
+    position: absolute;
+    bottom: 10px; right: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: rgba(255,255,255,.25);
+    transform: rotate(180deg);
+  }
+  /* Colors */
+  .c-red    { background: linear-gradient(135deg,#E8192C,#b81020); }
+  .c-blue   { background: linear-gradient(135deg,#0057B8,#003d8a); }
+  .c-green  { background: linear-gradient(135deg,#00A651,#007a3b); }
+  .c-yellow { background: linear-gradient(135deg,#e6b800,#b38900); }
+  .c-wild   { background: linear-gradient(135deg,#1a1a1a,#2e2e2e); border-color: #444 !important; }
+  .c-exp    { background: linear-gradient(135deg,#6b21a8,#4a1278); }
+
+  /* modal */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.85);
+    z-index: 999;
+    padding: 24px 16px;
+    overflow-y: auto;
+  }
+  .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+  .modal-box {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 24px;
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid #333;
+    position: relative;
+    margin-top: 10vh;
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 32px; height: 32px;
+    background: #333;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #aaa;
+  }
+  .modal-icon {
+    width: 60px; height: 60px;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 14px;
+  }
+  .modal-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .modal-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .modal-desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #ccc;
+  }
+
+  /* ── SPECIAL RULES ── */
+  .special-rule {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 8px;
+  }
+  .special-rule-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
+  }
+  .special-rule-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  }
+  .special-rule h3 { font-size: 14px; font-weight: 700; }
+  .special-rule p { font-size: 13px; line-height: 1.6; color: #bbb; }
+
+  /* ── SCORING ── */
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .score-table th {
+    background: #222;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .score-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: #ccc;
+  }
+  .score-table tr:last-child td { border-bottom: none; }
+  .score-table td:last-child { text-align: right; font-weight: 700; color: var(--yellow); }
+  .score-table tr:nth-child(odd) td { background: #1a1a1a; }
+
+  /* ── COIN CARDS ── */
+  .coin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .coin-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color .2s;
+  }
+  .coin-card:active { opacity: .8; }
+  .coin-face {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .coin-mercy { background: linear-gradient(135deg,#444,#222); border: 2px solid #555; color: #fff; }
+  .coin-nomercy { background: linear-gradient(135deg,var(--red),#a00); border: 2px solid #ff4444; color: #fff; }
+  .coin-name { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 1px; margin-bottom: 4px; }
+  .coin-hint { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+  /* ── ALERT BLOCK ── */
+  .alert {
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  .alert-icon { font-size: 16px; flex-shrink: 0; padding-top: 1px; }
+  .alert-warn { background: rgba(255,215,0,.08); border: 1px solid rgba(255,215,0,.2); }
+  .alert-info { background: rgba(0,86,184,.12); border: 1px solid rgba(0,86,184,.3); }
+
+  /* KNOCK OUT */
+  .knockout-block {
+    background: linear-gradient(135deg, #1a0000, #2d0000);
+    border: 1px solid var(--red);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .knockout-block .ko-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--red);
+    line-height: 1;
+  }
+  .knockout-block p { font-size: 13px; color: #bbb; line-height: 1.5; }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+  /* uno button */
+  .uno-cta {
+    background: var(--red);
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 12px;
+    padding: 14px;
+    width: 100%;
+    margin-top: 12px;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    text-shadow: 2px 2px 0 rgba(0,0,0,.3);
+    box-shadow: 0 4px 0 #8b0000;
+    transition: transform .1s, box-shadow .1s;
+  }
+  .uno-cta:active { transform: translateY(3px); box-shadow: 0 1px 0 #8b0000; }
+
+  .divider { height: 1px; background: var(--border); margin: 16px 0; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo-uno">UNO</div>
+    <div class="logo-sub">Show 'Em No Mercy™</div>
+    <div class="header-meta">
+      <span class="badge">192 Cards</span>
+      <span class="badge">2–6 Players</span>
+      <span class="badge">Age 7+</span>
+      <span class="badge">+ Expansion Pack</span>
+    </div>
+  </div>
+</header>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('rules')">Rules</div>
+  <div class="tab" onclick="switchTab('cards')">Cards</div>
+  <div class="tab" onclick="switchTab('expansion')">Expansion</div>
+
+</div>
+
+<!-- ══════════════════════════ RULES PANEL ══════════════════════════ -->
+<div class="panel active" id="panel-rules">
+
+  <div class="object-block">
+    <strong>🎯 Objective</strong>
+    Be the first to empty your hand — or knock all other players out of the game by giving them 25+ cards.
+  </div>
+
+  <div class="section-title">Setup</div>
+  <div class="setup-list">
+    <div class="setup-step"><div class="step-num">1</div><p>Choose a dealer and shuffle the deck. Tip: split between multiple players — it's a big deck.</p></div>
+    <div class="setup-step"><div class="step-num">2</div><p>Deal <strong>7 cards</strong> to each player.</p></div>
+    <div class="setup-step"><div class="step-num">3</div><p>Place remaining cards face-down in the center. This is the <strong>Draw Pile</strong>.</p></div>
+    <div class="setup-step"><div class="step-num">4</div><p>Flip the top card face-up to start the <strong>Discard Pile</strong>. If it's an Action Card, ignore it and flip the next.</p></div>
+    <div class="setup-step"><div class="step-num">5</div><p>Player to the left of the dealer goes first. Play moves <strong>clockwise</strong>.</p></div>
+  </div>
+
+  <div class="section-title">On Your Turn</div>
+  <div class="rule-card" onclick="toggleCard(this)">
+    <div class="rule-card-header">
+      <div class="rule-icon" style="background:#1a4a1a; color:#00A651; font-size:22px;">✓</div>
+      <div>
+        <div class="rule-card-title">You HAVE a matching card</div>
+        <div class="rule-card-subtitle">Match color, number, or symbol</div>
+      </div>
+      <div class="rule-card-chevron">›</div>
+    </div>
+    <div class="rule-card-body">
+      Play <strong>one card</strong> onto the Discard Pile. It must match at least one attribute of the top card: its <strong>color</strong>, <strong>number</strong>, or <strong>symbol</strong>. If it's an Action Card, its effect triggers immediately.
+    </div>
+  </div>
+  <div class="rule-card" onclick="toggleCard(this)">
+    <div class="rule-card-header">
+      <div class="rule-icon" style="background:#4a1a1a; color:#E8192C; font-size:22px;">✕</div>
+      <div>
+        <div class="rule-card-title">You DON'T have a match</div>
+        <div class="rule-card-subtitle">Keep drawing until you can play</div>
+      </div>
+      <div class="rule-card-chevron">›</div>
+    </div>
+    <div class="rule-card-body">
+      Draw cards from the Draw Pile <strong>one at a time</strong> until you draw a card you can play. Then play that card immediately.
+    </div>
+  </div>
+
+  <div class="section-title">Calling "UNO!"</div>
+  <div class="alert alert-warn">
+    <div class="alert-icon">⚠️</div>
+    <div>When you're down to <strong>1 card</strong>, you must yell <strong>"UNO!"</strong> If someone catches you before the next player's turn begins, you draw <strong>2 cards</strong>.</div>
+  </div>
+
+  <div class="section-title">Special Rules</div>
+  <div class="special-rule">
+    <div class="special-rule-header"><div class="special-rule-dot" style="background:var(--yellow)"></div><h3>Stacking</h3></div>
+    <p>If a Draw Card (+2, +4, +6, +10) is played on you, you can counter with a Draw Card of <strong>equal or higher value</strong>. The penalty stacks until someone can't respond — they draw the full total.</p>
+  </div>
+  <div class="special-rule">
+    <div class="special-rule-header"><div class="special-rule-dot" style="background:var(--green)"></div><h3>7's Swap</h3></div>
+    <p>When you play a <strong>7</strong>, you must swap your entire hand with any player of your choice.</p>
+  </div>
+  <div class="special-rule">
+    <div class="special-rule-header"><div class="special-rule-dot" style="background:var(--blue)"></div><h3>0's Pass</h3></div>
+    <p>When you play a <strong>0</strong>, ALL players pass their hand to the next player in the current direction of play.</p>
+  </div>
+
+  <div class="section-title">Winning</div>
+  <div class="alert alert-info">
+    <div class="alert-icon">🏆</div>
+    <div>Play your <strong>last card</strong> to win the hand — or knock out all other players to be the last one standing.</div>
+  </div>
+
+
+</div>
+
+<!-- ══════════════════════════ CARDS PANEL ══════════════════════════ -->
+<div class="panel" id="panel-cards">
+  <div class="section-title">Action Cards — tap to learn more</div>
+  <div class="cards-grid">
+
+    <div class="action-card c-red" onclick="openModal('draw2')">
+      <div class="card-value">+2</div>
+      <div class="card-name">Draw Two</div>
+      <div class="card-pip">+2</div>
+    </div>
+    <div class="action-card c-blue" onclick="openModal('draw4')">
+      <div class="card-value">+4</div>
+      <div class="card-name">Draw Four</div>
+      <div class="card-pip">+4</div>
+    </div>
+    <div class="action-card c-green" onclick="openModal('skip')">
+      <div class="card-value">⊘</div>
+      <div class="card-name">Skip</div>
+      <div class="card-pip">⊘</div>
+    </div>
+    <div class="action-card c-yellow" onclick="openModal('reverse')">
+      <div class="card-value">⇄</div>
+      <div class="card-name">Reverse</div>
+      <div class="card-pip">⇄</div>
+    </div>
+    <div class="action-card c-red" onclick="openModal('discardall')">
+      <div class="card-value" style="font-size:20px;">Discard<br>All</div>
+      <div class="card-name">Color Match</div>
+      <div class="card-pip">↓↓</div>
+    </div>
+    <div class="action-card c-blue" onclick="openModal('skipeveryone')">
+      <div class="card-value" style="font-size:18px;">Skip<br>All</div>
+      <div class="card-name">Skip Everyone</div>
+      <div class="card-pip">⊘⊘</div>
+    </div>
+
+  </div>
+
+  <div class="section-title">Wild Cards</div>
+  <div class="cards-grid">
+
+    <div class="action-card c-wild" onclick="openModal('wrd4')">
+      <div class="card-value" style="font-size:18px; color:#E8192C;">Wild<br>Rev +4</div>
+      <div class="card-name" style="color:#aaa;">Reverse Draw 4</div>
+      <div class="card-pip" style="color:rgba(255,255,255,.15);">←+4</div>
+    </div>
+    <div class="action-card c-wild" onclick="openModal('wd6')">
+      <div class="card-value" style="color:#00A651;">+6</div>
+      <div class="card-name" style="color:#aaa;">Wild Draw 6</div>
+      <div class="card-pip" style="color:rgba(255,255,255,.15);">+6</div>
+    </div>
+    <div class="action-card c-wild" onclick="openModal('wd10')">
+      <div class="card-value" style="color:#FFD700;">+10</div>
+      <div class="card-name" style="color:#aaa;">Wild Draw 10</div>
+      <div class="card-pip" style="color:rgba(255,255,255,.15);">+10</div>
+    </div>
+    <div class="action-card c-wild" onclick="openModal('wcr')">
+      <div class="card-value" style="font-size:22px; color:#0057B8;">🎰</div>
+      <div class="card-name" style="color:#aaa;">Wild Color Roulette</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════ EXPANSION PANEL ══════════════════════════ -->
+<div class="panel" id="panel-expansion">
+  <div class="alert alert-info">
+    <div class="alert-icon">ℹ️</div>
+    <div>Shuffle the Expansion Pack cards into your No Mercy deck. Each player also gets <strong>1 coin</strong> to use once per game.</div>
+  </div>
+
+  <div class="section-title">Coins — choose your side before the game starts</div>
+  <div class="coin-grid">
+    <div class="coin-card" onclick="openModal('coin_mercy')">
+      <div class="coin-face coin-mercy">MERCY</div>
+      <div class="coin-name">Mercy</div>
+      <div class="coin-hint">Rescue yourself when knocked out</div>
+    </div>
+    <div class="coin-card" onclick="openModal('coin_nomercy')">
+      <div class="coin-face coin-nomercy">×2</div>
+      <div class="coin-name">No Mercy</div>
+      <div class="coin-hint">Double any Draw penalty you play</div>
+    </div>
+  </div>
+
+  <div class="alert alert-warn">
+    <div class="alert-icon">💡</div>
+    <div>Declare <strong>Mercy or No Mercy</strong> at the start of each game. You only get to use your coin <strong>once</strong>, so pick your moment wisely.</div>
+  </div>
+
+  <div class="section-title">Expansion Cards — tap to learn more</div>
+  <div class="cards-grid">
+
+    <div class="action-card c-exp" onclick="openModal('tens')">
+      <div class="card-value">10</div>
+      <div class="card-name" style="color:#dbb6ff;">Play Again</div>
+      <div class="card-pip">10</div>
+    </div>
+    <div class="action-card c-exp" onclick="openModal('wda')">
+      <div class="card-value" style="font-size:18px;">Wild<br>Disc All</div>
+      <div class="card-name" style="color:#dbb6ff;">Discard All</div>
+    </div>
+    <div class="action-card c-exp" onclick="openModal('wrd8')">
+      <div class="card-value" style="font-size:15px; color:#ffaad4;">Wild<br>Rev +8</div>
+      <div class="card-name" style="color:#dbb6ff;">Reverse Draw 8</div>
+    </div>
+    <div class="action-card c-exp" onclick="openModal('wfa')">
+      <div class="card-value" style="font-size:20px;">⚡</div>
+      <div class="card-name" style="color:#dbb6ff;">Final Attack</div>
+    </div>
+    <div class="action-card c-red" style="grid-column: span 2;" onclick="openModal('wsd')">
+      <div class="card-value" style="font-size:20px;">💀</div>
+      <div class="card-name">Sudden Death</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- ══════════════════════════ MODAL ══════════════════════════ -->
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal()">✕</div>
+    <div class="modal-icon" id="modal-icon"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-tag" id="modal-tag"></div>
+    <div class="modal-desc" id="modal-desc"></div>
+  </div>
+</div>
+
+<script>
+const cards = {
+  draw2: { icon:'+2', iconBg:'#E8192C', title:'Draw Two', tag:'Action Card', tagBg:'rgba(232,25,44,.2)', tagColor:'#ff6677', desc:'The next player in the current order must <strong>draw 2 cards</strong> and <strong>lose their turn</strong>. Can be stacked — play a higher Draw Card to pass the penalty on.' },
+  draw4: { icon:'+4', iconBg:'#0057B8', title:'Draw Four', tag:'Action Card', tagBg:'rgba(0,87,184,.2)', tagColor:'#5599ff', desc:'The next player must <strong>draw 4 cards</strong> and <strong>lose their turn</strong>. Can be stacked with a +4 or higher.' },
+  skip: { icon:'⊘', iconBg:'#00A651', title:'Skip', tag:'Action Card', tagBg:'rgba(0,166,81,.2)', tagColor:'#44dd88', desc:'The next player in the current direction <strong>loses their turn</strong>. With 2 players, this effectively gives you another turn.' },
+  reverse: { icon:'⇄', iconBg:'#e6b800', title:'Reverse', tag:'Action Card', tagBg:'rgba(230,184,0,.2)', tagColor:'#FFD700', desc:'<strong>Reverses the direction</strong> of play. If clockwise, it becomes counterclockwise and vice versa. With only 2 players, acts as a Skip — the other player loses their turn and you play again.' },
+  discardall: { icon:'↓↓', iconBg:'#E8192C', title:'Discard All', tag:'Action Card', tagBg:'rgba(232,25,44,.2)', tagColor:'#ff6677', desc:'Discard <strong>all cards in your hand</strong> that match the color of this card. Place the extra cards under the Discard All Card in the pile.' },
+  skipeveryone: { icon:'⊘⊘', iconBg:'#0057B8', title:'Skip Everyone', tag:'Action Card', tagBg:'rgba(0,87,184,.2)', tagColor:'#5599ff', desc:'<strong>All other players</strong> lose their turn. You immediately take another turn.' },
+  wrd4: { icon:'←+4', iconBg:'#1a1a1a', title:'Wild Reverse Draw 4', tag:'Wild Card', tagBg:'rgba(255,255,255,.08)', tagColor:'#aaa', desc:'<strong>Reverse the direction of play</strong>, then the next player in that new direction must <strong>draw 4 cards and lose their turn</strong>. With 2 players, this skips the other player and makes YOU draw 4. You choose the color that continues play. Can be stacked.' },
+  wd6: { icon:'+6', iconBg:'#1a1a1a', title:'Wild Draw 6', tag:'Wild Card', tagBg:'rgba(255,255,255,.08)', tagColor:'#aaa', desc:'The next player must <strong>draw 6 cards</strong> and <strong>lose their turn</strong>. You choose the color that continues play.' },
+  wd10: { icon:'+10', iconBg:'#1a1a1a', title:'Wild Draw 10', tag:'Wild Card', tagBg:'rgba(255,255,255,.08)', tagColor:'#aaa', desc:'The next player must <strong>draw 10 cards</strong> and <strong>lose their turn</strong>. You choose the color that continues play.' },
+  wcr: { icon:'🎰', iconBg:'#1a1a1a', title:'Wild Color Roulette', tag:'Wild Card', tagBg:'rgba(255,255,255,.08)', tagColor:'#aaa', desc:'The next player <strong>chooses a color</strong>. Then they must reveal cards from the Draw Pile <em>one at a time</em> until they get a card of that color — Wild Cards do NOT count. They add <strong>all revealed cards</strong> to their hand and lose their turn.' },
+  // Expansion
+  tens: { icon:'10', iconBg:'#E8192C', title:"10's Play Again", tag:'Expansion Card', tagBg:'rgba(107,33,168,.25)', tagColor:'#c084fc', desc:'When you play this card, you <strong>immediately take another turn</strong>.' },
+  wda: { icon:'↓↓', iconBg:'#6b21a8', title:'Wild Discard All', tag:'Expansion Wild', tagBg:'rgba(107,33,168,.25)', tagColor:'#c084fc', desc:'Matches <strong>any card</strong> regardless of color. Pick a color, then <strong>discard all cards in your hand</strong> of that color. Place them on top of the Discard Pile. Since it\'s a Wild, you also choose the color that continues play.' },
+  wrd8: { icon:'←+8', iconBg:'#6b21a8', title:'Wild Reverse Draw 8', tag:'Expansion Wild', tagBg:'rgba(107,33,168,.25)', tagColor:'#c084fc', desc:'<strong>Reverse the direction of play</strong> AND make the next player in that direction <strong>draw 8 cards and lose their turn</strong>. You choose the color that continues play.' },
+  wfa: { icon:'⚡', iconBg:'#6b21a8', title:'Wild Final Attack', tag:'Expansion Wild', tagBg:'rgba(107,33,168,.25)', tagColor:'#c084fc', desc:'First, <strong>reveal your hand</strong>. The next player loses their turn and must draw <strong>1 card for each Action Card and Wild Card</strong> in your hand (number cards don\'t count). If you reveal <strong>7 or more</strong> Action/Wild Cards, that player draws <strong>25 cards</strong> instead AND all other players draw 5. You choose the color.' },
+  wsd: { icon:'💀', iconBg:'#6b21a8', title:'Wild Sudden Death', tag:'Expansion Wild', tagBg:'rgba(107,33,168,.25)', tagColor:'#c084fc', desc:'<strong>ALL players</strong> — including YOU — must draw cards from the Draw Pile until they have <strong>24 cards in their hand</strong>. Ouch. You choose the color that continues play.' },
+  nomercy_card: { icon:'×2', iconBg:'#6b21a8', title:'No Mercy', tag:'Expansion Card', tagBg:'rgba(107,33,168,.25)', tagColor:'#c084fc', desc:'<strong>Immediately doubles the penalty</strong> of any Draw Card you play on the same turn. For example, a Wild Reverse Draw 4 becomes a Wild Reverse Draw 8. The doubled value also applies when stacking.' },
+  coin_mercy: { icon:'MERCY', iconBg:'#333', title:'Mercy Coin', tag:'Expansion Coin', tagBg:'rgba(255,255,255,.08)', tagColor:'#aaa', desc:'Declare at the start of the game you\'ll use the <strong>Mercy</strong> side. When used on your turn, you may <strong>discard your entire hand</strong> to the bottom of the Discard Pile, then draw <strong>7 fresh cards</strong>. Can be used even if you would have been knocked out for holding 25+ cards.' },
+  coin_nomercy: { icon:'×2', iconBg:'#b81020', title:'No Mercy Coin', tag:'Expansion Coin', tagBg:'rgba(232,25,44,.15)', tagColor:'#ff6677', desc:'Declare at the start of the game you\'ll use the <strong>No Mercy</strong> side. When used on your turn, it <strong>doubles the penalty</strong> of any Draw Card you play — for example, a Wild Reverse Draw 8 becomes a Wild Reverse Draw 16. The doubled value applies even when stacking.' },
+};
+
+function openModal(id) {
+  const c = cards[id];
+  if (!c) return;
+  document.getElementById('modal-icon').textContent = c.icon;
+  document.getElementById('modal-icon').style.background = c.iconBg;
+  document.getElementById('modal-title').textContent = c.title;
+  const tag = document.getElementById('modal-tag');
+  tag.textContent = c.tag;
+  tag.style.background = c.tagBg;
+  tag.style.color = c.tagColor;
+  document.getElementById('modal-desc').innerHTML = c.desc;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e) {
+  if (e.target.id === 'modal') closeModal();
+}
+
+function switchTab(id) {
+  document.querySelectorAll('.tab').forEach((t,i) => {
+    t.classList.toggle('active', ['rules','cards','expansion'][i] === id);
+  });
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function toggleCard(el) {
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>
