@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>UNO Flip — Rules</title>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Bebas+Neue&family=Boldonse&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent:       #9B5CF6;
+    --accent-dim:   rgba(155,92,246,0.2);
+    --accent-border:rgba(155,92,246,0.2);
+    --accent-hover: rgba(155,92,246,0.35);
+    --dark:         #0C0C0C;
+    --border:       rgba(155,92,246,0.2);
+    --border-hover: rgba(155,92,246,0.35);
+    --text:         #F5F2EC;
+    --muted:        #888;
+    --radius:       20px;
+    /* Light-side card colors */
+    --blue:   #3B82F6;
+    --green:  #22C55E;
+    --red:    #EF4444;
+    --yellow: #EAB308;
+    /* Dark-side card colors */
+    --pink:   #EC4899;
+    --teal:   #14B8A6;
+    --orange: #F97316;
+    --purple: #A855F7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* NOISE OVERLAY */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.055;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(160deg, #2D1A4E, #1E1035, #120820);
+    padding: 40px 48px 32px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    animation: fadeUp 0.5s cubic-bezier(.22,1,.36,1) both;
+  }
+
+  /* Diagonal triangle overlay — light half / dark half = Flip concept */
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(225deg, rgba(255,255,255,0.15) 50%, transparent 50%);
+    opacity: 0.15;
+  }
+
+  .header-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+  }
+
+  .logo-uno {
+    font-family: 'Boldonse', cursive;
+    font-size: clamp(52px, 7vw, 96px);
+    line-height: 1;
+    color: #F5F2EC;
+    letter-spacing: 2px;
+    text-shadow:
+      1px 1px 0 #C8C5BF,
+      2px 2px 0 #B0ADA8,
+      3px 3px 0 #989591,
+      4px 4px 0 #807E7A,
+      5px 5px 0 #686663,
+      6px 6px 0 #50504D,
+      7px 7px 0 #383836,
+      8px 8px 0 #202020,
+      12px 12px 12px rgba(0,0,0,0.6);
+  }
+
+  .logo-sub {
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+    font-size: 44px;
+    color: #F5F2EC;
+    text-transform: uppercase;
+    margin-top: 18px;
+    margin-bottom: 20px;
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+
+  .header-divider {
+    width: 40px;
+    height: 3px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    background: #0C0C0C;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .tab {
+    flex: 1;
+    padding: 13px 8px;
+    text-align: center;
+    font-size: 11px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all .2s;
+    user-select: none;
+  }
+  .tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* ── PANELS ── */
+  .panel { display: none; padding: 24px 48px 60px; }
+  .panel.active { display: block; animation: fadeUp 0.45s cubic-bezier(.22,1,.36,1) both; }
+
+  @media (max-width: 600px) {
+    .panel { padding: 16px 24px 60px; }
+    header { padding: 32px 24px 24px; }
+    .logo-sub { font-size: 30px; }
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-family: 'Rubik', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin: 28px 0 12px;
+    text-transform: uppercase;
+  }
+  .section-title:first-child { margin-top: 0; }
+
+  /* ── FLIP CONCEPT BANNER ── */
+  .flip-banner {
+    display: flex;
+    gap: 10px;
+    background: linear-gradient(160deg, #2D1A4E, #1E1035);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+  }
+  .flip-banner-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .flip-banner p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: rgba(245,242,236,0.65);
+  }
+  .flip-banner p strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ── SETUP STEPS ── */
+  .setup-list { display: flex; flex-direction: column; gap: 8px; }
+  .setup-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: linear-gradient(160deg, #2D1A4E22, #1E103511);
+    border-radius: 12px;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .step-num {
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    min-width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .setup-step p {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: rgba(245,242,236,0.65);
+    padding-top: 4px;
+  }
+  .setup-step p strong { color: var(--text); font-weight: 600; }
+
+  /* ── RULE CARDS (accordion) ── */
+  .rule-card {
+    background: linear-gradient(160deg, #2D1A4E22, #1E103511);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: border-color .2s, box-shadow .2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .rule-card:active { opacity: .85; }
+  .rule-card-header { display: flex; align-items: center; gap: 12px; }
+  .rule-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    font-weight: 700;
+    font-family: 'Rubik', sans-serif;
+    background: rgba(155,92,246,0.1);
+    border: 1px solid rgba(155,92,246,0.25);
+  }
+  .rule-card-title {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text);
+    flex: 1;
+  }
+  .rule-card-subtitle {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .rule-card-chevron { color: var(--muted); font-size: 16px; transition: transform .2s; }
+  .rule-card.open .rule-card-chevron { transform: rotate(90deg); }
+  .rule-card-body {
+    display: none;
+    padding-top: 12px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: rgba(245,242,236,0.65);
+    border-top: 1px solid var(--border);
+    margin-top: 12px;
+  }
+  .rule-card.open .rule-card-body { display: block; }
+  .rule-card.open { border-color: var(--border-hover); }
+  .rule-card-body strong { color: var(--text); font-weight: 600; }
+
+  /* ── SIDES TOGGLE PILLS (Light / Dark) ── */
+  .sides-toggle {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    padding: 4px;
+  }
+  .side-pill {
+    flex: 1;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 24px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .25s cubic-bezier(.22,1,.36,1);
+    color: var(--muted);
+  }
+  .side-pill.active-light {
+    background: rgba(255,255,255,0.92);
+    color: #0C0C0C;
+  }
+  .side-pill.active-dark {
+    background: #1E1035;
+    color: var(--accent);
+    border: 1px solid var(--border);
+  }
+
+  /* ── CARDS GRID ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .action-card {
+    border-radius: var(--radius);
+    padding: 14px;
+    position: relative;
+    overflow: hidden;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform .2s cubic-bezier(.22,1,.36,1), box-shadow .2s;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .action-card:hover {
+    transform: translateY(-8px) scale(1.012);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 20px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.1), 0 32px 64px -8px color-mix(in srgb, var(--accent) 30%, transparent), inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .action-card:active { transform: scale(.97); }
+  .action-card .card-value {
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.1;
+    color: rgba(245,242,236,0.9);
+  }
+  .action-card .card-name {
+    font-size: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: rgba(245,242,236,0.72);
+    text-transform: uppercase;
+    line-height: 1.3;
+  }
+  .action-card .card-pts {
+    position: absolute;
+    bottom: 10px; right: 10px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,.22);
+    letter-spacing: 0.1em;
+  }
+
+  /* Light side card colors */
+  .c-blue   { background: linear-gradient(160deg, #0D1828, #080F1A); border-color: rgba(59,130,246,0.3)!important; border-left: 3px solid var(--blue)!important; }
+  .c-green  { background: linear-gradient(160deg, #0A1A0D, #060E08); border-color: rgba(34,197,94,0.3)!important; border-left: 3px solid var(--green)!important; }
+  .c-red    { background: linear-gradient(160deg, #1A0C0C, #110707); border-color: rgba(239,68,68,0.3)!important; border-left: 3px solid var(--red)!important; }
+  .c-yellow { background: linear-gradient(160deg, #1A1608, #110F06); border-color: rgba(234,179,8,0.3)!important; border-left: 3px solid var(--yellow)!important; }
+  /* Dark side card colors */
+  .c-pink   { background: linear-gradient(160deg, #1A0A14, #0F0609); border-color: rgba(236,72,153,0.3)!important; border-left: 3px solid var(--pink)!important; }
+  .c-teal   { background: linear-gradient(160deg, #061414, #030B0B); border-color: rgba(20,184,166,0.3)!important; border-left: 3px solid var(--teal)!important; }
+  .c-orange { background: linear-gradient(160deg, #1A0E06, #110903); border-color: rgba(249,115,22,0.3)!important; border-left: 3px solid var(--orange)!important; }
+  .c-dpurple{ background: linear-gradient(160deg, #130A1E, #0C0613); border-color: rgba(168,85,247,0.3)!important; border-left: 3px solid var(--purple)!important; }
+  /* Wild / Flip */
+  .c-wild   { background: linear-gradient(160deg, #2D1A4E, #1E1035); border-color: rgba(155,92,246,0.25)!important; border-left: 3px solid var(--accent)!important; }
+  .c-flip   { background: linear-gradient(135deg, #1E1035 50%, #0A0A14 50%); border-color: rgba(155,92,246,0.3)!important; border-left: 3px solid var(--accent)!important; }
+
+  /* ── SIDE PANELS ── */
+  .side-panel { display: none; }
+  .side-panel.active { display: block; animation: fadeUp 0.35s cubic-bezier(.22,1,.36,1) both; }
+
+  /* ── SCORING TABLE ── */
+  .score-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .score-table th {
+    background: rgba(155,92,246,0.08);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .score-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    color: rgba(245,242,236,0.65);
+  }
+  .score-table tr:last-child td { border-bottom: none; }
+  .score-table td:last-child { text-align: right; font-weight: 700; color: var(--accent); }
+  .score-table tr:nth-child(odd) td { background: rgba(155,92,246,0.03); }
+
+  .score-section-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(155,92,246,0.6);
+    padding: 8px 14px 4px;
+    background: rgba(155,92,246,0.05);
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── SPECIAL RULE BLOCK ── */
+  .special-rule {
+    background: linear-gradient(160deg, #2D1A4E22, #1E103511);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .special-rule-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .special-rule-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: var(--accent); }
+  .special-rule h3 { font-size: 14px; font-weight: 600; color: var(--text); }
+  .special-rule p { font-size: 13.5px; line-height: 1.65; color: rgba(245,242,236,0.65); }
+  .special-rule p strong { color: var(--text); font-weight: 600; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,.88);
+    z-index: 10000;
+    padding: 24px 20px;
+    overflow-y: auto;
+  }
+  .modal-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+  .modal-box {
+    background: linear-gradient(160deg, #2D1A4E, #1E1035, #120820);
+    border-radius: var(--radius);
+    padding: 28px;
+    max-width: 420px;
+    width: 100%;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5), 0 20px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(155,92,246,0.15), 0 32px 64px -8px rgba(155,92,246,0.3), inset 0 1px 0 rgba(255,255,255,0.08);
+    position: relative;
+    margin-top: 10vh;
+  }
+  .modal-close {
+    position: absolute; top: 16px; right: 16px;
+    width: 32px; height: 32px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--muted);
+    transition: background .2s;
+  }
+  .modal-close:hover { background: rgba(255,255,255,0.1); }
+  .modal-icon {
+    width: 60px; height: 60px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 16px;
+    background: rgba(155,92,246,0.15);
+    border: 1px solid rgba(155,92,246,0.3);
+  }
+  .modal-title {
+    font-family: 'Boldonse', cursive;
+    font-size: 22px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .modal-tag {
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    background: rgba(155,92,246,0.15);
+    color: var(--accent);
+  }
+  .modal-side-badge {
+    display: inline-block;
+    font-family: 'Rubik', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-light { background: rgba(255,255,255,0.12); color: #F5F2EC; }
+  .badge-dark  { background: rgba(155,92,246,0.2);   color: var(--accent); }
+  .modal-desc {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: rgba(245,242,236,0.65);
+  }
+  .modal-desc strong { color: var(--text); font-weight: 600; }
+
+  /* ── FLIP CARD SPECIAL ── */
+  .flip-card-visual {
+    width: 100%;
+    height: 70px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08) 50%, rgba(155,92,246,0.15) 50%);
+    border: 1px solid rgba(155,92,246,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    margin-bottom: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .flip-card-visual .light-side { color: rgba(245,242,236,0.6); }
+  .flip-card-visual .dark-side  { color: var(--accent); }
+
+  /* footer */
+  .footer {
+    text-align: center;
+    padding: 0 24px 32px;
+    font-size: 11px;
+    color: rgba(136,136,136,0.5);
+    letter-spacing: 0.12em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" style="text-decoration:none;"><div class="logo-uno">UNO</div></a>
+    <div class="logo-sub">FLIP!</div>
+    <div class="header-divider"></div>
+    <div class="header-meta">
+      <span class="badge">2–10 Players</span>
+      <span class="badge">7+ Years</span>
+      <span class="badge">112 Cards</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── TABS ── -->
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('rules')">Rules</div>
+  <div class="tab" onclick="switchTab('cards')">Cards</div>
+</div>
+
+<!-- ══════════════════ RULES PANEL ══════════════════ -->
+<div class="panel active" id="panel-rules">
+
+  <div class="flip-banner">
+    <div class="flip-banner-icon">🔄</div>
+    <p>UNO Flip plays like classic UNO — but the deck has <strong>two sides</strong>. You start on the <strong>Light Side</strong>. When someone plays a Flip card, everything flips over — including the cards in your hand — and you're now playing the <strong>Dark Side</strong>, with much harsher penalties.</p>
+  </div>
+
+  <div class="section-title">Setup</div>
+  <div class="setup-list">
+    <div class="setup-step">
+      <div class="step-num">1</div>
+      <p>Make sure all cards face the same direction — <strong>Light Side cards</strong> one way, <strong>Dark Side cards</strong> the other (they share the same physical card).</p>
+    </div>
+    <div class="setup-step">
+      <div class="step-num">2</div>
+      <p>Each player draws a card and reveals the <strong>Light Side</strong>. Highest number goes first (symbols count as zero). That player becomes the dealer.</p>
+    </div>
+    <div class="setup-step">
+      <div class="step-num">3</div>
+      <p>Dealer shuffles and deals <strong>7 cards</strong> to each player. Hold cards so the <strong>Dark Side faces opponents</strong>.</p>
+    </div>
+    <div class="setup-step">
+      <div class="step-num">4</div>
+      <p>Place remaining deck <strong>Light Side face-down</strong> as the Draw Pile. Flip the top card face-up to start the Discard Pile.</p>
+    </div>
+    <div class="setup-step">
+      <div class="step-num">5</div>
+      <p>If an Action Card starts the Discard Pile, see the <strong>Action Cards</strong> tab for its special starting rules.</p>
+    </div>
+  </div>
+
+  <div class="section-title">How to Play</div>
+  <div class="rule-card" onclick="toggleCard(this)">
+    <div class="rule-card-header">
+      <div class="rule-icon">🃏</div>
+      <div style="flex:1">
+        <div class="rule-card-title">Your Turn</div>
+        <div class="rule-card-subtitle">Core loop</div>
+      </div>
+      <div class="rule-card-chevron">›</div>
+    </div>
+    <div class="rule-card-body">
+      Match the top card of the Discard Pile by <strong>number, color, or symbol</strong>. You can always play a Wild card. If you have no match, draw one card from the Draw Pile — if it plays, you may put it down immediately; otherwise, play passes to the next person.
+      <br><br>
+      You may also <strong>choose not to play</strong> a matching card from your hand. Draw one card as normal. If that drawn card plays, you may play it — but you cannot play any other card from your hand afterward.
+    </div>
+  </div>
+
+  <div class="rule-card" onclick="toggleCard(this)">
+    <div class="rule-card-header">
+      <div class="rule-icon">🔀</div>
+      <div style="flex:1">
+        <div class="rule-card-title">The Flip</div>
+        <div class="rule-card-subtitle">The game-changing mechanic</div>
+      </div>
+      <div class="rule-card-chevron">›</div>
+    </div>
+    <div class="rule-card-body">
+      When a <strong>Flip card</strong> is played, everything flips:
+      <br><br>
+      1. Flip the <strong>Discard Pile</strong> (the bottom card is now the top).<br>
+      2. Flip the <strong>Draw Pile</strong>.<br>
+      3. Every player <strong>flips their hand</strong> to the other side.
+      <br><br>
+      The new side stays in play until another Flip card is played, which switches it back. Cards must always face the <strong>correct direction</strong> for the active side.
+    </div>
+  </div>
+
+  <div class="rule-card" onclick="toggleCard(this)">
+    <div class="rule-card-header">
+      <div class="rule-icon">📢</div>
+      <div style="flex:1">
+        <div class="rule-card-title">UNO! & Going Out</div>
+        <div class="rule-card-subtitle">Last card rule</div>
+      </div>
+      <div class="rule-card-chevron">›</div>
+    </div>
+    <div class="rule-card-body">
+      When you're down to <strong>one card</strong>, shout <strong>"UNO!"</strong>. If another player catches you before the next player's turn begins, you must <strong>draw two cards</strong>.
+      <br><br>
+      When you play your last card, the round is over — either <strong>first player out wins</strong>, or you can keep playing and <strong>last player holding cards loses</strong>.
+      <br><br>
+      If a Draw card (Draw One, Draw Five, Wild Draw Two, or Wild Draw Color) is played as your last card, the affected player must still draw those cards before the round ends.
+      <br><br>
+      If the Draw Pile runs out, reshuffle the Discard Pile (except the top card) to form a new Draw Pile and keep playing.
+    </div>
+  </div>
+
+  <div class="rule-card" onclick="toggleCard(this)">
+    <div class="rule-card-header">
+      <div class="rule-icon">⚔️</div>
+      <div style="flex:1">
+        <div class="rule-card-title">Challenging Wild Draw Cards</div>
+        <div class="rule-card-subtitle">Wild Draw 2 & Wild Draw Color</div>
+      </div>
+      <div class="rule-card-chevron">›</div>
+    </div>
+    <div class="rule-card-body">
+      Wild Draw 2 and Wild Draw Color can <strong>only be played</strong> when you have no card matching the current color (matching numbers or symbols don't count).
+      <br><br>
+      <strong>To challenge:</strong> If you suspect an illegal play, call it before drawing. The player who played it shows their hand.
+      <br><br>
+      • <strong>Guilty</strong> — they draw the penalty instead of you.<br>
+      • <strong>Innocent</strong> — you draw the penalty <em>plus 2 extra cards</em>.
+    </div>
+  </div>
+
+  <div class="section-title">Winning</div>
+  <div class="rule-card" onclick="toggleCard(this)">
+    <div class="rule-card-header">
+      <div class="rule-icon">🏆</div>
+      <div style="flex:1">
+        <div class="rule-card-title">How to Win</div>
+        <div class="rule-card-subtitle">Empty your hand first — or avoid being the last person holding cards</div>
+      </div>
+      <div class="rule-card-chevron">›</div>
+    </div>
+    <div class="rule-card-body">
+      <strong>First out wins.</strong> Be the first player to play all the cards in your hand. Call "UNO!" on your second-to-last card, then go out on your next turn.
+      <br><br>
+      Alternatively: <strong>last player still holding cards loses.</strong> Everyone else is out once they empty their hand — the lone survivor at the end takes the L.
+    </div>
+  </div>
+
+  <div class="section-title">Special Situations</div>
+
+  <div class="special-rule">
+    <div class="special-rule-header">
+      <div class="special-rule-dot"></div>
+      <h3>2-Player Game</h3>
+    </div>
+    <p>Reverse cards act as <strong>Skip cards</strong> — the other player loses their turn and you play again.</p>
+  </div>
+
+  <div class="special-rule">
+    <div class="special-rule-header">
+      <div class="special-rule-dot"></div>
+      <h3>Action Card as First Card</h3>
+    </div>
+    <p><strong>Draw One / Draw Five:</strong> the first player draws the penalty and loses their turn. <strong>Reverse:</strong> dealer plays first, then play moves right. <strong>Skip:</strong> first player is skipped. <strong>Wild:</strong> first player to the left chooses the color. <strong>Wild Draw 2:</strong> return to deck, draw a new starting card.</p>
+  </div>
+
+  <div class="special-rule">
+    <div class="special-rule-header">
+      <div class="special-rule-dot"></div>
+      <h3>Keeping Cards Oriented</h3>
+    </div>
+    <p>When drawing cards, always add them to your hand in the <strong>correct orientation</strong> for the active side. E.g., if playing Light Side, drawn cards go in Light Side facing you. Players must also keep their hand <strong>visible to all other players</strong> at all times.</p>
+  </div>
+
+</div>
+
+<!-- ══════════════════ CARDS PANEL ══════════════════ -->
+<div class="panel" id="panel-cards">
+
+  <div class="sides-toggle">
+    <div class="side-pill active-light" id="pill-light" onclick="showSide('light')">☀ Light Side</div>
+    <div class="side-pill" id="pill-dark"  onclick="showSide('dark')">🌑 Dark Side</div>
+  </div>
+
+  <!-- LIGHT SIDE -->
+  <div class="side-panel active" id="side-light">
+
+    <div class="section-title">Number Cards (1–9)</div>
+    <div class="flip-banner" style="padding:14px 18px; margin-bottom:8px;">
+      <div class="flip-banner-icon" style="font-size:16px;">🔢</div>
+      <p style="font-size:13px;">18 of each color — <strong>Blue, Green, Red, Yellow</strong>. Match the top card by number or color. Worth <strong>face value</strong> in scoring.</p>
+    </div>
+
+    <div class="section-title">Action Cards — Light Side</div>
+    <div class="cards-grid">
+
+      <div class="action-card c-blue" onclick="openModal('draw1')">
+        <div class="card-value">+1</div>
+        <div class="card-name">Draw One</div>
+      </div>
+      <div class="action-card c-red" onclick="openModal('rev_light')">
+        <div class="card-value">⇄</div>
+        <div class="card-name">Reverse</div>
+      </div>
+      <div class="action-card c-green" onclick="openModal('skip_light')">
+        <div class="card-value">⊘</div>
+        <div class="card-name">Skip</div>
+      </div>
+      <div class="action-card c-flip" onclick="openModal('flip_card')">
+        <div class="card-value" style="font-size:20px;">FLIP</div>
+        <div class="card-name">Flip</div>
+      </div>
+
+    </div>
+
+    <div class="section-title">Wild Cards — Light Side</div>
+    <div class="cards-grid">
+
+      <div class="action-card c-wild" onclick="openModal('wild_light')">
+        <div class="card-value" style="font-size:20px; color:var(--accent);">Wild</div>
+        <div class="card-name">Wild</div>
+      </div>
+      <div class="action-card c-wild" onclick="openModal('wd2')">
+        <div class="card-value" style="color:var(--accent);">+2</div>
+        <div class="card-name">Wild Draw Two</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DARK SIDE -->
+  <div class="side-panel" id="side-dark">
+
+    <div class="flip-banner" style="background: linear-gradient(160deg,#1E1035,#120820); margin-bottom:16px;">
+      <div class="flip-banner-icon">🌑</div>
+      <p>The Dark Side has <strong>much steeper penalties</strong>. Colors shift to <strong>Pink, Teal, Orange, Purple</strong>. Play flips to this side when a Flip card is used.</p>
+    </div>
+
+    <div class="section-title">Number Cards (1–9)</div>
+    <div class="flip-banner" style="padding:14px 18px; margin-bottom:8px;">
+      <div class="flip-banner-icon" style="font-size:16px;">🔢</div>
+      <p style="font-size:13px;">18 of each color — <strong>Pink, Teal, Orange, Purple</strong>. Same matching rules as Light Side. Worth <strong>face value</strong> in scoring.</p>
+    </div>
+
+    <div class="section-title">Action Cards — Dark Side</div>
+    <div class="cards-grid">
+
+      <div class="action-card c-pink" onclick="openModal('draw5')">
+        <div class="card-value">+5</div>
+        <div class="card-name">Draw Five</div>
+      </div>
+      <div class="action-card c-orange" onclick="openModal('rev_dark')">
+        <div class="card-value">⇄</div>
+        <div class="card-name">Reverse</div>
+      </div>
+      <div class="action-card c-teal" onclick="openModal('skipall')">
+        <div class="card-value" style="font-size:20px;">⊘⊘</div>
+        <div class="card-name">Skip Everyone</div>
+      </div>
+      <div class="action-card c-flip" onclick="openModal('flip_card')">
+        <div class="card-value" style="font-size:20px;">FLIP</div>
+        <div class="card-name">Flip</div>
+      </div>
+
+    </div>
+
+    <div class="section-title">Wild Cards — Dark Side</div>
+    <div class="cards-grid">
+
+      <div class="action-card c-wild" onclick="openModal('wild_dark')">
+        <div class="card-value" style="font-size:20px; color:var(--accent);">Wild</div>
+        <div class="card-name">Wild</div>
+      </div>
+      <div class="action-card c-wild" onclick="openModal('wdc')">
+        <div class="card-value" style="font-size:18px; color:var(--accent);">Draw<br>Color</div>
+        <div class="card-name">Wild Draw Color</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal()">✕</div>
+    <div class="modal-icon" id="modal-icon"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-tag"   id="modal-tag"></div>
+    <div class="modal-desc"  id="modal-desc"></div>
+  </div>
+</div>
+
+<div class="footer">UNO is a trademark of Mattel, Inc. · Fan-made rules reference · Brought to you by Ari!</div>
+
+<script>
+const cards = {
+  draw1: {
+    icon: '+1',
+    title: 'Draw One',
+    side: 'light',
+    tag: 'Light Side · Action',
+    desc: 'The next player must <strong>draw one card and skip their turn</strong>. Can only be played on a matching color or another Draw One card. If turned up at the start, the same rule applies to the first player.'
+  },
+  rev_light: {
+    icon: '⇄',
+    title: 'Reverse',
+    side: 'light',
+    tag: 'Light Side · Action',
+    desc: '<strong>Reverses the direction of play.</strong> If going clockwise it becomes counter-clockwise and vice versa. Only plays on a matching color or another Reverse. With 2 players, acts as a Skip. If turned up at the start, the dealer plays first, then play moves to the right instead of left.'
+  },
+  skip_light: {
+    icon: '⊘',
+    title: 'Skip',
+    side: 'light',
+    tag: 'Light Side · Action',
+    desc: '<strong>The next player loses their turn</strong> and is skipped. Can only be played on a matching color or another Skip. If turned up at the start, the player to the left is skipped and the next player in line goes first.'
+  },
+  flip_card: {
+    icon: '🔄',
+    title: 'Flip',
+    side: 'both',
+    tag: 'Both Sides · Action',
+    desc: 'When played, <strong>everything flips</strong> to the other side of the deck. Flip the Discard Pile (the bottom card becomes the top), then the Draw Pile, then every player flips their hand to the other side. The new side stays active until another Flip card is played. Can only be played on a matching color or another Flip card.'
+  },
+  wild_light: {
+    icon: '★',
+    title: 'Wild',
+    side: 'light',
+    tag: 'Light Side · Wild',
+    desc: '<strong>Change the active color</strong> to any color you choose — including the current color. Can be played on any card at any time, even if you have a playable card. If turned up at the start, the first player to the left picks the color.'
+  },
+  wd2: {
+    icon: '+2',
+    title: 'Wild Draw Two',
+    side: 'light',
+    tag: 'Light Side · Wild',
+    desc: 'Choose the color that continues play. The next player must <strong>draw 2 cards and lose their turn</strong>. <strong>Restriction:</strong> you may only play this if you have no card matching the current color (having matching numbers or symbols doesn\'t count). If caught playing illegally and challenged successfully, you draw the 2 cards instead. If you challenge and lose, you draw 2 + 2 extra cards.'
+  },
+  draw5: {
+    icon: '+5',
+    title: 'Draw Five',
+    side: 'dark',
+    tag: 'Dark Side · Action',
+    desc: 'The next player must <strong>draw five cards and lose their turn</strong>. Can only be played on a matching color or another Draw Five card.'
+  },
+  rev_dark: {
+    icon: '⇄',
+    title: 'Reverse',
+    side: 'dark',
+    tag: 'Dark Side · Action',
+    desc: '<strong>Reverses the direction of play.</strong> Same function as the Light Side Reverse. Plays on a matching color or another Reverse card.'
+  },
+  skipall: {
+    icon: '⊘⊘',
+    title: 'Skip Everyone',
+    side: 'dark',
+    tag: 'Dark Side · Action',
+    desc: '<strong>All other players lose their turn.</strong> Play returns immediately to whoever played this card — effectively giving you a second turn. Can only be played on a matching color or another Skip Everyone card.'
+  },
+  wild_dark: {
+    icon: '★',
+    title: 'Wild',
+    side: 'dark',
+    tag: 'Dark Side · Wild',
+    desc: '<strong>Change the active color</strong> to any color of your choosing. Functions identically to the Light Side Wild card — playable at any time on any card.'
+  },
+  wdc: {
+    icon: '🌈',
+    title: 'Wild Draw Color',
+    side: 'dark',
+    tag: 'Dark Side · Wild',
+    desc: 'The most powerful card in the deck. You choose a color. The next player must <strong>draw cards from the Draw Pile one at a time until they get a card of your chosen color</strong>, then add all those cards to their hand and lose their turn. <strong>Restriction:</strong> may only be played when you have no card matching the current color. Challengeable under the same rules as Wild Draw Two — if challenged and found guilty, you draw all those cards instead; if the challenge fails, the challenger draws them plus 2 more.'
+  },
+};
+
+function openModal(id) {
+  const c = cards[id];
+  if (!c) return;
+  document.getElementById('modal-icon').textContent = c.icon;
+  document.getElementById('modal-title').textContent = c.title;
+  document.getElementById('modal-tag').textContent = c.tag;
+  document.getElementById('modal-desc').innerHTML = c.desc;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e) {
+  if (e.target.id === 'modal') closeModal();
+}
+
+function switchTab(id) {
+  document.querySelectorAll('.tab').forEach((t,i) => {
+    t.classList.toggle('active', ['rules','cards'][i] === id);
+  });
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function showSide(side) {
+  const lp = document.getElementById('pill-light');
+  const dp = document.getElementById('pill-dark');
+  const ls = document.getElementById('side-light');
+  const ds = document.getElementById('side-dark');
+  if (side === 'light') {
+    lp.className = 'side-pill active-light';
+    dp.className = 'side-pill';
+    ls.classList.add('active');
+    ds.classList.remove('active');
+  } else {
+    dp.className = 'side-pill active-dark';
+    lp.className = 'side-pill';
+    ds.classList.add('active');
+    ls.classList.remove('active');
+  }
+}
+
+function toggleCard(el) { el.classList.toggle('open'); }
+
+// Stagger card entrance animations
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.action-card').forEach((card, i) => {
+    card.style.animationDelay = `${80 + i * 40}ms`;
+    card.style.opacity = '0';
+    card.style.animation = `fadeUp 0.5s cubic-bezier(.22,1,.36,1) ${80 + i * 40}ms both`;
+  });
+});
+</script>
+</body>
+</html>
