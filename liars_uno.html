@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liar's UNO — The Rules</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤥</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Bebas+Neue&family=Boldonse&family=Cabin+Sketch:wght@700&family=Frijole&family=Rubik:wght@300;400;500;600;700&family=Tilt+Neon&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue:    #005BAA;
+    --steel:   #7AAEE8;
+    --dark:    #0C0C0C;
+    --border:  rgba(255,255,255,0.07);
+    --text:    #F5F2EC;
+    --muted:   #888;
+    --radius:  20px;
+    --accent:  #005BAA;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Noise overlay */
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.055;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── HEADER ── */
+  header {
+    background:
+      repeating-linear-gradient(90deg,  transparent 18px, rgba(180,210,255,0.04) 18px 19px),
+      repeating-linear-gradient(0deg,   transparent 18px, rgba(180,210,255,0.04) 18px 19px),
+      repeating-linear-gradient(45deg,  transparent  9px, rgba(100,160,220,0.025) 9px 10px),
+      repeating-linear-gradient(-45deg, transparent  9px, rgba(100,160,220,0.02)  9px 10px),
+      linear-gradient(160deg, #0B1628, #071020, #0D1830);
+    padding: 36px 48px 28px;
+    border-bottom: 1px solid rgba(100,160,220,0.25);
+    animation: fadeUp 0.5s cubic-bezier(.22,1,.36,1) both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Corner vignettes */
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 0% 0%, rgba(0,50,120,0.45) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 100%, rgba(0,30,90,0.35) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(0,91,170,0.1) 0%, transparent 70%);
+  }
+
+  /* Aged grain overlay for header */
+  header::after {
+    content: '';
+    position: absolute; inset: 0;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)'/%3E%3C/svg%3E");
+  }
+
+  .header-inner { position: relative; z-index: 1; max-width: 680px; }
+
+  .logo-wrap {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 22px;
+    padding-top: 1.2em;
+  }
+
+  .logo-uno {
+    font-family: 'Boldonse', cursive;
+    font-size: clamp(52px, 7vw, 96px);
+    line-height: 1;
+    color: var(--text);
+    letter-spacing: 2px;
+    text-shadow:
+      1px 1px 0 #C8C5BF, 2px 2px 0 #B0ADA8, 3px 3px 0 #989591,
+      4px 4px 0 #807E7A, 5px 5px 0 #686663, 6px 6px 0 #50504D,
+      7px 7px 0 #383836, 8px 8px 0 #202020, 12px 12px 12px rgba(0,0,0,0.6);
+  }
+
+  .logo-stamp {
+    position: absolute;
+    top: -0.2em;
+    left: -0.2em;
+    font-family: 'Cabin Sketch', cursive;
+    font-weight: 700;
+    font-size: clamp(32px, 4.8vw, 65px);
+    color: var(--steel);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: rotate(-10deg);
+    transform-origin: center center;
+    pointer-events: none;
+    white-space: nowrap;
+    text-shadow:
+      0 0 8px rgba(100,170,255,0.8),
+      0 0 20px rgba(60,130,220,0.5),
+      0 0 40px rgba(40,100,200,0.25);
+  }
+
+  .header-divider {
+    width: 40px; height: 3px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 2px;
+    margin-top: 32px;
+    margin-bottom: 14px;
+  }
+
+  .header-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    background: rgba(122,174,232,0.08);
+    border: 1px solid rgba(122,174,232,0.2);
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--steel);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    background:
+      repeating-linear-gradient(90deg,  transparent 18px, rgba(180,210,255,0.025) 18px 19px),
+      repeating-linear-gradient(0deg,   transparent 18px, rgba(180,210,255,0.025) 18px 19px),
+      #070E1C;
+    border-bottom: 1px solid rgba(100,160,220,0.25);
+    position: sticky; top: 0;
+    z-index: 100;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    flex: 1;
+    min-width: 80px;
+    padding: 13px 8px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    user-select: none;
+  }
+  .tab.active { color: var(--steel); border-bottom-color: var(--steel); }
+
+  /* ── PANELS ── */
+  .panel { display: none; padding: 28px 24px 48px; max-width: 680px; margin: 0 auto; }
+  .panel.active { display: block; }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin: 28px 0 12px;
+    opacity: 0.75;
+  }
+  .section-title:first-child { margin-top: 0; }
+
+  /* ── ALERT BOX ── */
+  .alert {
+    background: rgba(122,174,232,0.06);
+    border: 1px solid rgba(122,174,232,0.18);
+    border-left: 4px solid var(--steel);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: rgba(245,242,236,0.8);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .alert strong { color: var(--steel); font-weight: 600; }
+  .alert-blue {
+    background: rgba(0,91,170,0.12);
+    border-color: rgba(100,160,220,0.3);
+    border-left-color: var(--blue);
+  }
+  .alert-warn {
+    background: rgba(180,130,0,0.08);
+    border: 1px solid rgba(200,160,50,0.2);
+    border-left: 4px solid #C8A020;
+    color: rgba(245,242,236,0.75);
+  }
+  .alert-warn strong { color: #C8A020; }
+
+  /* ── SETUP STEPS ── */
+  .steps { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+  .step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(122,174,232,0.1);
+    border-radius: 14px;
+    padding: 13px 15px;
+  }
+  .step-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: rgba(0,91,170,0.3);
+    border: 1px solid rgba(122,174,232,0.3);
+    color: var(--steel);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .step-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(245,242,236,0.75);
+  }
+  .step-text strong { color: var(--text); }
+
+  /* ── CARD GRID ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .uno-card {
+    background: linear-gradient(160deg, #0F1E38, #091428, #071020);
+    border: 1px solid rgba(100,160,220,0.2);
+    border-radius: 16px;
+    padding: 14px 12px 12px;
+    cursor: pointer;
+    transition: transform 0.22s cubic-bezier(.22,1,.36,1), box-shadow 0.22s, border-color 0.22s;
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    gap: 6px;
+    min-height: 90px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.4),
+      0 8px 24px rgba(0,0,0,0.35),
+      inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .uno-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 20% 120%, rgba(0,91,170,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .uno-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(120,180,255,0.4);
+    box-shadow:
+      0 4px 8px rgba(0,0,0,0.5),
+      0 20px 48px rgba(0,0,0,0.6),
+      0 0 0 1px rgba(122,174,232,0.12),
+      0 24px 48px -8px rgba(0,91,170,0.3),
+      inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .uno-card.span2 { grid-column: span 2; }
+  .uno-card.span3 { grid-column: span 3; }
+
+  .card-val {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--steel);
+    line-height: 1;
+    font-family: 'Bebas Neue', cursive;
+    text-shadow:
+      0 0 8px rgba(100,170,255,0.5),
+      0 0 16px rgba(60,130,220,0.3);
+  }
+  .card-val.emoji { font-family: initial; font-size: 20px; text-shadow: none; }
+  .card-lbl {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+  .card-sublbl {
+    font-size: 9px;
+    color: rgba(122,174,232,0.5);
+    letter-spacing: 0.08em;
+  }
+  .card-tap {
+    font-size: 8.5px;
+    color: rgba(122,174,232,0.4);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: auto;
+  }
+
+  /* Wild card color dots */
+  .color-dots { display: flex; gap: 4px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* ── RULE ROWS (collapsible) ── */
+  .rule-row {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(122,174,232,0.1);
+    border-radius: 14px;
+    margin-bottom: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .rule-row:hover { border-color: rgba(122,174,232,0.25); }
+  .rule-row.open { border-color: rgba(122,174,232,0.3); }
+
+  .rule-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 15px;
+  }
+  .rule-icon {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: rgba(0,91,170,0.2);
+    border: 1px solid rgba(122,174,232,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; flex-shrink: 0;
+    color: var(--steel);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 16px;
+  }
+  .rule-label {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .rule-arrow {
+    color: var(--muted);
+    font-size: 12px;
+    transition: transform 0.2s;
+  }
+  .rule-row.open .rule-arrow { transform: rotate(90deg); color: var(--steel); }
+  .rule-body {
+    display: none;
+    padding: 0 15px 14px 61px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(245,242,236,0.7);
+  }
+  .rule-body strong { color: var(--text); }
+  .rule-body em { color: var(--steel); font-style: normal; font-weight: 500; }
+  .rule-row.open .rule-body { display: block; }
+
+  /* ── MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10000;
+    display: flex; align-items: flex-end; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+  .modal-box {
+    background:
+      repeating-linear-gradient(90deg,  transparent 18px, rgba(180,210,255,0.025) 18px 19px),
+      repeating-linear-gradient(0deg,   transparent 18px, rgba(180,210,255,0.025) 18px 19px),
+      linear-gradient(180deg, #0F1E38, #071020);
+    border: 1px solid rgba(120,180,255,0.3);
+    border-bottom: none;
+    border-radius: 24px 24px 0 0;
+    padding: 28px 24px 36px;
+    width: 100%; max-width: 480px;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: translateY(24px);
+    transition: transform 0.3s cubic-bezier(.22,1,.36,1);
+    position: relative;
+  }
+  .modal-overlay.open .modal-box { transform: translateY(0); }
+
+  .modal-close {
+    position: absolute; top: 16px; right: 16px;
+    width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; cursor: pointer; color: var(--muted);
+    transition: background 0.2s, color 0.2s;
+  }
+  .modal-close:hover { background: rgba(122,174,232,0.15); color: var(--text); }
+
+  .modal-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: rgba(0,91,170,0.25);
+    border: 1px solid rgba(122,174,232,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 14px;
+    color: var(--steel);
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.02em;
+  }
+  .modal-title {
+    font-family: 'Boldonse', cursive;
+    font-size: 22px;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+  .modal-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: rgba(0,91,170,0.2);
+    color: var(--steel);
+    border: 1px solid rgba(122,174,232,0.2);
+    border-radius: 20px;
+    padding: 2px 10px;
+    margin-bottom: 14px;
+  }
+  .modal-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245,242,236,0.75);
+  }
+  .modal-desc strong { color: var(--text); }
+  .modal-desc em { color: var(--steel); font-style: normal; }
+
+  /* ── TRUTH BADGE ── */
+  .truth-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(0,91,170,0.15);
+    border: 1px solid rgba(122,174,232,0.25);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--steel);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid rgba(100,160,220,0.15);
+    padding: 20px 24px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+    background:
+      repeating-linear-gradient(90deg, transparent 18px, rgba(180,210,255,0.015) 18px 19px),
+      #070E1C;
+  }
+
+  /* Mobile */
+  @media (max-width: 480px) {
+    header { padding: 28px 20px 22px; }
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .cards-grid .span3 { grid-column: span 2; }
+    .uno-card.span2 { grid-column: span 2; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <div class="logo-uno">UNO</div>
+      <div class="logo-stamp">Liar's</div>
+    </div>
+    <div class="header-divider"></div>
+    <div class="header-meta">
+      <span class="badge">2–6 Players</span>
+      <span class="badge">Ages 7+</span>
+      <span class="badge">112 Cards</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── TABS ── -->
+<nav class="tabs">
+  <div class="tab active" data-panel="basics">Basics</div>
+  <div class="tab" data-panel="cards">Cards</div>
+  <div class="tab" data-panel="challenge">Challenging</div>
+
+</nav>
+
+<!-- ═══════════════════════════════════════
+     PANEL 1 — BASICS
+════════════════════════════════════════ -->
+<div class="panel active" id="panel-basics">
+
+  <div class="alert alert-blue" style="margin-bottom:20px;">
+    <div class="alert-icon">🤥</div>
+    <div><strong>The twist:</strong> More than half the deck is Liar's Cards — played <strong>face down</strong>. You can lie about what you played. Other players can call your bluff.</div>
+  </div>
+
+  <div class="section-title">Objective</div>
+  <div class="alert">
+    <div class="alert-icon">🏆</div>
+    <div>Be the first to get rid of all your cards — or avoid being the last one standing. If you get caught lying, you draw cards. If you're honest and someone challenges you anyway, <em>they</em> draw.</div>
+  </div>
+
+  <div class="section-title">The Two Card Types</div>
+  <div class="cards-grid" style="grid-template-columns: 1fr 1fr; margin-bottom:20px;">
+    <div class="uno-card" style="cursor:default; min-height:110px;">
+      <div class="card-val" style="font-size:13px; letter-spacing:0.05em;">REGULAR</div>
+      <div class="card-lbl" style="color:rgba(245,242,236,0.5); margin-top:2px;">Always played</div>
+      <div style="font-family:'Bebas Neue'; font-size:22px; color:var(--steel); letter-spacing:0.05em; margin-top:4px;">FACE UP</div>
+    </div>
+    <div class="uno-card" style="cursor:default; min-height:110px; background: linear-gradient(160deg,#15082A,#0D0520,#090318); border-color:rgba(155,92,246,0.25);">
+      <div class="card-val" style="font-size:13px; letter-spacing:0.05em; color:#B08EE0;">LIAR'S</div>
+      <div class="card-lbl" style="color:rgba(245,242,236,0.5); margin-top:2px;">Always played</div>
+      <div style="font-family:'Bebas Neue'; font-size:22px; color:#B08EE0; letter-spacing:0.05em; margin-top:4px;">FACE DOWN</div>
+    </div>
+  </div>
+
+  <div class="section-title">Setup</div>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Shuffle and deal 7 cards</strong> to each player.</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">Place the remaining cards <strong>face down</strong> — this is the <strong>Draw Pile</strong>.</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">Flip the top card of the Draw Pile <strong>face up</strong> to start the <strong>Discard Pile</strong>. If it's a Liar's Card, flip it over and draw the next one.</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">The <strong>player left of the dealer</strong> goes first. Play moves clockwise.</div></div>
+  </div>
+
+  <div class="section-title">Your Turn</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">→</div>
+      <div class="step-text">Try to play <strong>one card</strong> onto the Discard Pile. A card is playable if it matches the top card in <strong>Color, Number, or Symbol</strong>. If it's an Action Card, it also does something special.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">→</div>
+      <div class="step-text">If you <strong>can't play</strong>, draw one card from the Draw Pile. You may then play that card if it's playable — otherwise your turn ends.</div>
+    </div>
+  </div>
+
+  <div class="section-title">Calling "UNO!"</div>
+  <div class="alert alert-warn">
+    <div class="alert-icon">⚠️</div>
+    <div>When you have <strong>1 card left</strong>, yell <strong>"UNO!"</strong> If someone calls it on you before you do, you must draw 2 cards.</div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     PANEL 3 — CARDS
+════════════════════════════════════════ -->
+<div class="panel" id="panel-cards">
+
+  <div class="section-title">Playing a Liar's Card</div>
+  <div class="rule-row" onclick="toggleRule(this)">
+    <div class="rule-header">
+      <div class="rule-icon">🤥</div>
+      <div class="rule-label">Playing it honestly (it actually matches)</div>
+      <div class="rule-arrow">›</div>
+    </div>
+    <div class="rule-body">
+      If your Liar's Card <strong>matches</strong> the top card on the Discard Pile, play it <strong>face down</strong> and say out loud what it is. You're telling the truth. Other players can still challenge you — if they do, and you were honest, they draw 1 card.
+    </div>
+  </div>
+  <div class="rule-row" onclick="toggleRule(this)">
+    <div class="rule-header">
+      <div class="rule-icon">😈</div>
+      <div class="rule-label">Playing it dishonestly (bluffing)</div>
+      <div class="rule-arrow">›</div>
+    </div>
+    <div class="rule-body">
+      If your Liar's Card <strong>doesn't match</strong>, play it face down and <strong>lie</strong> about what it is — claim it's any matching card (e.g. "Red 3"). Your lie must be believable: the card you claim must match the current top card in Color, Number, or Symbol. Other players can challenge you.
+    </div>
+  </div>
+
+  <div class="section-title">Special Number Rules</div>
+  <div class="rule-row" onclick="toggleRule(this)">
+    <div class="rule-header">
+      <div class="rule-icon" style="font-family:'Bebas Neue'; font-size:16px;">7</div>
+      <div class="rule-label">7's Swap — swap hands with anyone</div>
+      <div class="rule-arrow">›</div>
+    </div>
+    <div class="rule-body">
+      When you play a <strong>7</strong>, swap your entire hand with any other player of your choice. Play continues in current order.
+    </div>
+  </div>
+  <div class="rule-row" onclick="toggleRule(this)">
+    <div class="rule-header">
+      <div class="rule-icon" style="font-family:'Bebas Neue'; font-size:16px;">0</div>
+      <div class="rule-label">0's Pass — everyone passes left</div>
+      <div class="rule-arrow">›</div>
+    </div>
+    <div class="rule-body">
+      When a <strong>0</strong> is played, <em>all players</em> simultaneously pass their hand to the next player in the current direction of play.
+    </div>
+  </div>
+
+  <div class="cards-grid">
+    <div class="uno-card" onclick="openModal('liars_num')" style="background:linear-gradient(160deg,#15082A,#0D0520,#090318); border-color:rgba(155,92,246,0.25);">
+      <div class="card-val" style="color:#B08EE0;">1–9</div>
+      <div class="card-lbl" style="color:rgba(176,142,224,0.6);">Liar's Number</div>
+      <div class="card-tap" style="color:rgba(176,142,224,0.4);">Tap for info</div>
+    </div>
+    <div class="uno-card" onclick="openModal('liars_wc4')" style="background:linear-gradient(160deg,#15082A,#0D0520,#090318); border-color:rgba(155,92,246,0.25);">
+      <div class="color-dots">
+        <div class="dot" style="background:#E8272A"></div>
+        <div class="dot" style="background:#D4A017"></div>
+        <div class="dot" style="background:#00A651"></div>
+        <div class="dot" style="background:#005BAA"></div>
+      </div>
+      <div class="card-val" style="font-size:12px; color:#B08EE0;">LIAR'S +4</div>
+      <div class="card-lbl" style="color:rgba(176,142,224,0.6);">Wild Draw 4</div>
+    </div>
+    <div class="uno-card" onclick="openModal('liars_wcc')" style="background:linear-gradient(160deg,#15082A,#0D0520,#090318); border-color:rgba(155,92,246,0.25);">
+      <div class="color-dots">
+        <div class="dot" style="background:#E8272A"></div>
+        <div class="dot" style="background:#D4A017"></div>
+        <div class="dot" style="background:#00A651"></div>
+        <div class="dot" style="background:#005BAA"></div>
+      </div>
+      <div class="card-val" style="font-size:12px; color:#B08EE0;">LIAR'S</div>
+      <div class="card-lbl" style="color:rgba(176,142,224,0.6);">Wild Card</div>
+    </div>
+  </div>
+
+  <div class="section-title">For Colorblind Players</div>
+  <div class="alert">
+    <div class="alert-icon">👁</div>
+    <div>Each card includes a shape symbol: <strong>● = Red · ◆ = Yellow · ▼ = Green · ■ = Blue</strong></div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════
+     PANEL 4 — CHALLENGING
+════════════════════════════════════════ -->
+<div class="panel" id="panel-challenge">
+
+  <div class="alert alert-blue" style="margin-bottom:20px;">
+    <div class="alert-icon">🎯</div>
+    <div>Challenging is the heart of Liar's UNO. Any player can challenge <strong>immediately after</strong> a Liar's Card is played — before the next player's turn.</div>
+  </div>
+
+  <div class="alert" style="margin-bottom:20px;">
+    <div class="alert-icon">⏩</div>
+    <div>Once a Liar's Card is played, the next player can challenge before taking their own turn. If no one challenges, play continues — and the card's stated identity becomes permanent.</div>
+  </div>
+
+  <div class="section-title">How to Challenge</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">A player plays a Liar's Card face down and announces what it is.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">Any other player can say <strong>"I challenge!"</strong> before the next turn begins.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">The card is <strong>revealed</strong>. The truth comes out.</div>
+    </div>
+  </div>
+
+  <div class="section-title">Outcomes</div>
+  <div class="rule-row open" onclick="toggleRule(this)">
+    <div class="rule-header">
+      <div class="rule-icon">😇</div>
+      <div class="rule-label">They were telling the truth</div>
+      <div class="rule-arrow">›</div>
+    </div>
+    <div class="rule-body">
+      The challenger was wrong. The <em>challenger draws 1 card</em>. The original player keeps their lead — no penalty.
+    </div>
+  </div>
+  <div class="rule-row open" onclick="toggleRule(this)">
+    <div class="rule-header">
+      <div class="rule-icon">🤥</div>
+      <div class="rule-label">They were lying</div>
+      <div class="rule-arrow">›</div>
+    </div>
+    <div class="rule-body">
+      Caught! The liar must <strong>take their card back</strong> and <em>draw 1 card</em> as a penalty. The challenge was correct — no penalty for the challenger.
+    </div>
+  </div>
+
+  <div class="section-title">No Challenge Window</div>
+  <div class="alert alert-warn">
+    <div class="alert-icon">⚠️</div>
+    <div>If no one challenges before the next player takes their turn, the action takes effect as stated — <strong>the lie stands</strong>. You said "Red 3" and no one challenged? It was a Red 3.</div>
+  </div>
+
+  <div class="section-title">Strategy Tips</div>
+  <div class="rule-row" onclick="toggleRule(this)">
+    <div class="rule-header">
+      <div class="rule-icon">🧠</div>
+      <div class="rule-label">When to bluff</div>
+      <div class="rule-arrow">›</div>
+    </div>
+    <div class="rule-body">
+      Bluff when you have few cards and need to dump one fast. Bluff when the claimed card is believable. Bluff when other players are distracted or have been challenged themselves recently.
+    </div>
+  </div>
+  <div class="rule-row" onclick="toggleRule(this)">
+    <div class="rule-header">
+      <div class="rule-icon">🔍</div>
+      <div class="rule-label">When to challenge</div>
+      <div class="rule-arrow">›</div>
+    </div>
+    <div class="rule-body">
+      Challenge when a player with few cards plays suspiciously. Challenge when the claimed card feels unlikely based on what's been played. Be careful — a wrong challenge costs you a card.
+    </div>
+  </div>
+  <div class="rule-row" onclick="toggleRule(this)">
+    <div class="rule-header">
+      <div class="rule-icon">🤫</div>
+      <div class="rule-label">Keep a poker face</div>
+      <div class="rule-arrow">›</div>
+    </div>
+    <div class="rule-body">
+      You can be challenged even when telling the truth. Stay calm whether you're bluffing or not — hesitation and relief are tells. Channel your inner poker player.
+    </div>
+  </div>
+
+  <div class="section-title">Wild Liar's Challenge Card</div>
+  <div class="alert alert-blue">
+    <div class="alert-icon">🃏</div>
+    <div>There are special <strong>Wild Liar's Challenge Cards</strong> in the deck. When you play one, you <em>choose the color</em> — and all other players may play any card regardless of color or number on their next turn, as normal. These always go face down.</div>
+  </div>
+
+</div>
+
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  UNO is a trademark of Mattel, Inc. &nbsp;·&nbsp; Fan-made rules reference &nbsp;·&nbsp; Brought to you by Ari!
+</footer>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal()">✕</div>
+    <div class="modal-icon" id="modal-icon"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-tag" id="modal-tag"></div>
+    <div class="modal-desc" id="modal-desc"></div>
+  </div>
+</div>
+
+<script>
+const CARDS = {
+  num_red:    { icon:'1–9',  title:'Red Number Cards',      tag:'Regular Card · Face Up',   desc:'Match by <strong>color (red)</strong> or the same <strong>number</strong> on any other color. Played face up. Number value used in scoring.' },
+  num_yellow: { icon:'1–9',  title:'Yellow Number Cards',   tag:'Regular Card · Face Up',   desc:'Match by <strong>color (yellow)</strong> or the same <strong>number</strong> on any other color. Played face up. Number value used in scoring.' },
+  num_green:  { icon:'1–9',  title:'Green Number Cards',    tag:'Regular Card · Face Up',   desc:'Match by <strong>color (green)</strong> or the same <strong>number</strong> on any other color. Played face up. Number value used in scoring.' },
+  num_blue:   { icon:'0–9',  title:'Blue Number Cards',     tag:'Regular Card · Face Up',   desc:'Match by <strong>color (blue)</strong> or matching <strong>number</strong>. Includes <strong>0</strong> (everyone passes hands) and <strong>7</strong> (swap hands with anyone).' },
+  draw2:      { icon:'+2',   title:'Draw Two',              tag:'Action Card · Face Up',    desc:'The next player must <strong>draw 2 cards and lose their turn</strong>. Play on a matching color or another Draw 2.' },
+  skip:       { icon:'⊘',    title:'Skip',                  tag:'Action Card · Face Up',    desc:'The next player in the current direction <strong>loses their turn</strong>. With 2 players, acts like an extra turn for you.' },
+  reverse:    { icon:'⇄',    title:'Reverse',               tag:'Action Card · Face Up',    desc:'<strong>Reverses the direction of play.</strong> Clockwise becomes counterclockwise and vice versa. With 2 players, acts like a Skip.' },
+  wild:       { icon:'🌈',   title:'Wild',                  tag:'Wild Card · Face Up',      desc:'Play on <strong>any card</strong>. Choose any color to continue play. Can be played even when you have other playable cards.' },
+  wd4:        { icon:'+4',   title:'Wild Draw 4',           tag:'Wild Card · Face Up',      desc:'Next player <strong>draws 4 and loses their turn</strong>. You choose the color. <strong>Important:</strong> May only be played if you have no card matching the current color. Can be challenged by the next player.' },
+  liars_num:  { icon:'?',    title:"Liar's Number Card",    tag:"Liar's Card · Face Down",  desc:'Played <strong>face down</strong>. Announce a number and color that matches the current top card — but you can lie. If someone challenges and catches you, take the card back and draw 1. If challenged while truthful, challenger draws 1.' },
+  liars_wc4:  { icon:'+4',   title:"Liar's Wild Draw 4",    tag:"Liar's Card · Face Down",  desc:'Played <strong>face down</strong>. Can be played on anything. Announce "Wild Draw 4" — or lie and call it something else. If truthful and challenged, challenger draws 4. If lying and caught, you draw 4 instead.' },
+  liars_wcc:  { icon:'🃏',   title:"Liar's Wild Card",      tag:"Liar's Card · Face Down",  desc:'Played <strong>face down</strong>. Choose a color — Wild Cards don\'t count toward matching. All other players put a card face down and announce it as any card matching the current color.<br><br>You can challenge any player and force them to reveal their card. If they were lying, they take the card back and draw 1. This goes on until either everyone is challenged or until someone reveals a card matching their call.<br><br>Unchallenged players are safe and can discard their card.' },
+};
+
+const $modal = document.getElementById('modal');
+const $icon  = document.getElementById('modal-icon');
+const $title = document.getElementById('modal-title');
+const $tag   = document.getElementById('modal-tag');
+const $desc  = document.getElementById('modal-desc');
+
+function openModal(id) {
+  const c = CARDS[id]; if (!c) return;
+  $icon.textContent  = c.icon;
+  $icon.style.fontSize = (c.icon.length > 2) ? '14px' : '24px';
+  $title.textContent = c.title;
+  $tag.textContent   = c.tag;
+  $desc.innerHTML    = c.desc;
+  $modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  $modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e) { if (e.target === $modal) closeModal(); }
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const id = tab.dataset.panel;
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t === tab));
+    document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + id));
+    window.scrollTo(0, 0);
+  });
+});
+
+function toggleRule(el) { el.classList.toggle('open'); }
+</script>
+</body>
+</html>
