@@ -1,0 +1,71 @@
+file,name,game,type,width,height
+Card Assets/Liars UNO/Cards/liars-uno-0-red.png,0 — Red,Liars UNO,cards,1024,1536
+Card Assets/Liars UNO/Cards/liars-uno-1-red.png,1 — Red,Liars UNO,cards,1024,1536
+Card Assets/Liars UNO/Cards/liars-uno-7-red.png,7 — Red,Liars UNO,cards,1024,1536
+Card Assets/Liars UNO/Cards/liars-uno-liar-0-red.png,Liar 0 — Red,Liars UNO,cards,1024,1536
+Card Assets/Liars UNO/Cards/liars-uno-liar-1-red.png,Liar 1 — Red,Liars UNO,cards,1024,1536
+Card Assets/Liars UNO/Cards/liars-uno-liar-7-red.png,Liar 7 — Red,Liars UNO,cards,1024,1536
+Card Assets/Liars UNO/Cards/liars-uno-liar-draw-2-red.png,Liar Draw 2 — Red,Liars UNO,cards,1024,1536
+Card Assets/Liars UNO/Cards/liars-uno-liar-reverse-red.png,Liar Reverse — Red,Liars UNO,cards,1024,1536
+Card Assets/Liars UNO/Cards/liars-uno-liar-skip-red.png,Liar Skip — Red,Liars UNO,cards,1024,1536
+Card Assets/Liars UNO/Cards/liars-uno-liar-wild-draw-4.png,Liar Wild Draw 4,Liars UNO,cards,1024,1536
+Card Assets/Liars UNO/Cards/liars-uno-wild-liars-challenge.png,Wild Liar’s Challenge,Liars UNO,cards,1024,1536
+Card Assets/UNO Dare/Adults Only/Cards/uno-dare-adults-only-draw-2-or-dare-2-red.png,Draw 2 or Dare 2 — Red,UNO Dare,cards,1024,1536
+Card Assets/UNO Dare/Adults Only/Cards/uno-dare-adults-only-reverse-green.png,Reverse — Green,UNO Dare,cards,1024,1536
+Card Assets/UNO Dare/Adults Only/Cards/uno-dare-adults-only-skip-blue.png,Skip — Blue,UNO Dare,cards,1024,1536
+Card Assets/UNO Dare/Adults Only/Cards/uno-dare-adults-only-wild-draw-2-or-dare-1.png,Wild Draw 2 or Dare 1,UNO Dare,cards,1024,1536
+Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-draw-5-teal.png,Draw 5 — Teal,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-flip-teal.png,Flip — Teal,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-reverse-orange.png,Reverse — Orange,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-skip-everyone-purple.png,Skip Everyone — Purple,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-wild-draw-color.png,Wild Draw Color,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-wild.png,Wild,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-draw-1-green.png,Draw 1 — Green,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-flip-blue.png,Flip — Blue,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-reverse-blue.png,Reverse — Blue,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-skip-red.png,Skip — Red,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-wild-draw-2.png,Wild Draw 2,UNO Flip,cards,1024,1536
+Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-wild.png,Wild,UNO Flip,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-discard-all-yellow.png,Discard All — Yellow,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-draw-4-blue.png,Draw 4 — Blue,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-skip-everyone-green.png,Skip Everyone — Green,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-wild-color-roulette.png,Wild Color Roulette,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-wild-draw-10.png,Wild Draw 10,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-wild-draw-6.png,Wild Draw 6,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-wild-reverse-draw-4.png,Wild Reverse Draw 4,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Base Game/Markers/uno-no-mercy-0-pass-marker.png,0 Pass Marker,UNO Show Em No Mercy,markers,1024,1024
+Card Assets/UNO Show Em No Mercy/Base Game/Markers/uno-no-mercy-7-swap-marker.png,7 Swap Marker,UNO Show Em No Mercy,markers,1024,1024
+Card Assets/UNO Show Em No Mercy/Expansion/Cards/uno-no-mercy-expansion-10-yellow.png,10 — Yellow,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Expansion/Cards/uno-no-mercy-expansion-wild-discard-all.png,Wild Discard All,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Expansion/Cards/uno-no-mercy-expansion-wild-final-attack.png,Wild Final Attack,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Expansion/Cards/uno-no-mercy-expansion-wild-reverse-draw-8.png,Wild Reverse Draw 8,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Expansion/Cards/uno-no-mercy-expansion-wild-sudden-death.png,Wild Sudden Death,UNO Show Em No Mercy,cards,1024,1536
+Card Assets/UNO Show Em No Mercy/Expansion/Coins/uno-no-mercy-mercy-coin.png,Mercy Coin,UNO Show Em No Mercy,coins,1024,1024
+Card Assets/UNO Show Em No Mercy/Expansion/Coins/uno-no-mercy-no-mercy-coin.png,No Mercy Coin,UNO Show Em No Mercy,coins,1024,1024
+Card Assets/UNO Show Em No Mercy/Expansion/Markers/uno-no-mercy-expansion-10-play-again-marker.png,10 Play Again Marker,UNO Show Em No Mercy,markers,1024,1024
+Card Assets/UNO/Add-On Packs/Reverse Pack/Cards/uno-reverse-pack-reverse-draw-2-green.png,Reverse Draw 2 — Green,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Reverse Pack/Cards/uno-reverse-pack-reverse-skip-yellow.png,Reverse Skip — Yellow,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Reverse Pack/Cards/uno-reverse-pack-wild-no-u.png,Wild No U,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Reverse Pack/Cards/uno-reverse-pack-wild-power-reverse.png,Wild Power Reverse,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Reverse Pack/Packaging/uno-reverse-pack-package-front.png,Reverse Pack — Package Front,UNO,packaging,1024,1536
+Card Assets/UNO/Add-On Packs/Speed Pack/Cards/uno-speed-pack-speed-up-1-yellow.png,Speed Up 1 — Yellow,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Speed Pack/Cards/uno-speed-pack-speed-up-5-red.png,Speed Up 5 — Red,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Speed Pack/Cards/uno-speed-pack-wild-double-speed-up.png,Wild Double Speed Up,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Speed Pack/Packaging/uno-speed-pack-package-front.png,Speed Pack — Package Front,UNO,packaging,1024,1536
+Card Assets/UNO/Add-On Packs/Stack Pack/Cards/uno-stack-pack-stack-1-red.png,Stack 1 — Red,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Stack Pack/Cards/uno-stack-pack-stack-2-blue.png,Stack 2 — Blue,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Stack Pack/Cards/uno-stack-pack-wild-stack-3.png,Wild Stack 3,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Stack Pack/Cards/uno-stack-pack-wild-stack-number.png,Wild Stack Number,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Stack Pack/Packaging/uno-stack-pack-package-front.png,Stack Pack — Package Front,UNO,packaging,1024,1536
+Card Assets/UNO/Add-On Packs/Swap Pack/Cards/uno-swap-pack-refresh-hand-blue.png,Refresh Hand — Blue,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Swap Pack/Cards/uno-swap-pack-swap-1-yellow.png,Swap 1 — Yellow,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Swap Pack/Cards/uno-swap-pack-wild-force-trade.png,Wild Force Trade,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Swap Pack/Cards/uno-swap-pack-wild-pass-hands.png,Wild Pass Hands,UNO,cards,1024,1536
+Card Assets/UNO/Add-On Packs/Swap Pack/Packaging/uno-swap-pack-package-front.png,Swap Pack — Package Front,UNO,packaging,1024,1536
+Card Assets/UNO/Base Game/Cards/uno-draw-2-blue.png,Draw 2 — Blue,UNO,cards,1024,1536
+Card Assets/UNO/Base Game/Cards/uno-reverse-green.png,Reverse — Green,UNO,cards,1024,1536
+Card Assets/UNO/Base Game/Cards/uno-skip-red.png,Skip — Red,UNO,cards,1024,1536
+Card Assets/UNO/Base Game/Cards/uno-wild-customizable.png,Wild Customizable,UNO,cards,1024,1536
+Card Assets/UNO/Base Game/Cards/uno-wild-draw-4.png,Wild Draw 4,UNO,cards,1024,1536
+Card Assets/UNO/Base Game/Cards/uno-wild-shuffle-hands.png,Wild Shuffle Hands,UNO,cards,1024,1536
+Card Assets/UNO/Base Game/Cards/uno-wild.png,Wild,UNO,cards,1024,1536

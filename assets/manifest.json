@@ -1,0 +1,452 @@
+[
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-0-red.png",
+    "output": "assets/liars-uno-0-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-1-red.png",
+    "output": "assets/liars-uno-1-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-7-red.png",
+    "output": "assets/liars-uno-7-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-liar-0-red.png",
+    "output": "assets/liars-uno-liar-0-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-liar-1-red.png",
+    "output": "assets/liars-uno-liar-1-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-liar-7-red.png",
+    "output": "assets/liars-uno-liar-7-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-liar-draw-2-red.png",
+    "output": "assets/liars-uno-liar-draw-2-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-liar-reverse-red.png",
+    "output": "assets/liars-uno-liar-reverse-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-liar-skip-red.png",
+    "output": "assets/liars-uno-liar-skip-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-liar-wild-draw-4.png",
+    "output": "assets/liars-uno-liar-wild-draw-4.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/Liars UNO/Cards/liars-uno-wild-liars-challenge.png",
+    "output": "assets/liars-uno-wild-liars-challenge.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Reverse Pack/Cards/uno-reverse-pack-reverse-draw-2-green.png",
+    "output": "assets/uno-reverse-pack-reverse-draw-2-green.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Reverse Pack/Cards/uno-reverse-pack-reverse-skip-yellow.png",
+    "output": "assets/uno-reverse-pack-reverse-skip-yellow.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Reverse Pack/Cards/uno-reverse-pack-wild-no-u.png",
+    "output": "assets/uno-reverse-pack-wild-no-u.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Reverse Pack/Cards/uno-reverse-pack-wild-power-reverse.png",
+    "output": "assets/uno-reverse-pack-wild-power-reverse.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Reverse Pack/Packaging/uno-reverse-pack-package-front.png",
+    "output": "assets/uno-reverse-pack-package-front.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Speed Pack/Cards/uno-speed-pack-speed-up-1-yellow.png",
+    "output": "assets/uno-speed-pack-speed-up-1-yellow.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Speed Pack/Cards/uno-speed-pack-speed-up-5-red.png",
+    "output": "assets/uno-speed-pack-speed-up-5-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Speed Pack/Cards/uno-speed-pack-wild-double-speed-up.png",
+    "output": "assets/uno-speed-pack-wild-double-speed-up.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Speed Pack/Packaging/uno-speed-pack-package-front.png",
+    "output": "assets/uno-speed-pack-package-front.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Stack Pack/Cards/uno-stack-pack-stack-1-red.png",
+    "output": "assets/uno-stack-pack-stack-1-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Stack Pack/Cards/uno-stack-pack-stack-2-blue.png",
+    "output": "assets/uno-stack-pack-stack-2-blue.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Stack Pack/Cards/uno-stack-pack-wild-stack-3.png",
+    "output": "assets/uno-stack-pack-wild-stack-3.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Stack Pack/Cards/uno-stack-pack-wild-stack-number.png",
+    "output": "assets/uno-stack-pack-wild-stack-number.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Stack Pack/Packaging/uno-stack-pack-package-front.png",
+    "output": "assets/uno-stack-pack-package-front.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Swap Pack/Cards/uno-swap-pack-refresh-hand-blue.png",
+    "output": "assets/uno-swap-pack-refresh-hand-blue.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Swap Pack/Cards/uno-swap-pack-swap-1-yellow.png",
+    "output": "assets/uno-swap-pack-swap-1-yellow.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Swap Pack/Cards/uno-swap-pack-wild-force-trade.png",
+    "output": "assets/uno-swap-pack-wild-force-trade.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Swap Pack/Cards/uno-swap-pack-wild-pass-hands.png",
+    "output": "assets/uno-swap-pack-wild-pass-hands.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Add-On Packs/Swap Pack/Packaging/uno-swap-pack-package-front.png",
+    "output": "assets/uno-swap-pack-package-front.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Base Game/Cards/uno-draw-2-blue.png",
+    "output": "assets/uno-draw-2-blue.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Base Game/Cards/uno-reverse-green.png",
+    "output": "assets/uno-reverse-green.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Base Game/Cards/uno-skip-red.png",
+    "output": "assets/uno-skip-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Base Game/Cards/uno-wild-customizable.png",
+    "output": "assets/uno-wild-customizable.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Base Game/Cards/uno-wild-draw-4.png",
+    "output": "assets/uno-wild-draw-4.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Base Game/Cards/uno-wild-shuffle-hands.png",
+    "output": "assets/uno-wild-shuffle-hands.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO/Base Game/Cards/uno-wild.png",
+    "output": "assets/uno-wild.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Dare/Adults Only/Cards/uno-dare-adults-only-draw-2-or-dare-2-red.png",
+    "output": "assets/uno-dare-adults-only-draw-2-or-dare-2-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Dare/Adults Only/Cards/uno-dare-adults-only-reverse-green.png",
+    "output": "assets/uno-dare-adults-only-reverse-green.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Dare/Adults Only/Cards/uno-dare-adults-only-skip-blue.png",
+    "output": "assets/uno-dare-adults-only-skip-blue.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Dare/Adults Only/Cards/uno-dare-adults-only-wild-draw-2-or-dare-1.png",
+    "output": "assets/uno-dare-adults-only-wild-draw-2-or-dare-1.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-draw-5-teal.png",
+    "output": "assets/uno-flip-dark-draw-5-teal.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-flip-teal.png",
+    "output": "assets/uno-flip-dark-flip-teal.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-reverse-orange.png",
+    "output": "assets/uno-flip-dark-reverse-orange.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-skip-everyone-purple.png",
+    "output": "assets/uno-flip-dark-skip-everyone-purple.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-wild-draw-color.png",
+    "output": "assets/uno-flip-dark-wild-draw-color.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Dark Side/Cards/uno-flip-dark-wild.png",
+    "output": "assets/uno-flip-dark-wild.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-draw-1-green.png",
+    "output": "assets/uno-flip-light-draw-1-green.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-flip-blue.png",
+    "output": "assets/uno-flip-light-flip-blue.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-reverse-blue.png",
+    "output": "assets/uno-flip-light-reverse-blue.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-skip-red.png",
+    "output": "assets/uno-flip-light-skip-red.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-wild-draw-2.png",
+    "output": "assets/uno-flip-light-wild-draw-2.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Flip/Light Side/Cards/uno-flip-light-wild.png",
+    "output": "assets/uno-flip-light-wild.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-discard-all-yellow.png",
+    "output": "assets/uno-no-mercy-discard-all-yellow.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-draw-4-blue.png",
+    "output": "assets/uno-no-mercy-draw-4-blue.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-skip-everyone-green.png",
+    "output": "assets/uno-no-mercy-skip-everyone-green.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-wild-color-roulette.png",
+    "output": "assets/uno-no-mercy-wild-color-roulette.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-wild-draw-10.png",
+    "output": "assets/uno-no-mercy-wild-draw-10.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-wild-draw-6.png",
+    "output": "assets/uno-no-mercy-wild-draw-6.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Base Game/Cards/uno-no-mercy-wild-reverse-draw-4.png",
+    "output": "assets/uno-no-mercy-wild-reverse-draw-4.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Base Game/Markers/uno-no-mercy-0-pass-marker.png",
+    "output": "assets/uno-no-mercy-0-pass-marker.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Base Game/Markers/uno-no-mercy-7-swap-marker.png",
+    "output": "assets/uno-no-mercy-7-swap-marker.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Expansion/Cards/uno-no-mercy-expansion-10-yellow.png",
+    "output": "assets/uno-no-mercy-expansion-10-yellow.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Expansion/Cards/uno-no-mercy-expansion-wild-discard-all.png",
+    "output": "assets/uno-no-mercy-expansion-wild-discard-all.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Expansion/Cards/uno-no-mercy-expansion-wild-final-attack.png",
+    "output": "assets/uno-no-mercy-expansion-wild-final-attack.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Expansion/Cards/uno-no-mercy-expansion-wild-reverse-draw-8.png",
+    "output": "assets/uno-no-mercy-expansion-wild-reverse-draw-8.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Expansion/Cards/uno-no-mercy-expansion-wild-sudden-death.png",
+    "output": "assets/uno-no-mercy-expansion-wild-sudden-death.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Expansion/Coins/uno-no-mercy-mercy-coin.png",
+    "output": "assets/uno-no-mercy-mercy-coin.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Expansion/Coins/uno-no-mercy-no-mercy-coin.png",
+    "output": "assets/uno-no-mercy-no-mercy-coin.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "source": "Card Assets/UNO Show Em No Mercy/Expansion/Markers/uno-no-mercy-expansion-10-play-again-marker.png",
+    "output": "assets/uno-no-mercy-expansion-10-play-again-marker.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "source": "Game Logos/liars-uno-logo.png",
+    "output": "assets/liars-uno-logo.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "source": "Game Logos/uno-dare-adults-only-logo.png",
+    "output": "assets/uno-dare-adults-only-logo.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "source": "Game Logos/uno-flip-logo.png",
+    "output": "assets/uno-flip-logo.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "source": "Game Logos/uno-logo.png",
+    "output": "assets/uno-logo.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  {
+    "source": "Game Logos/uno-show-em-no-mercy-logo.png",
+    "output": "assets/uno-show-em-no-mercy-logo.webp",
+    "width": 1024,
+    "height": 1024
+  }
+]

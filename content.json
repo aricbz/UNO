@@ -1,0 +1,2174 @@
+{
+  "games": [
+    {
+      "id": "uno",
+      "title": "UNO Classic",
+      "short": "The original rivalry.",
+      "description": "The one that started it all. Match, skip, reverse. Make it your own with four add-on packs.",
+      "logo": "uno-logo",
+      "color": "#ffda47",
+      "meta": "2–10 players · Ages 7+",
+      "source": "uno-base-game",
+      "packs": [
+        "swap",
+        "speed",
+        "stack",
+        "reverse"
+      ],
+      "route": "uno.html",
+      "tag": "THE ORIGINAL",
+      "hero": [
+        "uno-skip-red",
+        "uno-reverse-green",
+        "uno-draw-2-blue"
+      ],
+      "learn": {
+        "setup": [
+          "Deal 7 cards to each player. The player with the highest number drawn is the dealer; symbols count as zero.",
+          "Put the rest face down as the draw pile. Turn one card over to start the discard pile.",
+          "The player left of the dealer starts. Opening actions have special effects—see the source-backed details below."
+        ],
+        "turn": "Match the top card by color, number, or symbol. If you cannot play, draw ONE card; you may play it immediately if it matches. You may choose to draw instead; after drawing, you may play only that drawn card.",
+        "win": "Official: empty your hand to end a round, score opponents’ remaining cards, and race to 500 points.",
+        "tips": [
+          [
+            "Can I stack a +2 on a +2?",
+            "The classic sheet makes the next player draw and miss their turn. It does not allow avoiding that penalty with another Draw card. Enable Stack Pack to see that pack’s specific responses."
+          ],
+          [
+            "Can I play a Wild Draw Four?",
+            "Only if your hand has no card matching the current COLOR. A matching number or symbol in another color does not prevent it. A successful challenge makes the offender draw 4; a failed challenge makes you draw 6."
+          ],
+          [
+            "What happens with an opening action?",
+            "Draw Two: the first player draws 2 and is skipped. Skip: skip the first player. Reverse: the dealer starts and play goes right. Wild: the player left of the dealer calls the color. Wild Draw Four: return it to the deck and reveal another card."
+          ],
+          [
+            "What if the draw pile runs out?",
+            "Reshuffle the discard pile and keep playing."
+          ],
+          [
+            "How do I score?",
+            "Numbers: face value. Draw Two, Reverse and Skip: 20. Wild and Wild Draw Four: 50. The first player to reach 500 wins; the sheet also offers an alternative lowest-score method."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "mercy",
+      "title": "Show ’Em No Mercy",
+      "short": "Friendships, tested.",
+      "description": "Bigger penalties. Relentless stacking. Get to 25 cards and you’re out.",
+      "logo": "uno-show-em-no-mercy-logo",
+      "color": "#ff7185",
+      "meta": "2–6 players · Ages 7+",
+      "source": "uno-show-em-no-mercy",
+      "packs": [
+        "expansion"
+      ],
+      "route": "uno-show-em-no-mercy.html",
+      "tag": "NO HOLDING BACK",
+      "hero": [
+        "uno-no-mercy-wild-draw-10",
+        "uno-no-mercy-discard-all-yellow",
+        "uno-no-mercy-wild-draw-6"
+      ],
+      "learn": {
+        "setup": [
+          "Choose a dealer. Shuffle and deal 7 cards to each player.",
+          "Start a draw pile; reveal a number card for the discard pile. Ignore opening action cards and reveal again.",
+          "Player left of the dealer starts clockwise. With the expansion, declare your coin side at the start."
+        ],
+        "turn": "Match by color, number, or symbol. If you have no match, draw UNTIL you draw a playable card, then play it.",
+        "win": "Official: win by playing your final card OR by being the only player not knocked out.",
+        "tips": [
+          [
+            "How does stacking work?",
+            "Respond with a Draw card equal to or higher than the LAST Draw card—not the total. Example: +4 followed by +6 means the next player needs +6 or higher, or draws 10."
+          ],
+          [
+            "When am I knocked out?",
+            "At 25 OR MORE cards. Set aside the eliminated hand until the deck needs reshuffling. The expansion Mercy coin has different threshold wording—see Sources."
+          ],
+          [
+            "What do 7 and 0 do?",
+            "7: you must swap with a chosen player. 0: everyone passes hands in the current direction."
+          ],
+          [
+            "Two-player Reverse Draw 4?",
+            "You reverse and skip the other player, then YOU draw 4. You can stack to send it back."
+          ],
+          [
+            "Optional scoring?",
+            "Numbers: face value; colored actions: 20; Wild actions: 50. Add 250 per knocked-out player; their eliminated hand does not score. First to 1000 wins."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "flip",
+      "title": "UNO FLIP!",
+      "short": "There’s a darker side.",
+      "description": "One deck. Two personalities. Flip the entire game from light to dark and back again.",
+      "logo": "uno-flip-logo",
+      "color": "#c6a0ff",
+      "meta": "2–10 players · Ages 7+",
+      "source": "uno-flip",
+      "packs": [],
+      "route": "uno-flip.html",
+      "tag": "DOUBLE THE TROUBLE",
+      "hero": [
+        "uno-flip-light-flip-blue",
+        "uno-flip-dark-flip-teal",
+        "uno-flip-dark-draw-5-teal"
+      ],
+      "learn": {
+        "setup": [
+          "Align the whole deck so all Light Sides face the same way. The player with the highest Light Side number is the dealer.",
+          "Deal 7 cards with Light Sides facing their holders. Draw pile: Light Side down. Discard pile: Light Side up.",
+          "Player left of the dealer starts. Begin on the Light Side; a starting Flip switches immediately to Dark."
+        ],
+        "turn": "Match on the side currently in play by color, number, or symbol. If you cannot play, draw ONE card and optionally play it if it matches. Keep new cards facing the same way as your hand.",
+        "win": "Official: empty your hand to end the round. Score the side the round ENDED ON. First to 500 points wins.",
+        "tips": [
+          [
+            "What actually flips?",
+            "First the whole discard pile (the Flip just played goes to the bottom), then the draw pile, then every hand. Ignore actions newly exposed on top. If the new top is Wild, the Flip player chooses the color."
+          ],
+          [
+            "Can I challenge a Wild penalty?",
+            "Both Wild Draw Two and Wild Draw Color require no matching-color card in the player’s hand. If guilty, the offender takes the penalty. If innocent, the challenger takes the original penalty plus 2."
+          ],
+          [
+            "How do I score?",
+            "Numbers: face value; Draw One: 10; Draw Five, Reverse, Skip, Flip: 20; Skip Everyone: 30; Wild: 40; Wild Draw Two: 50; Wild Draw Color: 60. Use the side on which the round ended."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "liars",
+      "title": "Liar’s UNO",
+      "short": "Keep a straight face.",
+      "description": "Play it face down. Say what it is. The truth is entirely up to you.",
+      "logo": "liars-uno-logo",
+      "color": "#8da6ff",
+      "meta": "2–6 players · Ages 7+",
+      "source": "liars-uno",
+      "packs": [],
+      "route": "liars-uno.html",
+      "tag": "TRUST NO ONE",
+      "hero": [
+        "liars-uno-liar-7-red",
+        "liars-uno-liar-wild-draw-4",
+        "liars-uno-wild-liars-challenge"
+      ],
+      "learn": {
+        "setup": [
+          "Shuffle and deal 7 cards to each player.",
+          "Create draw and discard piles. Ignore opening actions; treat an opening Liar’s number as a normal card.",
+          "Player left of the dealer starts clockwise. Regular cards go face UP; Liar’s cards go face DOWN."
+        ],
+        "turn": "Match a Regular card normally, or play a Liar’s card face down and announce a plausible matching card. Any player may challenge before the next turn begins. If you cannot play, draw ONE and play it if possible.",
+        "win": "Official: going out wins if the final card survives any challenge. Wild Liar’s Challenge can produce joint winners.",
+        "tips": [
+          [
+            "Truth or bluff?",
+            "Challenged truth: challenger draws 1. Caught lying: take your card back AND draw 1. If unchallenged before the next turn, the declared action takes effect even if you lied."
+          ],
+          [
+            "Can a regular card go face down?",
+            "No. If caught, take it back and draw 6."
+          ],
+          [
+            "What about 7 and 0?",
+            "7 swaps with a chosen player; 0 passes all hands in the current direction. If challenged, draw the penalty card AFTER the exchange."
+          ],
+          [
+            "Wild Liar’s Challenge?",
+            "Choose a color; others offer face-down cards declared as that color (Wilds do not count). Challenge players until everyone is challenged or someone is truthful. A liar takes their card back and draws 1. The first truthful player and all still-unchallenged players discard their offered cards under the Wild. Multiple players going out this way win together."
+          ],
+          [
+            "Optional scoring?",
+            "Numbers: face value; Skip, Reverse, Draw Two: 20; Wild Draw Four and Wild Liar’s Challenge: 50. First to 500 wins."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "dare",
+      "title": "UNO Dare Adults Only",
+      "short": "How far will you go?",
+      "description": "Draw or take the dare. Adults Only artwork, with clearly marked standard Dare reference rules.",
+      "logo": "uno-dare-adults-only-logo",
+      "color": "#f5f5f5",
+      "meta": "Adults Only · Source limitation",
+      "source": "uno-dare",
+      "packs": [],
+      "route": "uno-dare-adults-only.html",
+      "tag": "AFTER HOURS",
+      "hero": [
+        "uno-dare-adults-only-skip-blue",
+        "uno-dare-adults-only-wild-draw-2-or-dare-1",
+        "uno-dare-adults-only-draw-2-or-dare-2-red"
+      ],
+      "learn": {
+        "setup": [
+          "Substitute reference only: the source is standard UNO Dare CDY11, NOT the Adults Only leaflet.",
+          "Standard Dare: choose a Dare List card, choose a dealer by highest drawn number, then deal 7 cards.",
+          "Standard Dare starts left of the dealer. Consult your physical Adults Only leaflet for its die, Truth result, reverse result, and dare levels."
+        ],
+        "turn": "Standard Dare reference: match by color, number, or symbol. Draw ONE if needed; optionally play that card. A Dare offers draw 2 or the numbered challenge on the chosen Dare List.",
+        "win": "Standard Dare source: empty your hand to end a round, then score toward 500 points. Adults Only-specific rules remain unverified.",
+        "tips": [
+          [
+            "What does the substitute establish?",
+            "In standard Dare, the target draws 2 or attempts the numbered dare. Failing the dare means drawing 2. Wild Dare also lets its player choose the color. These instructions do not verify the Adults Only die or four dare levels."
+          ],
+          [
+            "Where are the actual dares?",
+            "They are on separate Dare List cards, absent from the PDF. Use your physical game; no dares have been invented here."
+          ],
+          [
+            "Can I use this as a complete Adults Only guide?",
+            "No. The source is an accepted substitute, and all references here are labeled accordingly. Use the physical Adults Only leaflet for edition-specific mechanics."
+          ],
+          [
+            "Standard Dare scoring?",
+            "Numbers: face value; Reverse, Skip and Dare: 20; Wild Dare: 50. First to 500 wins. A final Dare still makes the next player draw 2 or perform the dare before scoring."
+          ]
+        ]
+      }
+    }
+  ],
+  "packs": {
+    "swap": {
+      "id": "swap",
+      "name": "Swap Pack",
+      "source": "uno-swap-pack",
+      "requires": "uno"
+    },
+    "speed": {
+      "id": "speed",
+      "name": "Speed Pack",
+      "source": "uno-speed-pack",
+      "requires": "uno"
+    },
+    "stack": {
+      "id": "stack",
+      "name": "Stack Pack",
+      "source": "uno-stack-pack",
+      "requires": "uno"
+    },
+    "reverse": {
+      "id": "reverse",
+      "name": "Reverse Pack",
+      "source": "uno-reverse-pack",
+      "requires": "uno"
+    },
+    "expansion": {
+      "id": "expansion",
+      "name": "No Mercy Expansion",
+      "source": "uno-show-em-no-mercy-expansion-pack",
+      "requires": "mercy"
+    }
+  },
+  "sources": {
+    "liars-uno": {
+      "id": "liars-uno",
+      "title": "Liar's UNO",
+      "url": "https://service.mattel.com/instruction_sheets/JLH43%20English.pdf",
+      "pdf": "sources/liars-uno-rules-en.pdf",
+      "transcript": "sources/Extracted Text/liars-uno-rules-en.md",
+      "sections": [
+        {
+          "id": "contents",
+          "title": "Contents",
+          "page": 1,
+          "side": "",
+          "text": "112 Cards"
+        },
+        {
+          "id": "object",
+          "title": "Object",
+          "page": 1,
+          "side": "",
+          "text": "Be first to get rid of all the cards in your hand."
+        },
+        {
+          "id": "card-types",
+          "title": "Card types",
+          "page": 1,
+          "side": "",
+          "text": "- REGULAR CARD: Always played FACE UP.\n- LIAR'S CARD: Always played FACE DOWN."
+        },
+        {
+          "id": "liar-s-uno-in-a-nutshell",
+          "title": "Liar's UNO in a nutshell",
+          "page": 1,
+          "side": "",
+          "text": "It plays just like classic UNO® by matching color, number or symbol, but here's the twist - more than half the deck is made up of “Liar's Cards.” Each Number Card in every color has one Regular Card and one Liar's Card (see above), and almost all the Action Cards are Liar's Cards! When you play a Liar's Card, you MUST play it FACE DOWN, and then say out loud what it is, but the real fun begins when you decide whether to tell the truth or bluff. If you lie and get busted, you draw a card. If you're honest but someone challenges you, they draw a card instead. So, channel your inner poker champ, keep a straight face, and when you're down to one card don't forget to yell “UNO!”"
+        },
+        {
+          "id": "setup",
+          "title": "Setup",
+          "page": 1,
+          "side": "",
+          "text": "1. Choose a dealer and shuffle the cards.\n2. Deal 7 cards to each player.\n3. Place the remaining cards FACE DOWN in the center of the table. This is the DRAW PILE.\n4. Flip over the top card of the DRAW PILE and place it FACE UP to form the DISCARD PILE. If this card is an Action Card, ignore it and flip over the next card; if it's a Liar's Card, treat it as a normal card.\n5. The player to the left of the dealer goes first and play proceeds clockwise."
+        },
+        {
+          "id": "how-to-play-uno",
+          "title": "How to play UNO",
+          "page": 1,
+          "side": "",
+          "text": "First, let's go over the basics of UNO®.\n\nOn your turn, you try to get rid of your cards by playing ONE CARD onto the Discard Pile."
+        },
+        {
+          "id": "if-you-have-a-matching-card-in-your-hand-you-may-play-it-on-the-discard-pile",
+          "title": "If you HAVE a matching card in your hand, you may PLAY IT on the Discard Pile",
+          "page": 1,
+          "side": "",
+          "text": "1. You can only play a card if it matches at least one attribute of the top card on the Discard Pile: its Color, Number, or Symbol.\n2. If the card you played is an Action Card, it does something special! (see Action Cards below)"
+        },
+        {
+          "id": "if-you-do-not-have-a-matching-card-draw-one-card-from-the-draw-pile",
+          "title": "If you DO NOT HAVE a matching card, DRAW ONE CARD from the Draw Pile",
+          "page": 1,
+          "side": "",
+          "text": "1. If your new card can be played, then you may play it now.\n2. You may choose to draw a card instead of playing one, even if you have a playable card in your hand.\n\nOnce you play or draw a card, play continues with the next player.\n\nNOTE: If there are no cards left in the Draw Pile, reshuffle the Discard Pile to form a new Draw Pile."
+        },
+        {
+          "id": "now-let-s-play-liar-s-uno",
+          "title": "Now, let's play Liar's UNO!",
+          "page": 1,
+          "side": "",
+          "text": "On your turn, try to get rid of your cards by playing one card onto the Discard Pile. But remember, there are Regular Cards and Liar's Cards, so you have a lot of options from simple to sneaky."
+        },
+        {
+          "id": "playing-a-regular-card",
+          "title": "Playing a Regular Card",
+          "page": 1,
+          "side": "",
+          "text": "If you have a Regular Card that matches the top card on the Discard Pile in either Color, Number or Symbol, play it face up. Easy peasy."
+        },
+        {
+          "id": "playing-a-liar-s-card",
+          "title": "Playing a Liar's Card",
+          "page": 1,
+          "side": "",
+          "text": "Matching Liar's Card: If your Liar's Card MATCHES the top card on the Discard Pile, play it FACE DOWN and say out loud what it is. Since it matches, you're telling the TRUTH.\n\nNon-Matching Liar's Card: If your Liar's Card DOESN'T MATCH the top card on the Discard Pile, play it FACE DOWN and LIE about what it is. However, your lie must be plausible. For example, if the top card is a Red 3, you can say your card is any Red Card (Red 7, Red Draw 2, etc.) or a matching Number Card (Blue 3, Yellow 3, etc.) or even a Wild Draw 4!\n\nAfter you play a card FACE DOWN, any player may challenge you:\n\n- If you're challenged, you must reveal the card.\n- If you were telling the TRUTH, the player who challenged you must draw 1 card. Sweet!\n- If you were LYING, you must take the card back AND draw 1 card. Ouch!\n\nIf no one challenges you before the next player begins their turn, you're safe. If you said the card was an Action Card, the action takes effect whether you were lying or not."
+        },
+        {
+          "id": "if-you-can-t-play-a-card",
+          "title": "If you can't play a card",
+          "page": 1,
+          "side": "",
+          "text": "If you don't have a matching Regular Card or any Liar's Cards, draw a card from the Draw Pile. If that card is playable, you may play it. Otherwise, your turn is over.\n\nNOTE: You MAY NOT play a Regular Card face down and try to pass it off as a Liar's Card. If you get caught doing so, you must take the card back and draw 6 cards!"
+        },
+        {
+          "id": "calling-uno",
+          "title": "Calling “UNO!”",
+          "page": 1,
+          "side": "",
+          "text": "The moment you only have 1 card in your hand, you must yell “UNO” to alert the other players you are about to win.\n\nHowever, if someone beats you to it and calls out “UNO” before the next player takes their turn then you must draw 2 cards!"
+        },
+        {
+          "id": "winning",
+          "title": "Winning",
+          "page": 1,
+          "side": "",
+          "text": "When a player plays their final card, if no one challenges them, they win. If challenged and caught lying, they must take their card back, draw 1 card as a penalty and then play continues."
+        },
+        {
+          "id": "7-s-swap",
+          "title": "7's Swap",
+          "page": 1,
+          "side": "",
+          "text": "When you play a 7 card of any color, you MUST swap your hand with another player of your choice. Play then continues in current order."
+        },
+        {
+          "id": "0-s-pass",
+          "title": "0's Pass",
+          "page": 1,
+          "side": "",
+          "text": "When you play a 0 card of any color, ALL players must pass their hand to the next player in the current direction of play.\n\nNOTE: If a 7 or 0 is challenged, the penalty card is drawn AFTER any exchange of hands."
+        },
+        {
+          "id": "action-cards",
+          "title": "Action Cards",
+          "page": 1,
+          "side": "",
+          "text": "NOTE: All Action cards (except the Wild Liar's Challenge Card) are Liar's Cards and you MUST play them FACE DOWN. The Wild Liar's Challenge Card is always played FACE UP."
+        },
+        {
+          "id": "draw-two-card",
+          "title": "Draw Two card",
+          "page": 1,
+          "side": "",
+          "text": "When played, the next player must draw 2 cards and lose their turn."
+        },
+        {
+          "id": "reverse-card",
+          "title": "Reverse card",
+          "page": 1,
+          "side": "",
+          "text": "When played, the direction of play is reversed. If play was moving clockwise, it now moves counterclockwise and vice versa."
+        },
+        {
+          "id": "skip-card",
+          "title": "Skip card",
+          "page": 1,
+          "side": "",
+          "text": "When played, the next player loses their turn."
+        },
+        {
+          "id": "wild-draw-4-card",
+          "title": "Wild Draw 4 card",
+          "page": 1,
+          "side": "",
+          "text": "This card matches anything so you can play it no matter what card is on the Discard Pile. When played, the next player must draw 4 cards and lose their turn. You get to choose the color that continues play."
+        },
+        {
+          "id": "wild-liar-s-challenge-card",
+          "title": "Wild Liar's Challenge card",
+          "page": 1,
+          "side": "",
+          "text": "When played, first you choose a color. Next, all other players put a card of that color FACE DOWN in front of them and say out loud what the card is (Wild Cards don't count). If they don't have a card of that color, they can put down any card, but they MUST say that it is a card matching the color you chose.\n\nFor example, if you call “red” and they don't have a red card, they can lie that their card is a Red 2, Red Skip, whatever.\n\nNext, you may challenge any player and force them to reveal their card. If they were lying, they must take their card back and draw 1 card as a penalty. You may continue challenging players until you challenge everyone, or until you challenge someone who reveals a card of the correct color. When that happens, that player AND all remaining unchallenged players get to put their cards under the Wild Liar's Challenge card and play continues as normal with the color you chose.\n\nNOTE: If someone discards their LAST card this way, they win (if multiple players go out, they win TOGETHER)."
+        },
+        {
+          "id": "keeping-score-optional-victory-method",
+          "title": "Keeping Score (Optional Victory Method)",
+          "page": 1,
+          "side": "",
+          "text": "When a player wins a hand, they receive points based on the cards remaining in their opponent's hands.\n\nCards are valued as follows:\n\n| Card | Value |\n| --- | --- |\n| All number cards (0-9) | Face Value |\n| Any Action Card: Skip, Reverse, Draw 2 | 20 Points |\n| Any Wild Card: Wild Draw 4, Wild Liar's Challenge | 50 Points |\n\nKeep a running tally of each player's points from hand to hand. When a player reaches 500 points, they are the winner."
+        },
+        {
+          "id": "for-colorblind-players",
+          "title": "For colorblind players",
+          "page": 1,
+          "side": "",
+          "text": "Special graphic symbols have been added to each card to help identify the color(s) on that card. This will allow players with ANY form of color blindness to easily play!\n\n| Graphic symbol (described from the printed key) | Color |\n| --- | --- |\n| Circle | Red |\n| Four-point star | Yellow |\n| Downward-pointing triangle | Green |\n| Square | Blue |"
+        }
+      ]
+    },
+    "uno-base-game": {
+      "id": "uno-base-game",
+      "title": "UNO Base Game",
+      "url": "https://service.mattel.com/instruction_sheets/W2085-Eng.pdf",
+      "pdf": "sources/uno-base-game-rules-en.pdf",
+      "transcript": "sources/Extracted Text/uno-base-game-rules-en.md",
+      "sections": [
+        {
+          "id": "contents",
+          "title": "Contents",
+          "page": 1,
+          "side": "",
+          "text": "108 Cards as follows:\n\n19 Blue Cards – 0 to 9\n\n19 Green Cards – 0 to 9\n\n19 Red Cards – 0 to 9\n\n19 Yellow Cards – 0 to 9\n\n8 Draw Two Cards – 2 each in blue, green, red and yellow\n\n8 Reverse Cards – 2 each in blue, green, red and yellow\n\n8 Skip Cards – 2 each in blue, green, red and yellow\n\n4 Wild Cards\n\n4 Wild Draw Four Cards"
+        },
+        {
+          "id": "object-of-the-game",
+          "title": "Object of the Game",
+          "page": 1,
+          "side": "",
+          "text": "Be the first player to get rid of all of your cards in each round and score points for the cards your opponents are left holding. Points in rounds accumulate and the first player to reach 500 points wins."
+        },
+        {
+          "id": "setup",
+          "title": "Setup",
+          "page": 1,
+          "side": "",
+          "text": "1. Each player draws a card; the player that draws the highest number deals (count any card with a symbol as zero).\n\n2. The dealer shuffles and deals each player 7 cards.\n\n3. Place the remainder of the deck facedown to form a DRAW pile.\n\n4. The top card of the DRAW pile is turned over to begin a DISCARD pile. NOTE: If any of the Action Cards (symbols) are turned over to start the DISCARD pile, see FUNCTIONS OF ACTION CARDS for special instructions."
+        },
+        {
+          "id": "let-s-play",
+          "title": "Let’s Play",
+          "page": 1,
+          "side": "",
+          "text": "The person to the left of the dealer starts play. On your turn, you must match a card from your hand to the card on the top of the DISCARD pile, either by number, colour or symbol (symbols represent Action Cards; see FUNCTIONS OF ACTION CARDS).\n\nEXAMPLE: If the card on the DISCARD pile is a red 7, the player must put down a red card OR any colour 7. Alternatively, the player can put down a Wild card (See FUNCTIONS OF ACTION CARDS). If you don’t have a card that matches the one on the DISCARD pile, you must take a card from the DRAW pile. If the card you picked up can be played, you are free to put it down in the same turn. Otherwise, play moves on to the next person in turn.\n\nYou may also choose NOT to play a playable card from your hand. If so, you must draw a card from the DRAW pile. If playable, that card can be put down in the same turn, however you may not play any other card from your hand after the draw."
+        },
+        {
+          "id": "draw-two-card",
+          "title": "Draw Two Card",
+          "page": 2,
+          "side": "",
+          "text": "When you play this card, the next player must draw 2 cards and miss their turn. This card may only be played on a matching colour or on another Draw Two card. If turned up at the beginning of play, the same rule applies."
+        },
+        {
+          "id": "reverse-card",
+          "title": "Reverse Card",
+          "page": 2,
+          "side": "",
+          "text": "When you play this card, the direction of play reverses (if play is currently to the left, then play changes to the right, and vice versa). This card may only be played on a matching colour or on another Reverse card. If this card is turned up at the beginning of play, the dealer goes first, then play moves to the right instead of the left."
+        },
+        {
+          "id": "skip-card",
+          "title": "Skip Card",
+          "page": 2,
+          "side": "",
+          "text": "When you play this card, the next player is “skipped” (loses their turn). This card may only be played on a matching colour or on another Skip card. If a Skip card is turned up at the beginning of play, the player to the left of the dealer is “skipped,” hence the player to the left of that player starts play."
+        },
+        {
+          "id": "wild-card",
+          "title": "Wild Card",
+          "page": 2,
+          "side": "",
+          "text": "When you play this card, you get to choose the colour that continues play (any colour including the colour in play before the Wild card was laid down). You may play a Wild card on your turn even if you have another playable card in your hand. If a Wild card is turned up at the beginning of play, the person to the left of the dealer chooses the colour that continues play."
+        },
+        {
+          "id": "wild-draw-4-card",
+          "title": "Wild Draw 4 Card",
+          "page": 2,
+          "side": "",
+          "text": "When you play this card, you get to choose the colour that continues play PLUS the next player must draw 4 cards from the DRAW pile and lose their turn. However, there is a hitch! You may only play this card when you do NOT have another card in your hand that matches the COLOUR on the DISCARD pile (but it is acceptable to play this card if you have matching number or Action Cards). If turned up at the beginning of play, return this card to the deck and pick another card.\n\nNOTE: If you suspect that a Wild Draw 4 card has been played on you illegally (i.e. the player has a matching card), then you may challenge that player. The challenged player must show you (the challenger) their hand. If guilty, the challenged player must draw the 4 cards instead of you. However, if the challenged player is innocent, you must draw the 4 cards PLUS an additional 2 cards (6 total)!"
+        },
+        {
+          "id": "going-out",
+          "title": "Going Out",
+          "page": 2,
+          "side": "",
+          "text": "When you play your next-to-last card, you must yell “UNO” (meaning “one”) to indicate that you have only one card left. If you don’t yell “UNO” and you are caught before the next player begins their turn, you must draw two cards.\n\nOnce a player has no cards left, the round is over. Points are scored (see SCORING) and play starts over again. If the last card played in a round is a Draw Two or Wild Draw Four card, the next player must draw the 2 or 4 cards respectively. These cards are counted when the points are totaled. If no player is out of cards by the time the DRAW pile is depleted, the DISCARD pile is reshuffled and play continues."
+        },
+        {
+          "id": "scoring",
+          "title": "Scoring",
+          "page": 3,
+          "side": "",
+          "text": "The first player to get rid of their cards in a round receives points for all of the cards left in their opponents’ hands as follows:\n\n| Card | Value |\n| --- | --- |\n| All number cards (0-9) | Face Value |\n| Draw Two | 20 Points |\n| Reverse | 20 Points |\n| Skip | 20 Points |\n| Wild | 50 Points |\n| Wild Draw Four | 50 Points |\n\nOnce the score for the round has been tallied, if no player has reached 500 points, reshuffle the cards and begin a new round."
+        },
+        {
+          "id": "winning-the-game",
+          "title": "Winning the Game",
+          "page": 3,
+          "side": "",
+          "text": "The WINNER is the first player to reach 500 points."
+        },
+        {
+          "id": "alternative-scoring-and-winning",
+          "title": "Alternative Scoring and Winning",
+          "page": 3,
+          "side": "",
+          "text": "Another way to score points is to keep a running tally of the points each player is left with at the end of each round. When one player reaches 500 points, the player with the lowest points is the winner."
+        }
+      ]
+    },
+    "uno-dare": {
+      "id": "uno-dare",
+      "title": "UNO Dare",
+      "url": "https://service.mattel.com/instruction_sheets/CDY11-Eng.pdf",
+      "pdf": "sources/uno-dare-rules-en.pdf",
+      "transcript": "sources/Extracted Text/uno-dare-rules-en.md",
+      "sections": [
+        {
+          "id": "contents",
+          "title": "Contents",
+          "page": 1,
+          "side": "",
+          "text": "108 Cards as follows:\n\n19 Blue cards - 0 to 9\n\n19 Green cards - 0 to 9\n\n19 Red cards - 0 to 9\n\n19 Yellow cards - 0 to 9\n\n8 Reverse cards - 2 each in blue, green, red and yellow\n\n8 Skip cards - 2 each in blue, green, red and yellow\n\n8 Dare cards - 2 each in blue, green, red and yellow\n\n8 Wild Dare cards\n\n4 Dare List cards"
+        },
+        {
+          "id": "object-of-the-game",
+          "title": "Object of the Game",
+          "page": 1,
+          "side": "",
+          "text": "Be the first player to get rid of all of your cards in each round and score points for the cards your opponents are left holding. Points in rounds accumulate and the first player to reach 500 points wins."
+        },
+        {
+          "id": "setup",
+          "title": "Setup",
+          "page": 1,
+          "side": "",
+          "text": "1. Decide which one of the 4 Dare List cards you want to use in your game. Each Dare List Card represents a specific category with different dares: Family, Showoff, Daredevil, and House Rules (where you fill in the blanks with your own special rules).\n\n2. Next, Each player draws a card; the player that draws the highest number deals (count any card with a symbol as zero).\n\n3. The dealer shuffles and deals each player 7 cards.\n\n4. Place the remainder of the deck facedown to form a DRAW pile.\n\n5. The top card of the DRAW pile is turned over to begin a DISCARD pile. NOTE: If any of the Action cards (symbols) are turned over to start the DISCARD pile, see FUNCTIONS OF ACTION CARDS for special instructions."
+        },
+        {
+          "id": "tip",
+          "title": "TIP",
+          "page": 1,
+          "side": "",
+          "text": "Already know how to play original UNO® card game? If you’re familiar with the basic rules, you can jump ahead to the Special UNO Dare™ Action Cards section."
+        },
+        {
+          "id": "let-s-play",
+          "title": "Let’s Play",
+          "page": 1,
+          "side": "",
+          "text": "The person to the left of the dealer starts play. On your turn, you must match a card from your hand to the card on the top of the DISCARD pile, either by number, color or symbol (symbols represent Action Cards; see FUNCTIONS OF ACTION CARDS).\n\nEXAMPLE: If the card on the DISCARD pile is a red 7, the player must put down a red card OR any color 7. Alternatively, the player can put down a Wild card (See FUNCTIONS OF ACTION CARDS). If you don’t have a card that matches the one on the DISCARD pile, you must take a card from the DRAW pile. If the card you picked up can be played, you are free to put it down in the same turn. Otherwise, play moves on to the next person in turn.\n\nYou may also choose NOT to play a playable card from your hand. If so, you must draw a card from the DRAW pile. If playable, that card can be put down in the same turn, however you may not play any other card from your hand after the draw."
+        },
+        {
+          "id": "reverse-card",
+          "title": "Reverse Card",
+          "page": 1,
+          "side": "",
+          "text": "When you play this card, the direction of play reverses (if play is currently to the left, then play changes to the right, and vice versa). This card may only be played on a matching color or on another Reverse card. If this card is turned up at the beginning of play, the dealer goes first, then play moves to the right instead of the left."
+        },
+        {
+          "id": "skip-card",
+          "title": "Skip Card",
+          "page": 1,
+          "side": "",
+          "text": "When you play this card, the next player is “skipped” (loses their turn). This card may only be played on a matching color or on another Skip card. If a Skip card is turned up at the beginning of play, the player to the left of the dealer is “skipped,” hence the player to the left of that player starts play."
+        },
+        {
+          "id": "dare-card",
+          "title": "Dare Card",
+          "page": 2,
+          "side": "",
+          "text": "When you play this card, the next player must choose to either draw 2 cards, or do the dare associated with the number on the card. Simply compare the number on the Dare card with the number on your chosen Dare List card to find out what the dare will be. This card may only be played on a matching color or on another Dare card. If a Dare card is turned up at the beginning of play, the player to the left of the dealer must choose to draw 2 cards or do a dare.\n\nOnce a dare is chosen, the player must successfully complete the dare or suffer a penalty. For example, if the dare is “Remain perfectly frozen until your next turn,” and they move before their turn comes around again, they fail and must draw 2 cards. Some of the dares are subjective in nature, so all the players must agree on whether the player has successfully completed the dare or not. Strictness is up to you."
+        },
+        {
+          "id": "wild-dare-card",
+          "title": "Wild Dare Card",
+          "page": 2,
+          "side": "",
+          "text": "When you play this card, the next player must choose to either draw 2 cards, or do the dare associated with the number on the card. You also get to choose the color that continues play (any color including the color in play before the Wild card was laid down). You may play a Wild Dare Card on your turn even if you have another playable card in your hand. If a Wild Dare card is turned up at the beginning of play, the person to the left of the dealer must choose to draw 2 cards or do a dare. They also get to choose the color that continues play. REMEMBER: WHATEVER THE DARE, ALL PLAYERS MAY PARTICIPATE IN MAKING THE DARE EASIER OR HARDER ON THE PLAYER DOING THE DARE BY ASKING QUESTIONS, TEASING, SLOW OR FAST PLAY, ETC. FOR EXAMPLE, IF THE DARE IS “TALK LIKE A PIRATE UNTIL YOUR NEXT TURN,” YOU MAY ENGAGE THE PLAYER IN CONVERSATION, AND THEY MUST REPLY IN CHARACTER. IF THEY REFUSE TO ANSWER OR SLIP UP AND FORGET THE ACCENT, THEY FAIL AND MUST DRAW 2 CARDS."
+        },
+        {
+          "id": "going-out",
+          "title": "Going Out",
+          "page": 2,
+          "side": "",
+          "text": "When you play your next-to-last card, you must yell “UNO” (meaning “one”) to indicate that you have only one card left. If you don’t yell “UNO” and you are caught before the next player begins their turn, you must draw two cards.\n\nOnce a player has no cards left, the round is over. Points are scored (see SCORING) and play starts over again. If the last card played in a round is a Dare card or Wild Dare card, the next player must either draw 2 cards or perform the dare. These cards are counted when the points are totaled. If no player is out of cards by the time the DRAW pile is depleted, the DISCARD pile is reshuffled and play continues."
+        },
+        {
+          "id": "scoring",
+          "title": "Scoring",
+          "page": 2,
+          "side": "",
+          "text": "The first player to get rid of their cards in a round receives points for all of the cards left in their opponents’ hands as follows:\n\n| Card | Value |\n| --- | --- |\n| All number cards (0-9) | Face Value |\n| Reverse | 20 Points |\n| Skip | 20 Points |\n| Dare | 20 Points |\n| Wild Dare | 50 Points |\n\nOnce the score for the round has been tallied, if no player has reached 500 points, reshuffle the cards and begin a new round."
+        },
+        {
+          "id": "winning-the-game",
+          "title": "Winning the Game",
+          "page": 2,
+          "side": "",
+          "text": "The WINNER is the first player to reach 500 points."
+        },
+        {
+          "id": "alternative-scoring-and-winning",
+          "title": "Alternative Scoring and Winning",
+          "page": 2,
+          "side": "",
+          "text": "Another way to score points is to keep a running tally of the points each player is left with at the end of each round. When one player reaches 500 points, the player with the lowest points is the winner."
+        }
+      ]
+    },
+    "uno-flip": {
+      "id": "uno-flip",
+      "title": "UNO FLIP",
+      "url": "https://service.mattel.com/instruction_sheets/GDG37-Eng.pdf",
+      "pdf": "sources/uno-flip-rules-en.pdf",
+      "transcript": "sources/Extracted Text/uno-flip-rules-en.md",
+      "sections": [
+        {
+          "id": "contents",
+          "title": "Contents",
+          "page": 1,
+          "side": "",
+          "text": "112 Cards as follows:"
+        },
+        {
+          "id": "light-side-white-border",
+          "title": "LIGHT SIDE (white border):",
+          "page": 1,
+          "side": "",
+          "text": "18 Blue cards - 1 to 9\n\n18 Green cards - 1 to 9\n\n18 Red cards - 1 to 9\n\n18 Yellow cards - 1 to 9\n\n8 Draw One cards - 2 each in blue, green, red and yellow\n\n8 Reverse cards - 2 each in blue, green, red and yellow\n\n8 Skip cards - 2 each in blue, green, red and yellow\n\n8 Flip - 2 each in blue, green, red and yellow\n\n4 Wild cards\n\n4 Wild Draw Two cards"
+        },
+        {
+          "id": "dark-side-black-border",
+          "title": "DARK SIDE (black border):",
+          "page": 1,
+          "side": "",
+          "text": "18 Pink cards - 1 to 9\n\n18 Teal cards - 1 to 9\n\n18 Orange cards - 1 to 9\n\n18 Purple cards - 1 to 9\n\n8 Draw Five cards - 2 each in pink, teal, orange and purple\n\n8 Reverse cards - 2 each in pink, teal, orange and purple\n\n8 Skip Everyone cards - 2 each in pink, teal, orange and purple\n\n8 Flip - 2 each in pink, teal, orange and purple\n\n4 Wild cards\n\n4 Wild Draw Color cards"
+        },
+        {
+          "id": "uno-flip-in-a-nutshell",
+          "title": "UNO FLIP™ IN A NUTSHELL",
+          "page": 1,
+          "side": "",
+          "text": "UNO FLIP™ plays like regular UNO®, except there are two sides to the deck of cards: a “light” side and a “dark” side. You start playing with the Light Side, but whenever someone plays a FLIP card, the deck is flipped over (as are the cards in your hand) and now everyone must play off of the Dark Side of the cards. The Dark Side has different Action Cards with much stiffer penalties. Players must play with the Dark Side cards until someone else plays another FLIP card, and then play goes back to the Light Side, and so on until someone has played all the cards in their hand, ending the round. As always, if you are the first player to get rid of all of your cards in a round, you score points for the cards your opponents are left holding. Points in rounds accumulate and the first player to reach 500 points wins.\n\nNOTE: REMEMBER TO SCORE POINTS BASED ON WHICH SIDE (LIGHT OR DARK) THE GAME ENDED ON."
+        },
+        {
+          "id": "setup",
+          "title": "Setup",
+          "page": 1,
+          "side": "",
+          "text": "1. Since the deck is two-sided, make sure all the cards of each side are facing the same way: all the Light Side cards facing one way, all the Dark Side cards facing the other way.\n\n2. Each player draws a card and then reveals the Light Side; the player that draws the highest number is the dealer (count any card with a symbol as zero).\n\n3. The dealer shuffles and deals each player 7 cards. Hold the cards with the Light Side facing you and the Dark Side facing your opponents.\n\n4. Place the remainder of the deck with the Light Side facedown to form a DRAW pile (the Dark Side cards will be facing UP).\n\n5. The top card of the DRAW pile is turned over to begin a DISCARD pile (the Light Side cards will be facing UP).\n\nNOTE: If any of the Action Cards (symbols) are turned over to start the DISCARD pile, see FUNCTIONS OF ACTION CARDS for special instructions."
+        },
+        {
+          "id": "let-s-play",
+          "title": "Let’s Play",
+          "page": 1,
+          "side": "",
+          "text": "The person to the left of the dealer starts play. Whether playing the Light Side or the Dark Side, on your turn, you must match a card from your hand to the card on the top of the DISCARD pile, either by number, color or symbol (symbols represent Action Cards; see FUNCTIONS OF ACTION CARDS).\n\nEXAMPLE: If the card on the DISCARD pile is a blue 7, the player must put down a blue card OR any color 7. Alternatively, the player can put down a Wild card (See FUNCTIONS OF ACTION CARDS). If you don’t have a card that matches the one on the DISCARD pile, you must take a card from the DRAW pile.\n\nNOTE: When adding cards to your hand, make sure they are facing the same direction as the other cards in your hand. For example, if you are currently playing the Light Side, add new cards to your hand with the Light Side facing you. If the card you picked up can be played, you are free to put it down in the same turn. Otherwise, play moves on to the next person in turn.\n\nYou may also choose NOT to play a playable card from your hand. If so, you must draw a card from the DRAW pile. If playable, that card can be put down in the same turn, however you may not play any other card from your hand after the draw."
+        },
+        {
+          "id": "light-side-draw-one-card",
+          "title": "Draw One Card",
+          "page": 2,
+          "side": "LIGHT SIDE",
+          "text": "When you play this card, the next player must draw one card and miss their turn. This card may only be played on a matching color or on another Draw One card. If turned up at the beginning of play, the same rule applies."
+        },
+        {
+          "id": "light-side-reverse-card",
+          "title": "Reverse Card",
+          "page": 2,
+          "side": "LIGHT SIDE",
+          "text": "When you play this card, the direction of play reverses (if play is currently to the left, then play changes to the right, and vice versa). This card may only be played on a matching color or on another Reverse card. If this card is turned up at the beginning of play, the dealer goes first, then play moves to the right instead of the left."
+        },
+        {
+          "id": "light-side-skip-card",
+          "title": "Skip Card",
+          "page": 2,
+          "side": "LIGHT SIDE",
+          "text": "When you play this card, the next player is “skipped” (loses their turn). This card may only be played on a matching color or on another Skip card. If a Skip card is turned up at the beginning of play, the player to the left of the dealer is “skipped,” hence the player to the left of that player starts play."
+        },
+        {
+          "id": "light-side-wild-card",
+          "title": "Wild Card",
+          "page": 2,
+          "side": "LIGHT SIDE",
+          "text": "When you play this card, you get to choose the color that continues play (any color including the color in play before the Wild card was laid down). You may play a Wild card on your turn even if you have another playable card in your hand. If a Wild card is turned up at the beginning of play, the person to the left of the dealer chooses the color that continues play."
+        },
+        {
+          "id": "light-side-wild-draw-2-card",
+          "title": "Wild Draw 2 Card",
+          "page": 2,
+          "side": "LIGHT SIDE",
+          "text": "When you play this card, you get to choose the color that continues play PLUS the next player must draw two cards from the DRAW pile and lose their turn.\n\nHowever, there is a hitch! You may only play this card when you do NOT have another card in your hand that matches the COLOR on the DISCARD pile (but it is acceptable to play this card if you have matching number or Action Cards). If turned up at the beginning of play, return this card to the deck and pick another card.\n\nNOTE: If you suspect that a Wild Draw 2 card has been played on you illegally (i.e. the player has a matching card), then you may challenge that player. The challenged player must show you (the challenger) their hand. If guilty, the challenged player must draw the 2 cards instead of you. However, if the challenged player is innocent, you must draw the 2 cards PLUS an additional 2 cards (4 total)!"
+        },
+        {
+          "id": "light-side-flip-card",
+          "title": "Flip Card",
+          "page": 2,
+          "side": "LIGHT SIDE",
+          "text": "when you play this card, everything flips from the Dark Side to the Light Side.\n\nOnce the Flip card has been played, flip over the Discard Pile (the card just played will now be on the bottom), then the Draw Pile, then everyone’s hands must flip to the other side. This new side will remain in play until another Flip card is played, changing it again. This card may only be played on a matching color or on another Flip card. If this card is turned over at the beginning of play, the deck is immediately flipped to the Dark side."
+        },
+        {
+          "id": "dark-side-draw-five-card",
+          "title": "Draw Five Card",
+          "page": 2,
+          "side": "DARK SIDE",
+          "text": "When you play this card, the next player must draw five cards and miss their turn. This card may only be played on a matching color or on another Draw Five card."
+        },
+        {
+          "id": "dark-side-reverse-card",
+          "title": "Reverse Card",
+          "page": 2,
+          "side": "DARK SIDE",
+          "text": "When you play this card, the direction of play reverses (if play is currently to the left, then play changes to the right, and vice versa). This card may only be played on a matching color or on another Reverse card."
+        },
+        {
+          "id": "dark-side-skip-everyone-card",
+          "title": "Skip Everyone Card",
+          "page": 2,
+          "side": "DARK SIDE",
+          "text": "When you play this card, all players are “skipped” (loses their turn). Play then returns to whoever laid down the card. This card may only be played on a matching color or on another Skip Everyone card."
+        },
+        {
+          "id": "dark-side-wild-card",
+          "title": "Wild Card",
+          "page": 2,
+          "side": "DARK SIDE",
+          "text": "When you play this card, you get to choose the color that continues play (any color including the color in play before the Wild card was laid down). You may play a Wild card on your turn even if you have another playable card in your hand."
+        },
+        {
+          "id": "dark-side-wild-draw-color-card",
+          "title": "Wild Draw Color Card",
+          "page": 2,
+          "side": "DARK SIDE",
+          "text": "When you play this card, the next player must draw until they get a color of your choosing (no matter how many cards they have to draw to do so) and lose their turn. However, there is a hitch! You may only play this card when you do NOT have another card in your hand that matches the COLOR on the DISCARD pile (but it is acceptable to play this card if you have matching number or Action Cards). If this card turns up at the beginning of play, the person to left of the dealer chooses the color that continues play.\n\nNOTE: If you suspect that a Wild Draw Color card has been played on you illegally (i.e. the player has a matching card), then you may challenge that player. The challenged player must show you (the challenger) their hand. If guilty, the challenged player must draw the cards until they get the chosen color instead of you. However, if the challenged player is innocent, you must draw the cards until you get the chosen color PLUS an additional 2 cards!"
+        },
+        {
+          "id": "dark-side-flip-card",
+          "title": "Flip Card",
+          "page": 2,
+          "side": "DARK SIDE",
+          "text": "when you play this card, everything flips from the Dark Side to the Light Side.\n\nOnce the Flip card has been played, flip over the Discard Pile (the card just played will now be on the bottom), then the Draw Pile, then everyone’s hands must flip to the other side. This new side will remain in play until another Flip card is played, changing it again. This card may only be played on a matching color or on another Flip card.\n\nNOTE: WHEN THE DECK IS FLIPPED, IF THE NEW TOP CARD ON THE DISCARD PILE IS AN ACTION CARD (REVERSE, SKIP, DRAW, FLIP) YOU DO NOT HAVE TO TAKE THE ACTION. IF THE NEW CARD ON TOP OF THE PILE IS A WILD CARD, THE PLAYER WHO PLAYED THE FLIP CARD CALLS THE COLOR."
+        },
+        {
+          "id": "dark-side-going-out",
+          "title": "Going Out",
+          "page": 3,
+          "side": "DARK SIDE",
+          "text": "Whether you are playing with the Light Side or the Dark Side, when you play your next-to-last card, you must yell “UNO” (meaning “one”) to indicate that you have only one card left. If you don’t yell “UNO” and you are caught before the next player begins their turn, you must draw two cards.\n\nOnce a player has no cards left, the round is over. Points are scored (see SCORING) and play starts over again. If the last card played in a round is a Draw One, Draw Five, Wild Draw Two or Wild Draw Color card, the next player must draw the one, five, two or until they get a chosen color card respectively. These cards are counted when the points are totaled. If no player is out of cards by the time the DRAW pile is depleted, the DISCARD pile is reshuffled and play continues."
+        },
+        {
+          "id": "dark-side-scoring",
+          "title": "Scoring",
+          "page": 3,
+          "side": "DARK SIDE",
+          "text": "The first player to get rid of their cards in a round receives points for all of the cards left in their opponents’ hands as follows:\n\n| Card | Value |\n| --- | --- |\n| All number cards (1-9) | Face Value |\n| Draw One | 10 Points |\n| Draw Five | 20 Points |\n| Reverse | 20 Points |\n| Skip | 20 Points |\n| Skip Everyone | 30 Points |\n| Flip | 20 Points |\n| Wild | 40 Points |\n| Wild Draw Two | 50 Points |\n| Wild Draw Color | 60 Points |\n\nOnce the score for the round has been tallied, if no player has reached 500 points, reshuffle the cards and begin a new round."
+        },
+        {
+          "id": "dark-side-winning-the-game",
+          "title": "Winning the Game",
+          "page": 3,
+          "side": "DARK SIDE",
+          "text": "The WINNER is the first player to reach 500 points."
+        },
+        {
+          "id": "dark-side-alternative-scoring-and-winning",
+          "title": "Alternative Scoring and Winning",
+          "page": 3,
+          "side": "DARK SIDE",
+          "text": "Another way to score points is to keep a running tally of the points each player is left with at the end of each round. When one player reaches 500 points, the player with the lowest points is the winner."
+        }
+      ]
+    },
+    "uno-reverse-pack": {
+      "id": "uno-reverse-pack",
+      "title": "UNO Reverse Pack",
+      "url": "https://service.mattel.com/instruction_sheets/JCV56-Reverse.pdf",
+      "pdf": "sources/uno-reverse-pack-rules-en.pdf",
+      "transcript": "sources/Extracted Text/uno-reverse-pack-rules-en.md",
+      "sections": [
+        {
+          "id": "contents",
+          "title": "Contents",
+          "page": 1,
+          "side": "",
+          "text": "16 Cards"
+        },
+        {
+          "id": "required-base-game",
+          "title": "Required base game",
+          "page": 1,
+          "side": "",
+          "text": "THESE CARDS ARE DESIGNED TO BE COMBINED WITH A CLASSIC UNO® CARD GAME AND CANNOT BE PLAYED WITH ON THEIR OWN."
+        },
+        {
+          "id": "uno-reverse-pack-in-a-nutshell",
+          "title": "UNO® REVERSE PACK IN A NUTSHELL",
+          "page": 1,
+          "side": "",
+          "text": "This pack is loaded with so many Reverses it will make your head spin. Reverse Skip, Reverse Draw 2, Power Reverse?! So stay alert, because after you add these cards to your UNO® deck you’ll be wondering whose turn is it anyway?"
+        },
+        {
+          "id": "reverse-draw-2",
+          "title": "REVERSE DRAW 2",
+          "page": 1,
+          "side": "",
+          "text": "When you play this card, reverse the direction of play AND make the next player in that direction draw 2 cards and lose their turn. This card matches all other Reverse cards and Draw 2 cards and can be played on either type regardless of color."
+        },
+        {
+          "id": "reverse-skip",
+          "title": "REVERSE SKIP",
+          "page": 1,
+          "side": "",
+          "text": "When you play this card, reverse the direction of play AND the next player in that direction is skipped and loses their turn. This card matches all other Reverse cards and Skip cards and can be played on either type regardless of color."
+        },
+        {
+          "id": "wild-power-reverse",
+          "title": "WILD POWER REVERSE",
+          "page": 1,
+          "side": "",
+          "text": "When you play this card, reverse the direction of play, choose the color that continues play, AND take another turn!"
+        },
+        {
+          "id": "wild-no-u",
+          "title": "WILD NO U",
+          "page": 1,
+          "side": "",
+          "text": "You may play this card:\n\n- In response to any Action Card that makes you draw cards. You reverse the direction of play, force the player who played the Action Draw Card to take the penalty, and choose the color that continues play.\n\n- On any card as a normal Wild Card to reverse the direction of play and then choose the color that continues play."
+        },
+        {
+          "id": "for-colorblind-players",
+          "title": "FOR COLORBLIND PLAYERS",
+          "page": 1,
+          "side": "",
+          "text": "Special graphic symbols have been added to each card to help identify the color(s) on that card. This will allow players with ANY form of color blindness to easily play!\n\n| Symbol (described from the printed key) | Color |\n| --- | --- |\n| Circle | Red |\n| Four-point star | Yellow |\n| Downward-pointing triangle | Green |\n| Square | Blue |\n\nLearn more about UNO® Add-On Packs!"
+        }
+      ]
+    },
+    "uno-show-em-no-mercy-expansion-pack": {
+      "id": "uno-show-em-no-mercy-expansion-pack",
+      "title": "UNO Show 'em No Mercy Expansion Pack",
+      "url": "https://service.mattel.com/instruction_sheets/JJB29_English.pdf",
+      "pdf": "sources/uno-show-em-no-mercy-expansion-pack-rules-en.pdf",
+      "transcript": "sources/Extracted Text/uno-show-em-no-mercy-expansion-pack-rules-en.md",
+      "sections": [
+        {
+          "id": "contents",
+          "title": "Contents",
+          "page": 1,
+          "side": "",
+          "text": "24 Cards, 6 Coins"
+        },
+        {
+          "id": "required-base-game",
+          "title": "Required base game",
+          "page": 1,
+          "side": "",
+          "text": "THESE CARDS AND COINS ARE DESIGNED TO BE COMBINED WITH A UNO SHOW ‘EM NO MERCY™ CARD GAME AND CANNOT BE PLAYED WITH ON THEIR OWN."
+        },
+        {
+          "id": "expansion-pack-cards-and-coins-in-a-nutshell",
+          "title": "EXPANSION PACK CARDS AND COINS IN A NUTSHELL",
+          "page": 1,
+          "side": "",
+          "text": "Add these cards to your deck to dial up the brutality! You can only use your coin once per game, so choose wisely whether to save your butt or fry someone else’s."
+        },
+        {
+          "id": "10-s-play-again",
+          "title": "10’s PLAY AGAIN",
+          "page": 1,
+          "side": "",
+          "text": "When you play this card, immediately take another turn."
+        },
+        {
+          "id": "wild-discard-all",
+          "title": "WILD DISCARD ALL",
+          "page": 1,
+          "side": "",
+          "text": "This card matches anything so you can play it no matter what card is on the Discard Pile. Pick the color you want to discard and discard all the cards in your hand of that color. This card goes on top of those cards. Since this a Wild Card, you also get to choose the color that continues play."
+        },
+        {
+          "id": "wild-reverse-draw-8",
+          "title": "WILD REVERSE DRAW 8",
+          "page": 1,
+          "side": "",
+          "text": "Reverse the direction of play AND make the next player in that direction draw 8 cards and lose their turn. You choose the color that continues play."
+        },
+        {
+          "id": "wild-final-attack",
+          "title": "WILD FINAL ATTACK",
+          "page": 1,
+          "side": "",
+          "text": "First, reveal your hand. The next player loses their turn and must draw 1 card for each Action Card and Wild Card in your hand (number cards don’t count). If you reveal 7 or more Action and/or Wild Cards, that player must draw 25 cards instead AND all other players must draw 5 cards. You choose the color that continues play."
+        },
+        {
+          "id": "wild-sudden-death",
+          "title": "WILD SUDDEN DEATH",
+          "page": 1,
+          "side": "",
+          "text": "All players, including YOU, must draw cards from the Draw Pile until they have 24 cards in their hand – ouch! You choose the color that continues play."
+        },
+        {
+          "id": "expansion-pack-coins",
+          "title": "EXPANSION PACK COINS",
+          "page": 1,
+          "side": "",
+          "text": "Each player gets 1 coin and must declare at the beginning of each game if they are going to use the “Mercy” or the “No Mercy” side. You can use it on your turn whenever you want, but only once per game so choose wisely!"
+        },
+        {
+          "id": "mercy",
+          "title": "MERCY",
+          "page": 1,
+          "side": "",
+          "text": "You may immediately discard your ENTIRE HAND to the bottom of the Discard Pile, and then draw 7 fresh cards from the Draw Pile to create a new hand. You may use this even if you would have been knocked out for having more than 25 cards."
+        },
+        {
+          "id": "no-mercy",
+          "title": "NO MERCY",
+          "page": 1,
+          "side": "",
+          "text": "Immediately doubles the penalty of any Draw Card you play. For example, if you play a Wild Reverse Draw 8 it becomes a Wild Reverse Draw 16!\n\nNOTE: the new value of the penalty applies even when stacking."
+        },
+        {
+          "id": "identification-icon",
+          "title": "IDENTIFICATION ICON",
+          "page": 1,
+          "side": "",
+          "text": "Each UNO Show 'em No Mercy Expansion Card features a distinctive icon in the bottom left corner, making it easy to distinguish from the Core deck. If Core and Expansion cards are mixed and you need to separate them, simply look for this icon."
+        },
+        {
+          "id": "for-colorblind-players",
+          "title": "FOR COLORBLIND PLAYERS",
+          "page": 1,
+          "side": "",
+          "text": "Special graphic symbols have been added to each card to help identify the color(s) on that card. This will allow players with ANY form of color blindness to easily play!\n\n| Symbol (described from the printed key) | Color |\n| --- | --- |\n| Circle | Red |\n| Four-point star | Yellow |\n| Downward-pointing triangle | Green |\n| Square | Blue |"
+        }
+      ]
+    },
+    "uno-show-em-no-mercy": {
+      "id": "uno-show-em-no-mercy",
+      "title": "UNO Show 'em No Mercy",
+      "url": "https://service.mattel.com/instruction_sheets/HVW18-Eng.pdf",
+      "pdf": "sources/uno-show-em-no-mercy-rules-en.pdf",
+      "transcript": "sources/Extracted Text/uno-show-em-no-mercy-rules-en.md",
+      "sections": [
+        {
+          "id": "contents",
+          "title": "Contents",
+          "page": 1,
+          "side": "",
+          "text": "168 Cards"
+        },
+        {
+          "id": "object",
+          "title": "OBJECT",
+          "page": 1,
+          "side": "",
+          "text": "Be first to get rid of all the cards in your hand or knock out all other players from the game until you are the only one left."
+        },
+        {
+          "id": "uno-show-em-no-mercy-in-a-nutshell",
+          "title": "UNO SHOW EM NO MERCY™ IN A NUTSHELL",
+          "page": 1,
+          "side": "",
+          "text": "It plays just like classic UNO® by matching color, number or symbol, but 4 special rules and 6 super-tough Action Cards have been added to spice things up (more on those later). There are also 2 ways to win: the traditional way of getting rid of all the cards in your hand or knock all the other players out of the game (again, more on that in a minute). Like always, when you’re down to your last card, you still gotta yell “UNO!”"
+        },
+        {
+          "id": "setup",
+          "title": "SETUP",
+          "page": 1,
+          "side": "",
+          "text": "1. Choose a dealer and shuffle the cards. Tip: There are a lot of cards, so if you have trouble shuffling, try splitting the deck between multiple players.\n\n2. Deal 7 cards to each player.\n\n3. Place the remaining cards FACEDOWN in the center of the table. This is the DRAW PILE.\n\n4. Flip over the top card of the DRAW PILE and place it FACEUP to form the DISCARD PILE. If this card is an Action Card, ignore it and flip over the next card.\n\n5. The player to the left of the dealer goes first and play proceeds clockwise."
+        },
+        {
+          "id": "let-s-play-uno",
+          "title": "Let’s Play UNO®!",
+          "page": 1,
+          "side": "",
+          "text": "On your turn, try to get rid of all your cards by playing ONE CARD onto the Discard Pile.\n\nIf you HAVE a matching card in your hand, you may PLAY IT on the Discard Pile. You can only play a card if it matches at least one attribute of the top card on the Discard Pile: its color, number, or symbol. If the card you played is an Action Card, it does something special! (see Action Cards below)\n\nIf you DO NOT HAVE a matching card, you MUST draw cards from the Draw Pile UNTIL YOU DRAW A CARD YOU CAN PLAY. Then, play that card.\n\nOnce your turn is over, play continues with the next player.\n\nNOTE: if there are no cards left in the Draw Pile, reshuffle the Discard Pile to form a new Draw Pile."
+        },
+        {
+          "id": "calling-uno",
+          "title": "Calling “UNO!”",
+          "page": 1,
+          "side": "",
+          "text": "The moment you only have 1 card in your hand, you must yell “UNO” to alert the other players you are about to win.\n\nHowever, if someone catches you and calls out “UNO” before you (and before the next player begins their turn), then you must draw 2 cards!"
+        },
+        {
+          "id": "winning",
+          "title": "Winning",
+          "page": 1,
+          "side": "",
+          "text": "When a player plays their final card, they win. Alternatively, if all other players are knocked out of the game (see Mercy Rule), you win. Time to shuffle the cards and play again!"
+        },
+        {
+          "id": "stacking",
+          "title": "Stacking",
+          "page": 1,
+          "side": "",
+          "text": "If someone plays a Draw Card (+2, +4, +6, +10) you can “Stack” the penalty by playing a Draw Card from your hand of equal or higher value. If you do, the card you played adds to the total penalty for the next player. For example, if someone plays a +4 card on you, and you can play a +6 on top of it, the next player is now forced to draw 10 cards (unless they can play a Draw +6 or higher, then it goes on to the next player). This continues until someone can’t play a Draw Card that equals or exceeds the value of the last card played. That player then takes the full penalty of all stacked Draw Cards. Ouch!"
+        },
+        {
+          "id": "mercy",
+          "title": "Mercy",
+          "page": 1,
+          "side": "",
+          "text": "If a player ever has 25 or more cards in their hand, they are out of the game. Set aside their hand of cards until the deck runs out and needs to be reshuffled."
+        },
+        {
+          "id": "7-s-swap",
+          "title": "7’s Swap",
+          "page": 1,
+          "side": "",
+          "text": "When you play a 7 card of any color, you MUST swap your hand with another player of your choice. Play then continues in current order."
+        },
+        {
+          "id": "0-s-pass",
+          "title": "0’s Pass",
+          "page": 1,
+          "side": "",
+          "text": "When you play a 0 card of any color, ALL players must pass their hand to the next player in the current direction of play."
+        },
+        {
+          "id": "draw-two-card",
+          "title": "Draw Two Card",
+          "page": 2,
+          "side": "",
+          "text": "The next player in current order must draw 2 cards and lose their turn."
+        },
+        {
+          "id": "draw-four-card",
+          "title": "Draw Four Card",
+          "page": 2,
+          "side": "",
+          "text": "When played, the next player must draw 4 cards and lose their turn."
+        },
+        {
+          "id": "skip-card",
+          "title": "Skip Card",
+          "page": 2,
+          "side": "",
+          "text": "When played, the next player in current order loses their turn."
+        },
+        {
+          "id": "discard-all-card",
+          "title": "Discard All Card",
+          "page": 2,
+          "side": "",
+          "text": "Discard all the cards in your hand that match the color of the Discard All Card. Place the extra cards under the Discard All Card."
+        },
+        {
+          "id": "reverse-card",
+          "title": "Reverse Card",
+          "page": 2,
+          "side": "",
+          "text": "When played, the direction of play is reversed. If play was moving clockwise, it now moves counterclockwise and vice versa. With just two players a Reverse skips the other player, letting you take another turn."
+        },
+        {
+          "id": "skip-everyone-card",
+          "title": "Skip Everyone Card",
+          "page": 2,
+          "side": "",
+          "text": "Skip all the other players and take another turn."
+        },
+        {
+          "id": "wild-reverse-draw-4-card",
+          "title": "Wild Reverse Draw 4 Card",
+          "page": 2,
+          "side": "",
+          "text": "Reverse the direction of play, then the next player in the new direction must draw 4 cards and lose their turn. With just two players this card skips the other player and makes YOU draw 4 cards! You may use the stacking rule to send the penalty back to the other player."
+        },
+        {
+          "id": "wild-draw-6-card",
+          "title": "Wild Draw 6 Card",
+          "page": 2,
+          "side": "",
+          "text": "The next player must draw 6 cards and lose their turn."
+        },
+        {
+          "id": "wild-draw-10-card",
+          "title": "Wild Draw 10 Card",
+          "page": 2,
+          "side": "",
+          "text": "The next player must draw 10 cards and lose their turn."
+        },
+        {
+          "id": "wild-color-roulette-card",
+          "title": "Wild Color Roulette Card",
+          "page": 2,
+          "side": "",
+          "text": "The next player chooses a color. After that, they must reveal cards one at a time from the Draw Pile until they get a card of that color (Wild Cards do NOT count). Then they add all the revealed cards to their hand and lose their turn."
+        },
+        {
+          "id": "keeping-score-optional-victory-method",
+          "title": "Keeping Score (Optional Victory Method)",
+          "page": 2,
+          "side": "",
+          "text": "When a player wins a hand, they receive points based on the cards remaining in their opponent’s hands. Cards are valued as follows:\n\n| Card | Value |\n| --- | --- |\n| All number cards (0-9) | Face Value |\n| Any Color Action Card: Skip, Reverse, Draw 2, Draw 4, Discard All, Skip Everyone | 20 Points |\n| Any Wild Action Card: Wild Reverse Draw 4, Wild Draw 6, Wild Draw 10, Wild Color Roulette | 50 Points |"
+        },
+        {
+          "id": "bonus-for-knocking-out-players",
+          "title": "Bonus for knocking out players:",
+          "page": 2,
+          "side": "",
+          "text": "250 Points for each player knocked out of the game during the hand (ignore the cards in their hand at the time they were knocked out).\n\nKeep a running tally of each player’s points from hand to hand. When a player reaches 1000 points, they are the winner."
+        }
+      ]
+    },
+    "uno-speed-pack": {
+      "id": "uno-speed-pack",
+      "title": "UNO Speed Pack",
+      "url": "https://service.mattel.com/instruction_sheets/JCV57-Speed.pdf",
+      "pdf": "sources/uno-speed-pack-rules-en.pdf",
+      "transcript": "sources/Extracted Text/uno-speed-pack-rules-en.md",
+      "sections": [
+        {
+          "id": "contents",
+          "title": "Contents",
+          "page": 1,
+          "side": "",
+          "text": "16 Cards"
+        },
+        {
+          "id": "required-base-game",
+          "title": "Required base game",
+          "page": 1,
+          "side": "",
+          "text": "THESE CARDS ARE DESIGNED TO BE COMBINED WITH A CLASSIC UNO® CARD GAME AND CANNOT BE PLAYED WITH ON THEIR OWN."
+        },
+        {
+          "id": "uno-speed-pack-in-a-nutshell",
+          "title": "UNO® SPEED PACK IN A NUTSHELL",
+          "page": 1,
+          "side": "",
+          "text": "In a normal round of UNO® the Speed Level is “one,” meaning each player plays 1 card on their turn. But play a card with a “Speed Up” icon and the Speed Level goes up to “two,” meaning everyone must play 2 cards: the card they would normally play, plus an additional card. Every “Speed Up” icon you play increases how many cards players must play on their turn until someone can’t match the speed and crashes!"
+        },
+        {
+          "id": "speed-pack-icons",
+          "title": "SPEED PACK ICONS",
+          "page": 1,
+          "side": "",
+          "text": "Every card with a “Speed Up” icon you play increases the speed by one level. Starting with the next player, everyone must play an extra card on their turn for each icon played. At Speed Level two, each player must play 2 cards on their turn. 3 cards at Speed Level three, 4 at four, and so on. When playing multiple cards on your turn, each card must match the previous played card. Stay sharp because every “Speed Up” icon you play increases the speed for the next player. And the Wild “Double Speed Up” card increases the speed by 2 levels and you get to choose the color that continues play!"
+        },
+        {
+          "id": "action-cards",
+          "title": "ACTION CARDS",
+          "page": 1,
+          "side": "",
+          "text": "Unlike “Speed Up” icons, Action Cards (Draw 2, Skip, Reverse, etc.) only take effect if they are the last card played. If you play 3 cards on your turn and the first or second card is an Action Card, the next player does not have to do the action."
+        },
+        {
+          "id": "what-if-you-can-t-play",
+          "title": "WHAT IF YOU CAN’T PLAY?",
+          "page": 1,
+          "side": "",
+          "text": "If a player is unable to play the number of cards required, they play what they can and then draw cards equal to the current Speed Level. For example, if the current speed is 4 and you are only able to play 2 cards, you play those 2 cards and then draw 4 cards. The speed is then reset to 1 and the next player only has to play 1 card on their turn."
+        },
+        {
+          "id": "for-colorblind-players",
+          "title": "FOR COLORBLIND PLAYERS",
+          "page": 1,
+          "side": "",
+          "text": "Special graphic symbols have been added to each card to help identify the color(s) on that card. This will allow players with ANY form of color blindness to easily play!\n\n| Symbol (described from the printed key) | Color |\n| --- | --- |\n| Circle | Red |\n| Four-point star | Yellow |\n| Downward-pointing triangle | Green |\n| Square | Blue |\n\nLearn more about UNO® Add-On Packs!"
+        }
+      ]
+    },
+    "uno-stack-pack": {
+      "id": "uno-stack-pack",
+      "title": "UNO Stack Pack",
+      "url": "https://service.mattel.com/instruction_sheets/JCV58-Stack.pdf",
+      "pdf": "sources/uno-stack-pack-rules-en.pdf",
+      "transcript": "sources/Extracted Text/uno-stack-pack-rules-en.md",
+      "sections": [
+        {
+          "id": "contents",
+          "title": "Contents",
+          "page": 1,
+          "side": "",
+          "text": "16 Cards"
+        },
+        {
+          "id": "required-base-game",
+          "title": "Required base game",
+          "page": 1,
+          "side": "",
+          "text": "THESE CARDS ARE DESIGNED TO BE COMBINED WITH A CLASSIC UNO® CARD GAME AND CANNOT BE PLAYED WITH ON THEIR OWN."
+        },
+        {
+          "id": "uno-stack-pack-in-a-nutshell",
+          "title": "UNO® STACK PACK IN A NUTSHELL",
+          "page": 1,
+          "side": "",
+          "text": "Stacking in UNO? Oh yes we did. Each Stack Card acts like a Draw Card you can stack to make other players draw more and more cards. Play a Stack 1, Stack 2, or the dreaded Wild Stack Number card and soon you’ll be passing out penalties like popcorn."
+        },
+        {
+          "id": "stack-1",
+          "title": "STACK 1",
+          "page": 1,
+          "side": "",
+          "text": "You may play this card:\n\n- on a card of the matching color. The next player must draw 1 card and lose their turn.\n\n- in response to a Draw Card (+2, +4) if your card matches the color of the Draw 2 Card, or the chosen color for the Wild Draw 4. The total penalty is passed to the next player. For example, if a player plays a Wild Draw 4 and calls “red,” you may play a red Stack 1 card which makes the next player have to draw 5 cards and lose their turn.\n\n- in response to a Stack Card. The penalty increases by 1 and the next player must draw the total of the Stack Cards. For example, if you play a Stack 1 in response to a Stack 2, the next player must draw 3 cards and lose their turn."
+        },
+        {
+          "id": "stack-2",
+          "title": "STACK 2",
+          "page": 1,
+          "side": "",
+          "text": "Just like Stack 1, only you force the next player to draw 2 cards."
+        },
+        {
+          "id": "wild-stack-3",
+          "title": "WILD STACK 3",
+          "page": 1,
+          "side": "",
+          "text": "Just like above, except this card is wild, meaning you may play this card:\n\n- on any other card. You choose the color that continues play and the next player must draw 3 cards and lose their turn.\n\n- in response to any Draw Card or Stack Card. You choose the color that continues play and the penalty increases by 3 and passes to the next player."
+        },
+        {
+          "id": "wild-stack-number",
+          "title": "WILD STACK NUMBER",
+          "page": 1,
+          "side": "",
+          "text": "Same as the Wild Stack 3, except:\n\n- To determine how many cards the next player must draw, flip over the top card of the Draw Pile until you reveal a Number Card. The number on the card is how many cards the next player must draw! Put any cards you flipped over under the Discard Pile."
+        },
+        {
+          "id": "for-colorblind-players",
+          "title": "FOR COLORBLIND PLAYERS",
+          "page": 1,
+          "side": "",
+          "text": "Special graphic symbols have been added to each card to help identify the color(s) on that card. This will allow players with ANY form of color blindness to easily play!\n\n| Symbol (described from the printed key) | Color |\n| --- | --- |\n| Circle | Red |\n| Four-point star | Yellow |\n| Downward-pointing triangle | Green |\n| Square | Blue |\n\nLearn more about UNO® Add-On Packs!"
+        }
+      ]
+    },
+    "uno-swap-pack": {
+      "id": "uno-swap-pack",
+      "title": "UNO Swap Pack",
+      "url": "https://service.mattel.com/instruction_sheets/JCV59-Swap.pdf",
+      "pdf": "sources/uno-swap-pack-rules-en.pdf",
+      "transcript": "sources/Extracted Text/uno-swap-pack-rules-en.md",
+      "sections": [
+        {
+          "id": "contents",
+          "title": "Contents",
+          "page": 1,
+          "side": "",
+          "text": "16 Cards"
+        },
+        {
+          "id": "required-base-game",
+          "title": "Required base game",
+          "page": 1,
+          "side": "",
+          "text": "THESE CARDS ARE DESIGNED TO BE COMBINED WITH A CLASSIC UNO® CARD GAME AND CANNOT BE PLAYED WITH ON THEIR OWN."
+        },
+        {
+          "id": "uno-swap-pack-in-a-nutshell",
+          "title": "UNO® SWAP PACK IN A NUTSHELL",
+          "page": 1,
+          "side": "",
+          "text": "The cards in this pack involve swapping cards with other players, forcing other players to swap cards, or even swapping your entire hand. But you can’t swap the fact that you still gotta yell “UNO!” when you’re down to your last card!"
+        },
+        {
+          "id": "swap-1",
+          "title": "SWAP 1",
+          "page": 1,
+          "side": "",
+          "text": "Play this card on a card of matching color or another Swap 1 card. Then you take a random card from another player’s hand and give them a card from your hand."
+        },
+        {
+          "id": "refresh-hand",
+          "title": "REFRESH HAND",
+          "page": 1,
+          "side": "",
+          "text": "Play this card on a card of matching color or another Refresh Hand card. Place your entire Hand at the bottom of the Discard Pile, and then draw the same number of cards from the Draw Pile to make a new hand."
+        },
+        {
+          "id": "wild-force-trade",
+          "title": "WILD FORCE TRADE",
+          "page": 1,
+          "side": "",
+          "text": "When you play this card, choose any two players (include yourself if you want to) and force them to swap hands. Then choose the color that continues play."
+        },
+        {
+          "id": "wild-pass-hands",
+          "title": "WILD PASS HANDS",
+          "page": 1,
+          "side": "",
+          "text": "When you play this card, all players (including you) must pass their hand to the next player in the current order. After everyone has passed their hand, you choose the color that continues play."
+        },
+        {
+          "id": "for-colorblind-players",
+          "title": "FOR COLORBLIND PLAYERS",
+          "page": 1,
+          "side": "",
+          "text": "Special graphic symbols have been added to each card to help identify the color(s) on that card. This will allow players with ANY form of color blindness to easily play!\n\n| Symbol (described from the printed key) | Color |\n| --- | --- |\n| Circle | Red |\n| Four-point star | Yellow |\n| Downward-pointing triangle | Green |\n| Square | Blue |\n\nLearn more about UNO® Add-On Packs!"
+        }
+      ]
+    }
+  },
+  "cards": [
+    {
+      "id": "liars-uno-0-red",
+      "title": "Regular 0",
+      "summary": "Play face up. Everyone passes their hand in the current direction.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "0-s-pass",
+      "image": "assets/liars-uno-0-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "liars-uno-1-red",
+      "title": "Regular 1",
+      "summary": "Play face up. Match by color or number.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "playing-a-regular-card",
+      "image": "assets/liars-uno-1-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "liars-uno-7-red",
+      "title": "Regular 7",
+      "summary": "Play face up. Swap hands with another player of your choice.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "7-s-swap",
+      "image": "assets/liars-uno-7-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "liars-uno-liar-0-red",
+      "title": "Liar’s 0",
+      "summary": "Play face down and declare your card. Everyone passes their hand in the current direction.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "0-s-pass",
+      "image": "assets/liars-uno-liar-0-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "liars-uno-liar-1-red",
+      "title": "Liar’s 1",
+      "summary": "Play face down and declare your card. Match by color or number.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "playing-a-liar-s-card",
+      "image": "assets/liars-uno-liar-1-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "liars-uno-liar-7-red",
+      "title": "Liar’s 7",
+      "summary": "Play face down and declare your card. Swap hands with another player of your choice.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "7-s-swap",
+      "image": "assets/liars-uno-liar-7-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "liars-uno-liar-draw-2-red",
+      "title": "Liar’s Draw Two",
+      "summary": "Play face down. If the declared action stands, next player draws 2 and loses their turn.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "draw-two-card",
+      "image": "assets/liars-uno-liar-draw-2-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "liars-uno-liar-reverse-red",
+      "title": "Liar’s Reverse",
+      "summary": "Play face down. If the declared action stands, reverse direction.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "reverse-card",
+      "image": "assets/liars-uno-liar-reverse-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "liars-uno-liar-skip-red",
+      "title": "Liar’s Skip",
+      "summary": "Play face down. If the declared action stands, skip the next player.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "skip-card",
+      "image": "assets/liars-uno-liar-skip-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "liars-uno-liar-wild-draw-4",
+      "title": "Liar’s Wild Draw 4",
+      "summary": "Play face down. Announce it; next player draws 4 and loses their turn. Choose a color.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "wild-draw-4-card",
+      "image": "assets/liars-uno-liar-wild-draw-4.webp",
+      "status": "official"
+    },
+    {
+      "id": "liars-uno-wild-liars-challenge",
+      "title": "Wild Liar’s Challenge",
+      "summary": "Choose a color; others offer a face-down card. Challenge until everyone is challenged or you find a truthful player. Multiple players may win together.",
+      "game": "liars",
+      "pack": null,
+      "side": null,
+      "source": "liars-uno",
+      "section": "wild-liar-s-challenge-card",
+      "image": "assets/liars-uno-wild-liars-challenge.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-reverse-pack-reverse-draw-2-green",
+      "title": "Reverse Draw 2",
+      "summary": "Reverse direction; next player in that direction draws 2 and loses their turn. Matches any Reverse or Draw 2.",
+      "game": "uno",
+      "pack": "reverse",
+      "side": null,
+      "source": "uno-reverse-pack",
+      "section": "reverse-draw-2",
+      "image": "assets/uno-reverse-pack-reverse-draw-2-green.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-reverse-pack-reverse-skip-yellow",
+      "title": "Reverse Skip",
+      "summary": "Reverse direction, then skip the next player in that direction. Matches any Reverse or Skip.",
+      "game": "uno",
+      "pack": "reverse",
+      "side": null,
+      "source": "uno-reverse-pack",
+      "section": "reverse-skip",
+      "image": "assets/uno-reverse-pack-reverse-skip-yellow.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-reverse-pack-wild-no-u",
+      "title": "Wild No U",
+      "summary": "Respond to a draw action by reversing it onto its player and choosing a color. Or play as a Wild that reverses.",
+      "game": "uno",
+      "pack": "reverse",
+      "side": null,
+      "source": "uno-reverse-pack",
+      "section": "wild-no-u",
+      "image": "assets/uno-reverse-pack-wild-no-u.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-reverse-pack-wild-power-reverse",
+      "title": "Wild Power Reverse",
+      "summary": "Reverse direction, choose a color, and take another turn.",
+      "game": "uno",
+      "pack": "reverse",
+      "side": null,
+      "source": "uno-reverse-pack",
+      "section": "wild-power-reverse",
+      "image": "assets/uno-reverse-pack-wild-power-reverse.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-speed-pack-speed-up-1-yellow",
+      "title": "Speed Up 1",
+      "summary": "Play as a number card. Its speed icon raises the speed by one for the next player.",
+      "game": "uno",
+      "pack": "speed",
+      "side": null,
+      "source": "uno-speed-pack",
+      "section": "speed-pack-icons",
+      "image": "assets/uno-speed-pack-speed-up-1-yellow.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-speed-pack-speed-up-5-red",
+      "title": "Speed Up 5",
+      "summary": "The 5 is the card’s number. Its single speed icon raises speed by one, not five.",
+      "game": "uno",
+      "pack": "speed",
+      "side": null,
+      "source": "uno-speed-pack",
+      "section": "speed-pack-icons",
+      "image": "assets/uno-speed-pack-speed-up-5-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-speed-pack-wild-double-speed-up",
+      "title": "Wild Double Speed Up",
+      "summary": "Choose a color and increase the speed by two levels for the next player.",
+      "game": "uno",
+      "pack": "speed",
+      "side": null,
+      "source": "uno-speed-pack",
+      "section": "speed-pack-icons",
+      "image": "assets/uno-speed-pack-wild-double-speed-up.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-stack-pack-stack-1-red",
+      "title": "Stack 1",
+      "summary": "Add 1 to a Stack penalty; responding to a Draw card requires matching its color or chosen color.",
+      "game": "uno",
+      "pack": "stack",
+      "side": null,
+      "source": "uno-stack-pack",
+      "section": "stack-1",
+      "image": "assets/uno-stack-pack-stack-1-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-stack-pack-stack-2-blue",
+      "title": "Stack 2",
+      "summary": "Works like Stack 1, but adds 2 to the penalty.",
+      "game": "uno",
+      "pack": "stack",
+      "side": null,
+      "source": "uno-stack-pack",
+      "section": "stack-2",
+      "image": "assets/uno-stack-pack-stack-2-blue.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-stack-pack-wild-stack-3",
+      "title": "Wild Stack 3",
+      "summary": "Play on any card or respond to any Draw or Stack card. Choose a color; add 3 to the penalty.",
+      "game": "uno",
+      "pack": "stack",
+      "side": null,
+      "source": "uno-stack-pack",
+      "section": "wild-stack-3",
+      "image": "assets/uno-stack-pack-wild-stack-3.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-stack-pack-wild-stack-number",
+      "title": "Wild Stack Number",
+      "summary": "Reveal until a number card appears. Its number determines the added draw penalty. Put revealed cards under the discard pile.",
+      "game": "uno",
+      "pack": "stack",
+      "side": null,
+      "source": "uno-stack-pack",
+      "section": "wild-stack-number",
+      "image": "assets/uno-stack-pack-wild-stack-number.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-swap-pack-refresh-hand-blue",
+      "title": "Refresh Hand",
+      "summary": "Put your hand under the discard pile and draw the same number of fresh cards.",
+      "game": "uno",
+      "pack": "swap",
+      "side": null,
+      "source": "uno-swap-pack",
+      "section": "refresh-hand",
+      "image": "assets/uno-swap-pack-refresh-hand-blue.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-swap-pack-swap-1-yellow",
+      "title": "Swap 1",
+      "summary": "Take a random card from another player and give them a card you choose.",
+      "game": "uno",
+      "pack": "swap",
+      "side": null,
+      "source": "uno-swap-pack",
+      "section": "swap-1",
+      "image": "assets/uno-swap-pack-swap-1-yellow.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-swap-pack-wild-force-trade",
+      "title": "Wild Force Trade",
+      "summary": "Choose two players to exchange hands, then choose a color. You may include yourself.",
+      "game": "uno",
+      "pack": "swap",
+      "side": null,
+      "source": "uno-swap-pack",
+      "section": "wild-force-trade",
+      "image": "assets/uno-swap-pack-wild-force-trade.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-swap-pack-wild-pass-hands",
+      "title": "Wild Pass Hands",
+      "summary": "Everyone passes their hand in the current direction. Then you choose a color.",
+      "game": "uno",
+      "pack": "swap",
+      "side": null,
+      "source": "uno-swap-pack",
+      "section": "wild-pass-hands",
+      "image": "assets/uno-swap-pack-wild-pass-hands.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-draw-2-blue",
+      "title": "Draw Two",
+      "summary": "Next player draws 2 and misses their turn.",
+      "game": "uno",
+      "pack": null,
+      "side": null,
+      "source": "uno-base-game",
+      "section": "draw-two-card",
+      "image": "assets/uno-draw-2-blue.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-reverse-green",
+      "title": "Reverse",
+      "summary": "Reverse the direction of play.",
+      "game": "uno",
+      "pack": null,
+      "side": null,
+      "source": "uno-base-game",
+      "section": "reverse-card",
+      "image": "assets/uno-reverse-green.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-skip-red",
+      "title": "Skip",
+      "summary": "The next player loses their turn.",
+      "game": "uno",
+      "pack": null,
+      "side": null,
+      "source": "uno-base-game",
+      "section": "skip-card",
+      "image": "assets/uno-skip-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-wild-customizable",
+      "title": "Customizable Wild",
+      "summary": "Artwork available. No predefined effect is documented by this source; agree on a rule before use.",
+      "game": "uno",
+      "pack": null,
+      "side": null,
+      "source": "uno-base-game",
+      "section": null,
+      "image": "assets/uno-wild-customizable.webp",
+      "status": "gap"
+    },
+    {
+      "id": "uno-wild-draw-4",
+      "title": "Wild Draw Four",
+      "summary": "Choose a color; next player draws 4 and loses their turn. Only legal if you have no card matching the current color.",
+      "game": "uno",
+      "pack": null,
+      "side": null,
+      "source": "uno-base-game",
+      "section": "wild-draw-4-card",
+      "image": "assets/uno-wild-draw-4.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-wild-shuffle-hands",
+      "title": "Wild Shuffle Hands",
+      "summary": "Artwork available, but this card is absent from the supplied 108-card rule sheet. Effect not verified.",
+      "game": "uno",
+      "pack": null,
+      "side": null,
+      "source": "uno-base-game",
+      "section": null,
+      "image": "assets/uno-wild-shuffle-hands.webp",
+      "status": "gap"
+    },
+    {
+      "id": "uno-wild",
+      "title": "Wild",
+      "summary": "Choose the color. Play it even if you have another playable card.",
+      "game": "uno",
+      "pack": null,
+      "side": null,
+      "source": "uno-base-game",
+      "section": "wild-card",
+      "image": "assets/uno-wild.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-dare-adults-only-draw-2-or-dare-2-red",
+      "title": "Draw 2 or Dare",
+      "summary": "Standard Dare reference: choose draw 2 or complete the numbered dare. This does not verify the Adults Only die or dare levels.",
+      "game": "dare",
+      "pack": null,
+      "side": null,
+      "source": "uno-dare",
+      "section": "dare-card",
+      "image": "assets/uno-dare-adults-only-draw-2-or-dare-2-red.webp",
+      "status": "substitute"
+    },
+    {
+      "id": "uno-dare-adults-only-reverse-green",
+      "title": "Reverse",
+      "summary": "Standard Dare reference: reverse direction. Adults Only mechanics are not verified.",
+      "game": "dare",
+      "pack": null,
+      "side": null,
+      "source": "uno-dare",
+      "section": "reverse-card",
+      "image": "assets/uno-dare-adults-only-reverse-green.webp",
+      "status": "substitute"
+    },
+    {
+      "id": "uno-dare-adults-only-skip-blue",
+      "title": "Skip",
+      "summary": "Standard Dare reference: the next player loses their turn. Adults Only mechanics are not verified.",
+      "game": "dare",
+      "pack": null,
+      "side": null,
+      "source": "uno-dare",
+      "section": "skip-card",
+      "image": "assets/uno-dare-adults-only-skip-blue.webp",
+      "status": "substitute"
+    },
+    {
+      "id": "uno-dare-adults-only-wild-draw-2-or-dare-1",
+      "title": "Wild Draw 2 or Dare",
+      "summary": "Standard Dare reference: draw 2 or take the numbered dare; the player of the Wild chooses the color. Adults Only details unverified.",
+      "game": "dare",
+      "pack": null,
+      "side": null,
+      "source": "uno-dare",
+      "section": "wild-dare-card",
+      "image": "assets/uno-dare-adults-only-wild-draw-2-or-dare-1.webp",
+      "status": "substitute"
+    },
+    {
+      "id": "uno-flip-dark-draw-5-teal",
+      "title": "Draw Five",
+      "summary": "Next player draws 5 and misses their turn.",
+      "game": "flip",
+      "pack": null,
+      "side": "dark",
+      "source": "uno-flip",
+      "section": "dark-side-draw-five-card",
+      "image": "assets/uno-flip-dark-draw-5-teal.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-dark-flip-teal",
+      "title": "Flip",
+      "summary": "Flip the discard pile, draw pile, and everyone’s hands to the other side.",
+      "game": "flip",
+      "pack": null,
+      "side": "dark",
+      "source": "uno-flip",
+      "section": "dark-side-flip-card",
+      "image": "assets/uno-flip-dark-flip-teal.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-dark-reverse-orange",
+      "title": "Reverse",
+      "summary": "Reverse the direction of play.",
+      "game": "flip",
+      "pack": null,
+      "side": "dark",
+      "source": "uno-flip",
+      "section": "dark-side-reverse-card",
+      "image": "assets/uno-flip-dark-reverse-orange.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-dark-skip-everyone-purple",
+      "title": "Skip Everyone",
+      "summary": "Skip everyone else and take another turn.",
+      "game": "flip",
+      "pack": null,
+      "side": "dark",
+      "source": "uno-flip",
+      "section": "dark-side-skip-everyone-card",
+      "image": "assets/uno-flip-dark-skip-everyone-purple.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-dark-wild-draw-color",
+      "title": "Wild Draw Color",
+      "summary": "Choose a color; next player draws until finding it and loses their turn. Only legal with no card matching the current color.",
+      "game": "flip",
+      "pack": null,
+      "side": "dark",
+      "source": "uno-flip",
+      "section": "dark-side-wild-draw-color-card",
+      "image": "assets/uno-flip-dark-wild-draw-color.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-dark-wild",
+      "title": "Wild",
+      "summary": "Choose a color, even if you have another playable card.",
+      "game": "flip",
+      "pack": null,
+      "side": "dark",
+      "source": "uno-flip",
+      "section": "dark-side-wild-card",
+      "image": "assets/uno-flip-dark-wild.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-light-draw-1-green",
+      "title": "Draw One",
+      "summary": "Next player draws 1 and misses their turn.",
+      "game": "flip",
+      "pack": null,
+      "side": "light",
+      "source": "uno-flip",
+      "section": "light-side-draw-one-card",
+      "image": "assets/uno-flip-light-draw-1-green.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-light-flip-blue",
+      "title": "Flip",
+      "summary": "Flip the discard pile, draw pile, and everyone’s hands to the other side.",
+      "game": "flip",
+      "pack": null,
+      "side": "light",
+      "source": "uno-flip",
+      "section": "light-side-flip-card",
+      "image": "assets/uno-flip-light-flip-blue.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-light-reverse-blue",
+      "title": "Reverse",
+      "summary": "Reverse the direction of play.",
+      "game": "flip",
+      "pack": null,
+      "side": "light",
+      "source": "uno-flip",
+      "section": "light-side-reverse-card",
+      "image": "assets/uno-flip-light-reverse-blue.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-light-skip-red",
+      "title": "Skip",
+      "summary": "Next player loses their turn.",
+      "game": "flip",
+      "pack": null,
+      "side": "light",
+      "source": "uno-flip",
+      "section": "light-side-skip-card",
+      "image": "assets/uno-flip-light-skip-red.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-light-wild-draw-2",
+      "title": "Wild Draw Two",
+      "summary": "Choose a color. Next player draws 2 and loses their turn. Only legal with no card matching the current color.",
+      "game": "flip",
+      "pack": null,
+      "side": "light",
+      "source": "uno-flip",
+      "section": "light-side-wild-draw-2-card",
+      "image": "assets/uno-flip-light-wild-draw-2.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-flip-light-wild",
+      "title": "Wild",
+      "summary": "Choose a color, even if you have another playable card.",
+      "game": "flip",
+      "pack": null,
+      "side": "light",
+      "source": "uno-flip",
+      "section": "light-side-wild-card",
+      "image": "assets/uno-flip-light-wild.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-discard-all-yellow",
+      "title": "Discard All",
+      "summary": "Discard all cards of this card’s color. Put the extra cards underneath it.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "discard-all-card",
+      "image": "assets/uno-no-mercy-discard-all-yellow.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-draw-4-blue",
+      "title": "Draw Four",
+      "summary": "Next player draws 4 and loses their turn, unless they stack a qualifying Draw card.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "draw-four-card",
+      "image": "assets/uno-no-mercy-draw-4-blue.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-skip-everyone-green",
+      "title": "Skip Everyone",
+      "summary": "Skip every other player and take another turn.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "skip-everyone-card",
+      "image": "assets/uno-no-mercy-skip-everyone-green.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-wild-color-roulette",
+      "title": "Wild Color Roulette",
+      "summary": "Next player chooses a color, reveals until that color appears, takes every revealed card, and loses their turn. Wilds do not count.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "wild-color-roulette-card",
+      "image": "assets/uno-no-mercy-wild-color-roulette.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-wild-draw-10",
+      "title": "Wild Draw 10",
+      "summary": "Next player draws 10 and loses their turn, unless they stack a qualifying Draw card.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "wild-draw-10-card",
+      "image": "assets/uno-no-mercy-wild-draw-10.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-wild-draw-6",
+      "title": "Wild Draw 6",
+      "summary": "Next player draws 6 and loses their turn, unless they stack a qualifying Draw card.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "wild-draw-6-card",
+      "image": "assets/uno-no-mercy-wild-draw-6.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-wild-reverse-draw-4",
+      "title": "Wild Reverse Draw 4",
+      "summary": "Reverse; next player in the new direction draws 4 and loses their turn. With two players, YOU draw 4 unless you stack.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "wild-reverse-draw-4-card",
+      "image": "assets/uno-no-mercy-wild-reverse-draw-4.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-0-pass-marker",
+      "title": "0’s Pass",
+      "summary": "Playing any 0 makes everyone pass their hand in the current direction.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "0-s-pass",
+      "image": "assets/uno-no-mercy-0-pass-marker.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-7-swap-marker",
+      "title": "7’s Swap",
+      "summary": "Playing any 7 means you must exchange hands with another player of your choice.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "7-s-swap",
+      "image": "assets/uno-no-mercy-7-swap-marker.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-expansion-10-yellow",
+      "title": "10’s Play Again",
+      "summary": "Play a 10 and immediately take another turn.",
+      "game": "mercy",
+      "pack": "expansion",
+      "side": null,
+      "source": "uno-show-em-no-mercy-expansion-pack",
+      "section": "10-s-play-again",
+      "image": "assets/uno-no-mercy-expansion-10-yellow.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-expansion-wild-discard-all",
+      "title": "Wild Discard All",
+      "summary": "Choose a color to discard from your hand. Put this Wild on top, then choose the color that continues play.",
+      "game": "mercy",
+      "pack": "expansion",
+      "side": null,
+      "source": "uno-show-em-no-mercy-expansion-pack",
+      "section": "wild-discard-all",
+      "image": "assets/uno-no-mercy-expansion-wild-discard-all.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-expansion-wild-final-attack",
+      "title": "Wild Final Attack",
+      "summary": "Reveal your hand. Next player draws 1 per Action or Wild card and loses their turn. At 7+, they draw 25 and everyone else draws 5. Choose a color.",
+      "game": "mercy",
+      "pack": "expansion",
+      "side": null,
+      "source": "uno-show-em-no-mercy-expansion-pack",
+      "section": "wild-final-attack",
+      "image": "assets/uno-no-mercy-expansion-wild-final-attack.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-expansion-wild-reverse-draw-8",
+      "title": "Wild Reverse Draw 8",
+      "summary": "Reverse direction; the next player in that direction draws 8 and loses their turn. Choose the color.",
+      "game": "mercy",
+      "pack": "expansion",
+      "side": null,
+      "source": "uno-show-em-no-mercy-expansion-pack",
+      "section": "wild-reverse-draw-8",
+      "image": "assets/uno-no-mercy-expansion-wild-reverse-draw-8.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-expansion-wild-sudden-death",
+      "title": "Wild Sudden Death",
+      "summary": "Everyone, including you, draws until holding 24 cards. Choose a color.",
+      "game": "mercy",
+      "pack": "expansion",
+      "side": null,
+      "source": "uno-show-em-no-mercy-expansion-pack",
+      "section": "wild-sudden-death",
+      "image": "assets/uno-no-mercy-expansion-wild-sudden-death.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-mercy-coin",
+      "title": "Mercy coin",
+      "summary": "Once per game on your turn: discard your entire hand to the bottom, then draw 7. Check the source discrepancy below.",
+      "game": "mercy",
+      "pack": "expansion",
+      "side": null,
+      "source": "uno-show-em-no-mercy-expansion-pack",
+      "section": "mercy",
+      "image": "assets/uno-no-mercy-mercy-coin.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-no-mercy-coin",
+      "title": "No Mercy coin",
+      "summary": "Once per game on your turn: double a Draw card’s penalty. Its new value also applies when stacking.",
+      "game": "mercy",
+      "pack": "expansion",
+      "side": null,
+      "source": "uno-show-em-no-mercy-expansion-pack",
+      "section": "no-mercy",
+      "image": "assets/uno-no-mercy-no-mercy-coin.webp",
+      "status": "official"
+    },
+    {
+      "id": "uno-no-mercy-expansion-10-play-again-marker",
+      "title": "10’s Play Again marker",
+      "summary": "This reminder marker identifies the 10’s extra-turn effect.",
+      "game": "mercy",
+      "pack": "expansion",
+      "side": null,
+      "source": "uno-show-em-no-mercy-expansion-pack",
+      "section": "10-s-play-again",
+      "image": "assets/uno-no-mercy-expansion-10-play-again-marker.webp",
+      "status": "official"
+    },
+    {
+      "id": "mercy-uno-draw-2-blue",
+      "title": "Draw Two",
+      "summary": "Next player draws 2 and loses their turn, unless they stack a qualifying Draw card.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "draw-two-card",
+      "image": "assets/uno-draw-2-blue.webp",
+      "status": "official",
+      "artNote": "Classic UNO artwork shown as a visual reference for this shared action."
+    },
+    {
+      "id": "mercy-uno-reverse-green",
+      "title": "Reverse",
+      "summary": "Reverse direction. With two players, skip the other player and take another turn.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "reverse-card",
+      "image": "assets/uno-reverse-green.webp",
+      "status": "official",
+      "artNote": "Classic UNO artwork shown as a visual reference for this shared action."
+    },
+    {
+      "id": "mercy-uno-skip-red",
+      "title": "Skip",
+      "summary": "Next player loses their turn.",
+      "game": "mercy",
+      "pack": null,
+      "side": null,
+      "source": "uno-show-em-no-mercy",
+      "section": "skip-card",
+      "image": "assets/uno-skip-red.webp",
+      "status": "official",
+      "artNote": "Classic UNO artwork shown as a visual reference for this shared action."
+    }
+  ]
+}

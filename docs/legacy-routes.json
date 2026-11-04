@@ -1,0 +1,59 @@
+{
+  "liars-uno.html": [
+    "panel-basics",
+    "panel-cards",
+    "panel-challenge",
+    "modal",
+    "modal-icon",
+    "modal-title",
+    "modal-tag",
+    "modal-desc"
+  ],
+  "uno-show-em-no-mercy.html": [
+    "panel-rules",
+    "panel-cards",
+    "panel-expansion",
+    "modal",
+    "modal-icon",
+    "modal-title",
+    "modal-tag",
+    "modal-desc"
+  ],
+  "index.html": [],
+  "uno-flip.html": [
+    "panel-rules",
+    "panel-cards",
+    "pill-light",
+    "pill-dark",
+    "side-light",
+    "side-dark",
+    "modal",
+    "modal-icon",
+    "modal-title",
+    "modal-tag",
+    "modal-desc"
+  ],
+  "uno-dare-adults-only.html": [
+    "panel-overview",
+    "panel-play",
+    "panel-dare",
+    "modal",
+    "modal-icon",
+    "modal-title",
+    "modal-tag",
+    "modal-desc"
+  ],
+  "uno.html": [
+    "panel-rules",
+    "panel-cards",
+    "panel-stack",
+    "panel-speed",
+    "panel-swap",
+    "panel-reverse",
+    "modal",
+    "modal-icon",
+    "modal-title",
+    "modal-tag",
+    "modal-desc"
+  ]
+}
